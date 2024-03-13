@@ -1,6 +1,6 @@
 " Disable netrw for nvim-tree to work
-let loaded_netrw = 1
-let loaded_netrwPlugin = 1
+" let loaded_netrw = 1
+" let loaded_netrwPlugin = 1
 
 " Turn on numbers
 set number
