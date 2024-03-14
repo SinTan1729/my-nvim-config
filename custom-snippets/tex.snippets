@@ -1,16 +1,47 @@
+global !p
+
+# def math():
+# 	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+def itemize_like():
+	return get_env() in ["itemize", "enumerate"]
+def get_env():
+	return vim.eval('vimtex#env#get_inner()["name"]')
+
+endglobal
+
 priority -10
 
 extends tex
 
-snippet "\\begin\{(\w+)\}" "multiline begin{} / end{}" rbA
+context itemize_like()
+snippet "\\item\s*\S+" "create next item" rb
+`!p snip.rv = match.group(0)`
+\item $0
+endsnippet
+
+context itemize_like()
+pre_expand "del snip.buffer[snip.line]; snip.cursor.set(snip.line, len(snip.buffer[snip.line+1])+1)"
+snippet "\\item\s*$" "exit itemize_like envs" rb
+$0
+endsnippet
+
+context not itemize_like()
+snippet "\\begin\{(\w+)\}" "multiline begin{} / end{}" rb
 \begin{`!p snip.rv = match.group(1)`}
 	$1
 \end{`!p snip.rv = match.group(1)`}
 endsnippet
 
+context itemize_like()
+snippet "\\begin\{(\w+)\}" "multiline begin{} / end{}" rb
+\begin{`!p snip.rv = match.group(1)`}
+	\item $1
+\end{`!p snip.rv = match.group(1)`}
+endsnippet
+
 priority -20
 
-snippet "(?<!^)\\begin\{(\w+)\}" "inline begin{} / end{}" riA
+snippet "(?<!^)\\begin\{(\w+)\}" "inline begin{} / end{}" ri
 \begin{`!p snip.rv = match.group(1)`} $1 \end{`!p snip.rv = match.group(1)`} $0
 endsnippet
 
