@@ -57,9 +57,9 @@ let g:loaded_perl_provider=0
 let g:loaded_node_provider=0
 let g:loaded_ruby_provider=0
 
-" Change the leader to a comma
+" Change the leader and localleader
 let mapleader = ","
-let g:mapleader = ","
+let maplocalleader=';'
 
 " Use ,dd for deleting without putting into buffer
 nnoremap <leader>d "_d
