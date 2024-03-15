@@ -3,7 +3,10 @@ global !p
 # def math():
 # 	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
 def itemize_like():
-	return get_env() in ["itemize", "enumerate"]
+	try:
+		return get_env() in ["itemize", "enumerate"]
+	except:
+		return False
 def get_env():
 	return vim.eval('vimtex#env#get_inner()["name"]')
 
@@ -20,7 +23,7 @@ snippet "\\item\s*\S+.*" "create next item" rb
 endsnippet
 
 context itemize_like()
-pre_expand "del snip.buffer[snip.line]; snip.cursor.set(snip.line, len(snip.buffer[snip.line+1])+1)"
+pre_expand "del snip.buffer[snip.line]; snip.cursor.set(snip.line, len(snip.buffer[snip.line]))"
 snippet "\\item\s*$" "exit itemize_like envs" rb
 $0
 endsnippet

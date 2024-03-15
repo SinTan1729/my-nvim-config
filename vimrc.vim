@@ -58,7 +58,7 @@ let g:loaded_node_provider=0
 let g:loaded_ruby_provider=0
 
 " Change the leader and localleader
-let mapleader = ","
+let mapleader=","
 let maplocalleader=';'
 
 " Use ,dd for deleting without putting into buffer
