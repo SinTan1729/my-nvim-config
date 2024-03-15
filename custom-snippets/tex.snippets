@@ -14,7 +14,7 @@ priority -10
 extends tex
 
 context itemize_like()
-snippet "\\item\s*\S+" "create next item" rb
+snippet "\\item\s*\S+.*" "create next item" rb
 `!p snip.rv = match.group(0)`
 \item $0
 endsnippet
