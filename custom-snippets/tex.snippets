@@ -7,13 +7,21 @@ def in_env(lst):
 		return get_env() in lst
 	except:
 		return False
+
 def get_env():
 	return vim.eval('vimtex#env#get_inner()["name"]')
+
 def delline_exititemize(snip):
     cursorline = snip.cursor[0] 
     del snip.buffer[cursorline]
     snip.buffer.append("\n", cursorline + 1)
     snip.cursor.set(cursorline + 1, 0)
+
+def suppress_none(s):
+	if isinstance(s, str):
+		return s
+	else:
+		return ""
 
 endglobal
 
@@ -30,19 +38,19 @@ post_jump "delline_exititemize(snip)"
 snippet "\\item\s*$" "exit itemize_like envs" rb
 endsnippet
 
-snippet "\\begin\{(itemize|enumerate)\}" "multiline begin{} / end{}" rb
-\begin{`!p snip.rv = match.group(1)`}
+snippet "\\begin\{(itemize|enumerate)\}(\[\w+\])?" "multiline begin{} / end{}" rb
+\begin{`!p snip.rv = match.group(1)`}`!p snip.rv = suppress_none(match.group(2))`
 	\item $0
 \end{`!p snip.rv = match.group(1)`}
 endsnippet
 
-snippet "\\begin\{((?!itemize|enumerate))\}" "multiline begin{} / end{}" rb
-\begin{`!p snip.rv = match.group(1)`}
+priority -20
+
+snippet "\\begin\{(\w+)\}(\[\w+\])?" "multiline begin{} / end{}" rb
+\begin{`!p snip.rv = match.group(1)`}`!p snip.rv = suppress_none(match.group(2))`
 	$0
 \end{`!p snip.rv = match.group(1)`}
 endsnippet
-
-priority -20
 
 snippet "(?<!^)\\begin\{(\w+)\}" "inline begin{} / end{}" ri
 \begin{`!p snip.rv = match.group(1)`} $1 \end{`!p snip.rv = match.group(1)`} $0
