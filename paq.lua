@@ -8,30 +8,17 @@ local function clone_paq()
     end
 end
 
+-- Automatically install new packages at startup
 local function bootstrap_paq(packages)
     local first_install = clone_paq()
     vim.cmd.packadd("paq-nvim")
     local paq = require("paq")
+    paq(packages)
     if first_install then
         vim.notify("Installing plugins... If prompted, hit Enter to continue.")
         paq.install()
     end
-    paq(packages)
 end
-
--- Automatically install new packages at startup
-vim.api.nvim_create_autocmd("VimEnter", {
-	once = true,
-	callback = function() 
-        local paq = require("paq")
-        local pkgs_count = #paq.query("to_install")
-        if pkgs_count < 1 then
-            paq.update()
-            return end
-	    vim.notify(string.format("There are %d plugins to install", pkgs_count))
-        paq.install()
-	end
-})
 
 -- Load plugin via paq-nvim
 bootstrap_paq {
