@@ -22,6 +22,7 @@ end
 
 -- Load plugin via paq-nvim
 bootstrap_paq {
+    -- Let paq-nvim manage itself
     "savq/paq-nvim",
     -- airline related plugins
     "vim-airline/vim-airline",
