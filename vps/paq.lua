@@ -56,5 +56,6 @@ bootstrap_paq {
     "isobit/vim-caddyfile",
     -- Syntax highlighting for Fish scripts
     "khaveesh/vim-fish-syntax",
+    "kylechui/nvim-surround",
 }
 

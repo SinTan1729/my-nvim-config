@@ -59,6 +59,6 @@ bootstrap_paq {
     "lervag/vimtex",
     -- Formatter
     "stevearc/conform.nvim",
-    -- For Searching
     "junegunn/fzf.vim",
+    "kylechui/nvim-surround",
 }
