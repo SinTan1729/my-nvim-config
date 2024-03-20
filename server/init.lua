@@ -14,15 +14,12 @@ set.tabstop = 4
 set.shiftwidth = 4
 set.softtabstop = 4
 set.expandtab = true
--- Show LSP signs in the number column
-set.signcolumn = 'number'
 -- Turn on spell checking
 set.spell = true
 -- Enable mouse support
 set.mouse = 'n'
 -- Enable programming dictionary
 set.spelllang = { "en", "programming" }
--- Use ctrl-[hjkl] to select the active split
 
 -- Disable unused plugins
 vim.g.loaded_perl_provider = 0

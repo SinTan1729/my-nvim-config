@@ -14,8 +14,6 @@ set.tabstop = 4
 set.shiftwidth = 4
 set.softtabstop = 4
 set.expandtab = true
--- Show LSP signs in the number column
-set.signcolumn = 'number'
 -- Turn on spell checking
 set.spell = true
 -- Enable mouse support
