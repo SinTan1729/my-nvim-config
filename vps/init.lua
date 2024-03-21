@@ -1,36 +1,10 @@
-local set = vim.opt
+-- Load the different config files
+package.path = package.path .. ';' .. vim.fn.stdpath("config") .. "/?.lua"
 
--- Turn on numbers
-set.number = true
--- Turn off line wrapping
-set.wrap = false
--- Disable cmdline from bottom
-set.cmdheight = 0
--- Ignore case while searching except when the search term contains capital letters
-set.ignorecase = true
-set.smartcase = true
--- Use 4 spaces and properly adjust them for files using TAB
-set.tabstop = 4
-set.shiftwidth = 4
-set.softtabstop = 4
-set.expandtab = true
--- Turn on spell checking
-set.spell = true
--- Enable mouse support
-set.mouse = 'n'
--- Enable programming dictionary
-set.spelllang = { "en", "programming" }
-
--- Disable unused plugins
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_node_provider = 0
-vim.g.loaded_ruby_provider = 0
-
--- Load keymaps
-local keymaps = vim.fn.stdpath("config") .. "/keymaps.lua"
-vim.cmd.source(keymaps)
-
+-- Load global configs
+require("globals")
 -- Load plugins using paq-nvim
-local paq = vim.fn.stdpath("config") .. "/paq.lua"
-vim.cmd.source(paq)
+require("paq")
+-- Load keymaps
+require("keymaps")
 
