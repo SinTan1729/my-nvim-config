@@ -24,18 +24,15 @@ end
 bootstrap_paq {
     -- Let paq-nvim manage itself
     "savq/paq-nvim",
-    -- airline related plugins
-    "vim-airline/vim-airline",
-    "vim-airline/vim-airline-themes",
+    -- Use lualine for statusbar
+    "nvim-lualine/lualine.nvim",
+    "nvim-tree/nvim-web-devicons",
     -- Auto commenting per filetype
     "numToStr/Comment.nvim",
     -- Give option to save files using sudo, if needed
     "lambdalisue/suda.vim",
     -- Auto toggle for number mode when vim isn't focused
     "sitiom/nvim-numbertoggle",
-    -- Plugin for lean
-    "nvim-tree/nvim-tree.lua",
-    "nvim-tree/nvim-web-devicons",
     -- LSP related plugins
     "neovim/nvim-lspconfig",
     "nvim-lua/plenary.nvim",

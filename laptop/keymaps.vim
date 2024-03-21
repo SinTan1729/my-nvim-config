@@ -30,3 +30,7 @@ nnoremap <leader>u <c-r>
 " Find files using fzf by ,f
 nnoremap <leader>f :Files<CR>
 
+" Move around buffers using ,j and ,k
+nnoremap <leader>k :bnext<CR>
+nnoremap <leader>k :bprevious<CR>
+

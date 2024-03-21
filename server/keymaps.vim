@@ -15,3 +15,7 @@ nnoremap <Leader>O O<Esc>j
 " Use ,u for redo
 nnoremap <Leader>u <c-r>
 
+" Move around buffers using ,j and ,k
+nnoremap <leader>k :bnext<CR>
+nnoremap <leader>k :bprevious<CR>
+
