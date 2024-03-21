@@ -20,7 +20,7 @@ local function bootstrap_paq(packages)
     end
 end
 
--- Load plugin via paq-nvim
+-- Load plugins via paq-nvim
 bootstrap_paq {
     -- Let paq-nvim manage itself
     "savq/paq-nvim",
@@ -33,32 +33,16 @@ bootstrap_paq {
     "lambdalisue/suda.vim",
     -- Auto toggle for number mode when vim isn't focused
     "sitiom/nvim-numbertoggle",
-    -- Plugin for lean
-    "julian/lean.nvim",
-    -- LSP related plugins
-    "neovim/nvim-lspconfig",
-    "nvim-lua/plenary.nvim",
-    "hrsh7th/nvim-cmp",        -- For LSP completion
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-omni",        -- For LaTeX completion
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-cmdline",
-    "SirVer/ultisnips",        -- For snippets
     -- Support programming terms
     { "psliwka/vim-dirtytalk", build = ':let &rtp = &rtp | DirtytalkUpdate' },
     -- vim-moonfly theme
     { "bluz71/vim-moonfly-colors", as = 'moonfly' },
-    -- Rust tools
-    "simrat39/rust-tools.nvim",
     -- Automatically add bracket pairs
     "windwp/nvim-autopairs",
+    -- Syntax highlighting for Caddyfile
+    "isobit/vim-caddyfile",
     -- Syntax highlighting for Fish scripts
     "khaveesh/vim-fish-syntax",
-    -- Plugin for LaTeX
-    "lervag/vimtex",
-    -- Formatter
-    "stevearc/conform.nvim",
-    "junegunn/fzf.vim",
     "kylechui/nvim-surround",
 }
+

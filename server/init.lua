@@ -4,7 +4,7 @@ package.path = package.path .. ';' .. vim.fn.stdpath("config") .. "/?.lua"
 -- Load global configs
 require("globals")
 -- Load plugins using paq-nvim
-require("paq")
+require("plugins")
 -- Load keymaps
 require("keymaps")
 
