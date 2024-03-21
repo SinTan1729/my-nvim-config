@@ -27,7 +27,7 @@ vim.g.loaded_node_provider = 0
 vim.g.loaded_ruby_provider = 0
 
 -- Load keymaps
-local keymaps = vim.fn.stdpath("config") .. "/keymaps.vim"
+local keymaps = vim.fn.stdpath("config") .. "/keymaps.lua"
 vim.cmd.source(keymaps)
 
 -- Load plugins using paq-nvim
