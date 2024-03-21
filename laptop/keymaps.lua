@@ -5,7 +5,7 @@ vim.g.mapleader = ','
 vim.g.maplocalleader = ';'
 
 -- Set K to hover
-vim.cmd[[command -nargs=+ LspHover lua vim.lsp.buf.hover()]]
+vim.api.nvim_buf_create_user_command(0, "LspHover", "lua vim.lsp.buf.hover()", {nargs = '+' })
 vim.opt.keywordprg = ":LspHover"
 
 -- Use ctrl-[hjkl] to select the active split!
