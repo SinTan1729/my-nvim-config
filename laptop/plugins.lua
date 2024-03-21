@@ -44,7 +44,7 @@ bootstrap_paq {
     "hrsh7th/cmp-omni",         -- For LaTeX completion
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
-    "SirVer/UltiSnips",         -- For snippets
+    "SirVer/ultisnips",         -- For snippets
     -- Support programming terms
     { "psliwka/vim-dirtytalk", build = ':let &rtp = &rtp | DirtytalkUpdate' },
     -- vim-moonfly theme

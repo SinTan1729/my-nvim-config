@@ -33,6 +33,13 @@ bootstrap_paq {
     "lambdalisue/suda.vim",
     -- Auto toggle for number mode when vim isn't focused
     "sitiom/nvim-numbertoggle",
+    -- LSP related plugins
+    "neovim/nvim-lspconfig",
+    "hrsh7th/nvim-cmp",         -- For LSP completion
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-cmdline",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-path",
     -- Support programming terms
     { "psliwka/vim-dirtytalk", build = ':let &rtp = &rtp | DirtytalkUpdate' },
     -- vim-moonfly theme
@@ -44,5 +51,7 @@ bootstrap_paq {
     -- Syntax highlighting for Fish scripts
     "khaveesh/vim-fish-syntax",
     "kylechui/nvim-surround",
+    "junegunn/fzf",
+    "junegunn/fzf.vim",
 }
 

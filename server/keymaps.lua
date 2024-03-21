@@ -17,6 +17,10 @@ vim.keymap.set('n', '<leader>O', "O<Esc>j", { remap = false })
 -- Use ,u for redo
 vim.keymap.set('n', '<leader>u', "<c-r>", { remap = false })
 
+
+-- Find files using fzf by ,f
+vim.keymap.set('n', '<leader>f', ":Files<cr>", { remap = false })
+
 -- Move around buffers using ,j and ,k
 vim.keymap.set('n', '<leader>k', ":bnext<cr>", { remap = false })
 vim.keymap.set('n', '<leader>j', ":bprevious<cr>", { remap = false })
