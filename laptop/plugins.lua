@@ -38,12 +38,13 @@ bootstrap_paq {
     -- LSP related plugins
     "neovim/nvim-lspconfig",
     "nvim-lua/plenary.nvim",
-    "hrsh7th/nvim-cmp",        -- For LSP completion
+    "hrsh7th/nvim-cmp",         -- For LSP completion
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-omni",        -- For LaTeX completion
+    "hrsh7th/cmp-omni",         -- For LaTeX completion
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
+    "SirVer/UltiSnips",         -- For snippets
     -- Support programming terms
     { "psliwka/vim-dirtytalk", build = ':let &rtp = &rtp | DirtytalkUpdate' },
     -- vim-moonfly theme
