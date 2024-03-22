@@ -1,27 +1,19 @@
--- Automatically bootstrap paq-nvim
-local function clone_paq()
-    local path = vim.fn.stdpath("data") .. "/site/pack/paqs/start/paq-nvim"
-    local is_installed = vim.fn.empty(vim.fn.glob(path)) == 0
-    if not is_installed then
-        vim.fn.system { "git", "clone", "--depth=1", "https://github.com/savq/paq-nvim.git", path }
-        return true
-    end
+-- Automatically bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
--- Automatically install new packages at startup
-local function bootstrap_paq(packages)
-    local first_install = clone_paq()
-    vim.cmd.packadd("paq-nvim")
-    local paq = require("paq")
-    paq(packages)
-    if first_install then
-        vim.notify("Installing plugins... If prompted, hit Enter to continue.")
-        paq.install()
-    end
-end
-
--- Load plugins via paq-nvim
-bootstrap_paq {
+-- Load plugins via lazy.nvim
+require("lazy").setup({
     -- Let paq-nvim manage itself
     "savq/paq-nvim",
     -- Use lualine for statusbar
@@ -41,9 +33,9 @@ bootstrap_paq {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
     -- Support programming terms
-    { "psliwka/vim-dirtytalk", build = ':let &rtp = &rtp | DirtytalkUpdate' },
+    { "psliwka/vim-dirtytalk", build = ":DirtytalkUpdate" },
     -- vim-moonfly theme
-    { "bluz71/vim-moonfly-colors", as = 'moonfly' },
+    { "bluz71/vim-moonfly-colors", as = "moonfly" },
     -- Automatically add bracket pairs
     "windwp/nvim-autopairs",
     -- Syntax highlighting for Caddyfile
@@ -53,5 +45,5 @@ bootstrap_paq {
     "kylechui/nvim-surround",
     "junegunn/fzf",
     "junegunn/fzf.vim",
-}
+})
 
