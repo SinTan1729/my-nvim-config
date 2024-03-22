@@ -14,8 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Load plugins via lazy.nvim
 require("lazy").setup({
-    -- Let paq-nvim manage itself
-    "savq/paq-nvim",
     -- Use lualine for statusbar
     "nvim-lualine/lualine.nvim",
     "nvim-tree/nvim-web-devicons",
