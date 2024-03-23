@@ -25,11 +25,16 @@ require("lazy").setup({
     "sitiom/nvim-numbertoggle",
     -- LSP related plugins
     "neovim/nvim-lspconfig",
-    "hrsh7th/nvim-cmp",         -- For LSP completion
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-cmdline",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-path",
+    {
+        "hrsh7th/nvim-cmp",         -- For LSP completion
+        event = "InsertEnter",
+        dependencies = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-cmdline",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+        }
+    },
     -- Support programming terms
     { "psliwka/vim-dirtytalk", build = ":DirtytalkUpdate" },
     -- vim-moonfly theme
