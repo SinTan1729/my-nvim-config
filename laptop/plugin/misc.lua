@@ -5,4 +5,3 @@ require("Comment").setup()
 
 -- Default settings for nvim-surround
 require("nvim-surround").setup()
-

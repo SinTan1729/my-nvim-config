@@ -1,6 +1,6 @@
-require('lean').setup{
- abbreviations = { builtin = true },
- mappings = true,
+require('lean').setup {
+    abbreviations = { builtin = true },
+    mappings = true,
 }
 
 -- -- Update error messages even while you're typing in insert mode

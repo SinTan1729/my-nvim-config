@@ -4,7 +4,7 @@ local cnf = require("conform")
 local slow_format_filetypes = { "tex" }
 cnf.setup({
     formatters_by_ft = {
-        tex = { "latexindent" }
+        tex = { "latexindent" },
     },
 
     format_on_save = function(bufnr)
@@ -28,11 +28,10 @@ cnf.setup({
     end,
 })
 
-cnf.formatters.latexindent =  {
+cnf.formatters.latexindent = {
     -- command = "/usr/bin/latexindent",
     prepend_args = { "-g", "/dev/null" }, -- Do not create an indent.log file
     range_args = function(ctx)
         return { "--lines", ctx.range.start[1] .. "-" .. ctx.range["end"][1] }
     end,
 }
-
