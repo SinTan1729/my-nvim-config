@@ -1,14 +1,14 @@
 -- Automatically bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -28,15 +28,15 @@ require("lazy").setup({
     -- LSP related plugins
     "neovim/nvim-lspconfig",
     "nvim-lua/plenary.nvim",
-    "hrsh7th/nvim-cmp",         -- For LSP completion
+    "hrsh7th/nvim-cmp", -- For LSP completion
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-omni",         -- For LaTeX completion
+    "hrsh7th/cmp-omni", -- For LaTeX completion
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
-    "SirVer/ultisnips",         -- For snippets
+    "SirVer/ultisnips", -- For snippets
     -- Support programming terms
-    { "psliwka/vim-dirtytalk", build = ":DirtytalkUpdate" },
+    { "psliwka/vim-dirtytalk",     build = ":DirtytalkUpdate" },
     -- vim-moonfly theme
     { "bluz71/vim-moonfly-colors", as = "moonfly" },
     -- Rust tools
@@ -49,7 +49,7 @@ require("lazy").setup({
     "lervag/vimtex",
     -- Formatter
     "stevearc/conform.nvim",
-    "junegunn/fzf.vim",
     "kylechui/nvim-surround",
+    "junegunn/fzf",
+    "junegunn/fzf.vim",
 })
-
