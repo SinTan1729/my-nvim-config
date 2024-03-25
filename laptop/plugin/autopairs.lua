@@ -8,11 +8,11 @@ npairs.setup({
 })
 
 npairs.add_rules({
-    Rule("\\(", "\\)", {"tex", "latex"}),
-    Rule("\\[", "\\]", {"tex", "latex"}),
+        Rule("\\(", "\\)", { "tex", "latex" }),
+        Rule("\\[", "\\]", { "tex", "latex" }),
     },
     -- disable for .vim files, but it work for another filetypes
-    Rule("a","a","-vim")
+    Rule("a", "a", "-vim")
 )
 
 -- Add spaces between brackets
@@ -20,7 +20,7 @@ local brackets = { { '(', ')' }, { '[', ']' }, { '{', '}' } }
 npairs.add_rules {
     -- Rule for a pair with left-side ' ' and right side ' '
     Rule(' ', ' ')
-        -- Pair will only occur if the conditional function returns true
+    -- Pair will only occur if the conditional function returns true
         :with_pair(function(opts)
             -- We are checking if we are inserting a space in (), [], or {}
             local pair = opts.line:sub(opts.col - 1, opts.col)
@@ -32,7 +32,7 @@ npairs.add_rules {
         end)
         :with_move(cond.none())
         :with_cr(cond.none())
-        -- We only want to delete the pair of spaces when the cursor is as such: ( | )
+    -- We only want to delete the pair of spaces when the cursor is as such: ( | )
         :with_del(function(opts)
             local col = vim.api.nvim_win_get_cursor(0)[2]
             local context = opts.line:sub(col - 1, col + 2)
@@ -52,14 +52,14 @@ for _, bracket in pairs(brackets) do
             :with_move(function(opts) return opts.char == bracket[2] end)
             :with_del(cond.none())
             :use_key(bracket[2])
-            -- Removes the trailing whitespace that can occur without this
+        -- Removes the trailing whitespace that can occur without this
             :replace_map_cr(function(_) return '<C-c>2xi<CR><C-c>O' end)
     }
 end
 
 -- Add space around =
 npairs.add_rules {
-    Rule('=', '', { "-tex", "-vim", "-sh" })
+    Rule('=', '', { "-tex", "-vim", "-sh", "-dockerfile" })
         :with_pair(cond.not_inside_quote())
         :with_pair(function(opts)
             local last_char = opts.line:sub(opts.col - 1, opts.col - 1)
@@ -89,20 +89,21 @@ npairs.add_rules {
 }
 
 -- Insertion with surrounding check
-function rule2(a1,ins,a2,lang)                  
-    npairs.add_rule(          
-    Rule(ins, ins, lang)                                   
-        :with_pair(function(opts) return a1..a2 == opts.line:sub(opts.col - #a1, opts.col + #a2 - 1) end)
-        :with_move(cond.none())                                  
-        :with_cr(cond.none())                                 
-        :with_del(function(opts)                    
-            local col = vim.api.nvim_win_get_cursor(0)[2]                          
-            return a1..ins..ins..a2 == opts.line:sub(col - #a1 - #ins + 1, col + #ins + #a2) -- insert only works for #ins == 1 anyway
-        end)                                      
-    )                                             
+function rule2(a1, ins, a2, lang)
+    npairs.add_rule(
+        Rule(ins, ins, lang)
+        :with_pair(function(opts) return a1 .. a2 == opts.line:sub(opts.col - #a1, opts.col + #a2 - 1) end)
+        :with_move(cond.none())
+        :with_cr(cond.none())
+        :with_del(function(opts)
+            local col = vim.api.nvim_win_get_cursor(0)[2]
+            return a1 .. ins .. ins .. a2 ==
+            opts.line:sub(col - #a1 - #ins + 1, col + #ins + #a2)                            -- insert only works for #ins == 1 anyway
+        end)
+    )
 end
--- Only use it for ocaml
-rule2('(','*',')','ocaml')
-rule2('(*',' ','*)','ocaml')
-rule2('(',' ',')')
 
+-- Only use it for ocaml
+rule2('(', '*', ')', 'ocaml')
+rule2('(*', ' ', '*)', 'ocaml')
+rule2('(', ' ', ')')

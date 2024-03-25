@@ -34,7 +34,7 @@ require("lazy").setup({
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-omni", -- For LaTeX completion
+            "micangl/cmp-vimtex",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
         }
