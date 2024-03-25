@@ -59,7 +59,7 @@ end
 
 -- Add space around =
 npairs.add_rules {
-    Rule('=', '', { "-tex", "-vim", "-sh", "-dockerfile" })
+    Rule('=', '', { "-tex", "-vim", "-sh", "-dockerfile", "-make" })
         :with_pair(cond.not_inside_quote())
         :with_pair(function(opts)
             local last_char = opts.line:sub(opts.col - 1, opts.col - 1)
@@ -98,7 +98,7 @@ function rule2(a1, ins, a2, lang)
         :with_del(function(opts)
             local col = vim.api.nvim_win_get_cursor(0)[2]
             return a1 .. ins .. ins .. a2 ==
-            opts.line:sub(col - #a1 - #ins + 1, col + #ins + #a2)                            -- insert only works for #ins == 1 anyway
+                opts.line:sub(col - #a1 - #ins + 1, col + #ins + #a2) -- insert only works for #ins == 1 anyway
         end)
     )
 end
