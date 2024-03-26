@@ -23,6 +23,8 @@ require("lazy").setup({
     "lambdalisue/suda.vim",
     -- Auto toggle for number mode when vim isn't focused
     "sitiom/nvim-numbertoggle",
+    -- Treesitter
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     -- LSP related plugins
     "neovim/nvim-lspconfig",
     {

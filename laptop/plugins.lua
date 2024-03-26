@@ -25,6 +25,8 @@ require("lazy").setup({
     "sitiom/nvim-numbertoggle",
     -- Plugin for lean
     "julian/lean.nvim",
+    -- Treesitter
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     -- LSP related plugins
     "neovim/nvim-lspconfig",
     "nvim-lua/plenary.nvim",
@@ -41,9 +43,9 @@ require("lazy").setup({
     },
     "SirVer/ultisnips", -- For snippets
     -- Support programming terms
-    { "psliwka/vim-dirtytalk",     build = ":DirtytalkUpdate" },
+    { "psliwka/vim-dirtytalk",           build = ":DirtytalkUpdate" },
     -- vim-moonfly theme
-    { "bluz71/vim-moonfly-colors", as = "moonfly" },
+    { "bluz71/vim-moonfly-colors",       as = "moonfly" },
     -- Rust tools
     "simrat39/rust-tools.nvim",
     -- Automatically add bracket pairs
