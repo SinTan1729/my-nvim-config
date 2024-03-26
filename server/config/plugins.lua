@@ -13,7 +13,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Load plugins via lazy.nvim
-require("lazy").setup({
+require("lazy").setup(
+    {
     -- Use lualine for statusbar
     "nvim-lualine/lualine.nvim",
     "nvim-tree/nvim-web-devicons",
@@ -50,5 +51,10 @@ require("lazy").setup({
     "kylechui/nvim-surround",
     "junegunn/fzf",
     "junegunn/fzf.vim",
-})
+    },
+    {
+        lockfile = vim.fn.stdpath("config") .. "/config/lazy-lock.json",
+        install = { missing = true },
+    }
+)
 

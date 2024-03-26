@@ -29,7 +29,3 @@ set.spelllang = { "en", "programming" }
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_node_provider = 0
 vim.g.loaded_ruby_provider = 0
-
--- Load UltiSnips snippets from custom-snippets directory
-vim.g.UltiSnipsSnippetDirectories = { "custom-snippets", "UltiSnips" }
-

@@ -5,3 +5,6 @@ require("Comment").setup()
 
 -- Default settings for nvim-surround
 require("nvim-surround").setup()
+
+-- Load UltiSnips snippets from custom-snippets directory
+vim.g.UltiSnipsSnippetDirectories = { "my-snippets", "UltiSnips" }

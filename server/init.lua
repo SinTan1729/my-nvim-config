@@ -1,5 +1,5 @@
 -- Load the different config files
-package.path = package.path .. ';' .. vim.fn.stdpath("config") .. "/?.lua"
+package.path = package.path .. ';' .. vim.fn.stdpath("config") .. "/config/?.lua"
 
 -- Load global configs
 require("globals")
