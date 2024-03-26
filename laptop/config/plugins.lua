@@ -60,6 +60,7 @@ require("lazy").setup(
         "kylechui/nvim-surround",
         "junegunn/fzf",
         "junegunn/fzf.vim",
+        "karb94/neoscroll.nvim",
     },
     {
         lockfile = vim.fn.stdpath("config") .. "/config/lazy-lock.json",

@@ -5,7 +5,7 @@ vim.g.mapleader = ','
 vim.g.maplocalleader = ';'
 
 -- Set K to hover
-vim.api.nvim_buf_create_user_command(0, "LspHover", "lua vim.lsp.buf.hover()", {nargs = '+' })
+vim.api.nvim_buf_create_user_command(0, "LspHover", "lua vim.lsp.buf.hover()", { nargs = '+' })
 vim.opt.keywordprg = ":LspHover"
 
 -- Use ctrl-[hjkl] to select the active split!
@@ -32,4 +32,3 @@ vim.keymap.set('n', '<leader>f', ":Files<cr>", { remap = false })
 -- Move around buffers using ,j and ,k
 vim.keymap.set('n', '<leader>k', ":bnext<cr>", { remap = false })
 vim.keymap.set('n', '<leader>j', ":bprevious<cr>", { remap = false })
-
