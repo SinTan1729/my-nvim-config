@@ -1,5 +1,6 @@
 -- This file defines all the global configs
 local set = vim.opt
+local g = vim.g
 
 -- Turn on numbers
 set.number = true
@@ -23,7 +24,7 @@ set.mouse = 'n'
 set.spelllang = { "en", "programming" }
 
 -- Disable unused plugins
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_node_provider = 0
-vim.g.loaded_ruby_provider = 0
+g.loaded_perl_provider = 0
+g.loaded_node_provider = 0
+g.loaded_ruby_provider = 0
 

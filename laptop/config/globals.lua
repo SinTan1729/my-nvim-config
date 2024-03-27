@@ -1,5 +1,6 @@
 -- This file defines all the global config
 local set = vim.opt
+local g = vim.g
 
 -- Turn on numbers
 set.number = true
@@ -23,9 +24,8 @@ set.spell = true
 set.mouse = 'n'
 -- Enable programming dictionary
 set.spelllang = { "en", "programming" }
--- Use ctrl-[hjkl] to select the active split
 
 -- Disable unused plugins
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_node_provider = 0
-vim.g.loaded_ruby_provider = 0
+g.loaded_perl_provider = 0
+g.loaded_node_provider = 0
+g.loaded_ruby_provider = 0
