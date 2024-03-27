@@ -66,6 +66,7 @@ require("lazy").setup(
         "junegunn/fzf.vim",
         "karb94/neoscroll.nvim",
         "hiphish/rainbow-delimiters.nvim",
+        "linrongbin16/lsp-progress.nvim",
     },
     {
         lockfile = vim.fn.stdpath("config") .. "/config/lazy-lock.json",
