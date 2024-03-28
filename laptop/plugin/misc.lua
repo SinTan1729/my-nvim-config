@@ -6,5 +6,8 @@ require("Comment").setup()
 -- Default settings for nvim-surround
 require("nvim-surround").setup()
 
+-- Default settings for log-highlight
+require("log-highlight").setup()
+
 -- Load UltiSnips snippets from custom-snippets directory
 vim.g.UltiSnipsSnippetDirectories = { "my-snippets", "UltiSnips" }
