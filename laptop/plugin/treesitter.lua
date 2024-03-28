@@ -1,10 +1,11 @@
 local configs = require("nvim-treesitter.configs")
 
 configs.setup({
-    ensure_installed = { "rust", "lua", "vim", "vimdoc", "latex", "ocaml",
+    ensure_installed = { "rust", "lua", "vim", "vimdoc", "ocaml",
         "yaml", "dockerfile", "bash", "html", "javascript", "css", "go",
         "json", "python", "fish" },
     sync_install = false,
+    disable = { "latex" },
     highlight = {
         enable = true,
         disable = { "make" },
