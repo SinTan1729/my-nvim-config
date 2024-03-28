@@ -27,6 +27,12 @@ map('n', '<leader>f', ":Files<cr>", { remap = false })
 map('n', '<leader>k', ":bnext<cr>", { remap = false })
 map('n', '<leader>j', ":bprevious<cr>", { remap = false })
 map('n', '<leader>w', ":bdelete<cr>", { remap = false })
+map('n', '<leader>W', ":bdelete!<cr>", { remap = false })
+map('n', '<leader>t', ":tabnew<cr>", { remap = false })
+map('n', '<leader>q', ":qa<cr>", { remap = false })
+map('n', '<leader>Q', ":qa!<cr>", { remap = false })
+map('n', '<leader>s', ":w<cr>", { remap = false })
+map('n', '<leader>S', ":x<cr>", { remap = false })
 
 -- Clear search highlight by Esc in normal mode
 map('n', '<Esc>', ':noh<cr>', { remap = false })
