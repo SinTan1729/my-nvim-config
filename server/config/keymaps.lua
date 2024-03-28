@@ -13,17 +13,16 @@ map('n', '<leader>D', '"_D', { remap = false })
 map('n', '<leader>x', '"_x', { remap = false })
 
 -- Insert a newline in normal mode by ,o
-map('n', '<leader>o', "o<Esc>k", { remap = false })
-map('n', '<leader>O', "O<Esc>j", { remap = false })
+map('n', '<leader>o', ":call append(line('.'), '')<cr>", { remap = false })
+map('n', '<leader>O', ":call append(line('.')-1, '')<cr>", { remap = false })
 
 -- Use ,u for redo
 map('n', '<leader>u', "<c-r>", { remap = false })
 
-
 -- Find files using fzf by ,f
 map('n', '<leader>f', ":Files<cr>", { remap = false })
 
--- Buffer related keymaps
+-- Browser like keymaps
 map('n', '<leader>k', ":bnext<cr>", { remap = false })
 map('n', '<leader>j', ":bprevious<cr>", { remap = false })
 map('n', '<leader>w', ":bdelete<cr>", { remap = false })
