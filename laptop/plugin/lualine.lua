@@ -1,3 +1,14 @@
+local function total_lines()
+    local lc = vim.fn.line('$')
+    if lc < 1 then
+        return ''
+    elseif lc == 1 then
+        return '(1 line)'
+    else
+        return string.format('(%d lines)', lc)
+    end
+end
+
 require("lualine").setup {
     options = {
         theme = 'moonfly',
@@ -6,8 +17,8 @@ require("lualine").setup {
         lualine_a = { 'buffers' },
         lualine_b = {},
         lualine_c = {},
-        lualine_x = {},
-        lualine_y = { 'filename' },
+        lualine_x = { 'filename' },
+        lualine_y = { total_lines },
         lualine_z = { 'tabs' },
     },
     sections = {
