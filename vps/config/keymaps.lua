@@ -11,9 +11,9 @@ map({ 'v', 'n' }, '<leader>d', '"_d', { remap = false })
 map('n', '<leader>D', '"_D', { remap = false })
 map('n', '<leader>x', '"_x', { remap = false })
 
--- Insert a newline in normal mode by ,o
-map('n', '<leader>o', ":call append(line('.'), '')<cr>", { remap = false })
-map('n', '<leader>O', ":call append(line('.')-1, '')<cr>", { remap = false })
+-- Insert a newline in normal mode by ,o and ,O
+map('n', '<leader>o', ":<c-u>call append(line('.'), repeat([''], v:count1))<cr>", { remap = false })
+map('n', '<leader>O', ":<c-u>call append(line('.')-1, repeat([''], v:count1))<cr>", { remap = false })
 
 -- Use ,u for redo
 map('n', '<leader>u', "<c-r>", { remap = false })

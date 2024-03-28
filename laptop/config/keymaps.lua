@@ -24,8 +24,8 @@ map('n', '<leader>D', '"_D', { remap = false })
 map('n', '<leader>x', '"_x', { remap = false })
 
 -- Insert a newline in normal mode by ,o and ,O
-map('n', '<leader>o', ":call append(line('.'), '')<cr>", { remap = false })
-map('n', '<leader>O', ":call append(line('.')-1, '')<cr>", { remap = false })
+map('n', '<leader>o', ":<c-u>call append(line('.'), repeat([''], v:count1))<cr>", { remap = false })
+map('n', '<leader>O', ":<c-u>call append(line('.')-1, repeat([''], v:count1))<cr>", { remap = false })
 
 -- Use ,u for redo
 map('n', '<leader>u', "<c-r>", { remap = false })
@@ -45,4 +45,4 @@ map('n', '<leader>S', ":x<cr>", { remap = false })
 map('n', '<Esc>', ':noh<cr>', { remap = false })
 
 -- Find files using fzf by ,f
-vim.keymap.set('n', '<leader>f', ':Files<cr>', { remap = false, silent = true })
+vim.keymap.set('n', '<leader>f', ':Files<cr>', { remap = false })
