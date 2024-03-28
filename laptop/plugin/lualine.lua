@@ -1,12 +1,7 @@
-local function total_lines()
+local function counts()
     local lc = vim.fn.line('$')
-    if lc < 1 then
-        return ''
-    elseif lc == 1 then
-        return '(1 line)'
-    else
-        return string.format('(%d lines)', lc)
-    end
+    local wc = vim.fn.wordcount().words
+    return string.format('%d L, %d W', lc, wc)
 end
 
 require("lualine").setup {
@@ -18,7 +13,7 @@ require("lualine").setup {
         lualine_b = {},
         lualine_c = {},
         lualine_x = { 'filename' },
-        lualine_y = { total_lines },
+        lualine_y = { counts },
         lualine_z = { 'tabs' },
     },
     sections = {
