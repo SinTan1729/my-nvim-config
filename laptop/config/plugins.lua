@@ -62,8 +62,7 @@ require("lazy").setup(
         -- Formatter
         "stevearc/conform.nvim",
         "kylechui/nvim-surround",
-        "junegunn/fzf",
-        "junegunn/fzf.vim",
+        "ibhagwan/fzf-lua",
         "karb94/neoscroll.nvim",
         "hiphish/rainbow-delimiters.nvim",
         "linrongbin16/lsp-progress.nvim",

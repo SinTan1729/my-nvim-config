@@ -21,10 +21,13 @@ map('n', '<leader>u', "<c-r>", { remap = false })
 -- Find files using fzf by ,f
 map('n', '<leader>f', ":Files<cr>", { remap = false })
 
--- Move around buffers using ,j and ,k
+-- Buffer related keymaps
 map('n', '<leader>k', ":bnext<cr>", { remap = false })
 map('n', '<leader>j', ":bprevious<cr>", { remap = false })
+map('n', '<leader>w', ":bdelete<cr>", { remap = false })
 
 -- Clear search highlight by Esc in normal mode
 map('n', '<Esc>', ':noh<cr>', { remap = false })
 
+-- Find files using fzf by ,f
+vim.keymap.set('n', '<leader>f', ':Files<cr>', { remap = false, silent = true })

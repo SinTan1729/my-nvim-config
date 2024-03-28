@@ -49,8 +49,7 @@ require("lazy").setup(
     -- Syntax highlighting for Fish scripts
     "khaveesh/vim-fish-syntax",
     "kylechui/nvim-surround",
-    "junegunn/fzf",
-    "junegunn/fzf.vim",
+    "ibhagwan/fzf-lua",
     "karb94/neoscroll.nvim",
     },
     {
