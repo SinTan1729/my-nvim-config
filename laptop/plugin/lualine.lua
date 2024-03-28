@@ -13,8 +13,8 @@ require("lualine").setup {
         lualine_b = {},
         lualine_c = {},
         lualine_x = { 'filename' },
-        lualine_y = { counts },
-        lualine_z = { 'tabs' },
+        lualine_y = {},
+        lualine_z = { counts },
     },
     sections = {
         lualine_a = { 'mode' },
