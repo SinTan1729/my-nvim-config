@@ -45,4 +45,4 @@ map('n', '<leader>S', ":x<cr>", { remap = false })
 map('n', '<Esc>', ':noh<cr>', { remap = false })
 
 -- Find files using fzf by ,f
-vim.keymap.set('n', '<leader>f', ':Files<cr>', { remap = false })
+map('n', '<leader>f', ':Files<cr>', { remap = false })
