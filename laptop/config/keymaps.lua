@@ -8,9 +8,10 @@ local opt = vim.opt
 g.mapleader = ','
 g.maplocalleader = ';'
 
--- Set K to hover
+-- Set K to hover and ,a to show code actions
 api.nvim_buf_create_user_command(0, "LspHover", "lua vim.lsp.buf.hover()", { nargs = '+' })
 opt.keywordprg = ":LspHover"
+map('n', '<leader>a', vim.lsp.buf.code_action, { remap = false })
 
 -- Use ctrl-[hjkl] to select the active split!
 map('n', '<c-k>', ":wincmd k<cr>", { silent = true })
