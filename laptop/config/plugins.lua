@@ -52,7 +52,11 @@ require("lazy").setup(
         -- vim-moonfly theme
         { "bluz71/vim-moonfly-colors", as = "moonfly" },
         -- Rust tools
-        "simrat39/rust-tools.nvim",
+        {
+            "mrcjkb/rustaceanvim",
+            version = "^4",
+            ft = { "rust" },
+        },
         -- Automatically add bracket pairs
         "windwp/nvim-autopairs",
         -- Syntax highlighting for Fish scripts
