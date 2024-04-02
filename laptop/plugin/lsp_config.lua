@@ -1,5 +1,14 @@
 local lspconfig = require('lspconfig')
-lspconfig.pyright.setup {}
+
+require 'lspconfig'.pyright.setup({
+    settings = {
+        python = {
+            analysis = {
+                typeCheckingMode = "off"
+            }
+        }
+    }
+})
 
 lspconfig.lua_ls.setup({
     settings = {
