@@ -1,6 +1,7 @@
 -- This file defines all the global config
 local set = vim.opt
 local g = vim.g
+local fn = vim.fn
 
 -- Turn on numbers
 set.number = true
@@ -29,3 +30,6 @@ set.spelllang = { "en", "programming" }
 g.loaded_perl_provider = 0
 g.loaded_node_provider = 0
 g.loaded_ruby_provider = 0
+
+-- Make nvim work nicely with python venvs
+g.python3_host_prog = fn.system("which -a python3 | head -n2 | tail -n1 | tr -d '[:space:]'")
