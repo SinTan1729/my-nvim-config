@@ -1,4 +1,5 @@
 local lspconfig = require('lspconfig')
+local map = vim.keymap.set
 
 require 'lspconfig'.pyright.setup({
     settings = {
@@ -16,4 +17,13 @@ lspconfig.lua_ls.setup({
             telemetry = { enable = false },
         },
     }
+})
+
+-- Set ;k to hover and ;a to show code actions
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+        local bufnr = args.buf
+        map('n', '<localleader>k', vim.lsp.buf.hover, { remap = false })
+        map('n', '<localleader>a', vim.lsp.buf.code_action, { remap = false })
+    end,
 })
