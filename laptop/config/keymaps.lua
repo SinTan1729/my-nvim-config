@@ -9,7 +9,7 @@ g.mapleader = ','
 g.maplocalleader = ';'
 
 -- Set K to hover and ,a to show code actions
-api.nvim_buf_create_user_command(0, "LspHover", "lua vim.lsp.buf.hover()", { nargs = '+' })
+api.nvim_create_user_command("LspHover", "lua vim.lsp.buf.hover()", { nargs = '+' })
 opt.keywordprg = ":LspHover"
 map('n', '<leader>a', vim.lsp.buf.code_action, { remap = false })
 
