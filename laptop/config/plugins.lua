@@ -56,6 +56,7 @@ require("lazy").setup(
             "mrcjkb/rustaceanvim",
             version = "^4",
             ft = { "rust" },
+            dependencies = { "lvimuser/lsp-inlayhints.nvim" },
         },
         -- Automatically add bracket pairs
         "windwp/nvim-autopairs",
