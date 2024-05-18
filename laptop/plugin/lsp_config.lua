@@ -21,6 +21,8 @@ lspconfig.lua_ls.setup({
 
 lspconfig.ocamllsp.setup {}
 
+lspconfig.hls.setup {}
+
 -- Set ;k to hover and ;a to show code actions
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function()
