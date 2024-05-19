@@ -20,7 +20,6 @@ lspconfig.lua_ls.setup({
 })
 
 lspconfig.ocamllsp.setup {}
-
 lspconfig.hls.setup {}
 
 -- Set ;k to hover and ;a to show code actions
@@ -32,15 +31,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
--- Enable inlay hints (needs rework after nvim>=0.10)
+-- Enable inlay hints for Rust
 vim.api.nvim_create_autocmd("LspAttach", {
     pattern = "*.rs",
-    callback = function(args)
-        if not (args.data and args.data.client_id) then
-            return
-        end
-        local bufnr = args.buf
-        local client = vim.lsp.get_client_by_id(args.data.client_id)
-        require("lsp-inlayhints").on_attach(client, bufnr)
+    callback = function()
+        vim.lsp.inlay_hint.enable(true)
     end,
 })

@@ -11,6 +11,3 @@ require("log-highlight").setup()
 
 -- Load UltiSnips snippets from custom-snippets directory
 vim.g.UltiSnipsSnippetDirectories = { "my-snippets", "UltiSnips" }
-
--- Load default settings for inlay hints plugin (won't need it for nvim>=0.10)
-require("lsp-inlayhints").setup()
