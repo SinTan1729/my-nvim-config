@@ -1,4 +1,5 @@
--- This file lists all the plugins that need to be initiated to default setup
+-- This file has configs for things that are not really related to anything else,
+-- so don't really deserve to be put in a separate config file
 
 -- Default settings for comment plugin
 require("Comment").setup()

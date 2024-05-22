@@ -20,6 +20,7 @@ lspconfig.lua_ls.setup({
 })
 
 lspconfig.ocamllsp.setup {}
+
 lspconfig.hls.setup {}
 
 -- Set ;k to hover and ;a to show code actions

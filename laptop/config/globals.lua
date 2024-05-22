@@ -12,10 +12,22 @@ set.cmdheight = 0
 -- Ignore case while searching except when the search term contains capital letters
 set.ignorecase = true
 set.smartcase = true
--- Use 4 spaces and properly adjust them for files using TAB
-set.tabstop = 4
-set.shiftwidth = 4
-set.softtabstop = 4
+-- Use 4 spaces and properly adjust them for files using TAB,
+-- except for Haskell
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "*",
+    callback = function()
+        local tabsize
+        if string.find(" haskell ", ' ' .. vim.bo.filetype .. ' ') then
+            tabsize = 2
+        else
+            tabsize = 4
+        end
+        set.tabstop = tabsize
+        set.shiftwidth = tabsize
+        set.softtabstop = tabsize
+    end,
+})
 set.expandtab = true
 -- Show LSP signs in the number column
 set.signcolumn = 'number'
