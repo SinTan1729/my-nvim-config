@@ -33,15 +33,32 @@ snippet "\\item\s*\S+.*" "create next item" rb
 \item $0
 endsnippet
 
+context in_env(["parts"])
+snippet "\\part\s*\S+.*" "create next part" rb
+`!p snip.rv = match.group(0)`
+\part $0
+endsnippet
+
 context in_env(["itemize", "enumerate"])
 post_jump "delline_exititemize(snip)"
 snippet "\\item\s*$" "exit itemize_like envs" rb
+endsnippet
+
+context in_env(["parts"])
+post_jump "delline_exititemize(snip)"
+snippet "\\part\s*$" "exit parts" rb
 endsnippet
 
 snippet "\\begin\{(itemize|enumerate)\}(\[\w+\])?" "itemize-like envs multiline begin{} / end{}" rb
 \begin{`!p snip.rv = match.group(1)`}`!p snip.rv = suppress_none(match.group(2))`
 	\item $0
 \end{`!p snip.rv = match.group(1)`}
+endsnippet
+
+snippet "\\begin\{parts\}(\[\w+\])?" "parts multiline begin{} / end{}" rb
+\begin{parts}`!p snip.rv = suppress_none(match.group(1))`
+	\part $0
+\end{parts}
 endsnippet
 
 priority -20
