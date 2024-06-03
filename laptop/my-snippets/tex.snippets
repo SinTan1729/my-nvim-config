@@ -38,7 +38,7 @@ post_jump "delline_exititemize(snip)"
 snippet "\\item\s*$" "exit itemize_like envs" rb
 endsnippet
 
-snippet "\\begin\{(itemize|enumerate)\}(\[\w+\])?" "multiline begin{} / end{}" rb
+snippet "\\begin\{(itemize|enumerate)\}(\[\w+\])?" "itemize-like envs multiline begin{} / end{}" rb
 \begin{`!p snip.rv = match.group(1)`}`!p snip.rv = suppress_none(match.group(2))`
 	\item $0
 \end{`!p snip.rv = match.group(1)`}
@@ -51,6 +51,8 @@ snippet "\\begin\{(\w+)\}(\[\w+\])?" "multiline begin{} / end{}" rb
 	$0
 \end{`!p snip.rv = match.group(1)`}
 endsnippet
+
+priority -30
 
 snippet "(?<!^)\\begin\{(\w+)\}" "inline begin{} / end{}" ri
 \begin{`!p snip.rv = match.group(1)`} $1 \end{`!p snip.rv = match.group(1)`} $0
