@@ -76,7 +76,7 @@ require("lazy").setup(
         },
         {
             "felpafel/inlay-hint.nvim",
-            tag = "v1.0.0",
+            version = "1",
             event = "LspAttach",
             config = true,
         }
