@@ -14,6 +14,7 @@ lspconfig.pyright.setup({
 lspconfig.lua_ls.setup({
     settings = {
         Lua = {
+            diagnostics = { globals = { 'vim' } },
             telemetry = { enable = false },
         },
     }
