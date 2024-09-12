@@ -7,5 +7,5 @@ subsets of it.
 Feel free to use it for configuring your [NeoVim](https://neovim.io/)
 installation the way you like it.
 
-[Link to the base repo.](https://git.sintan1729.uk/SinTan1729/my-nvim-config)
+[Link to the base repo.](https://git.sayantansantra.com/SinTan1729/my-nvim-config)
 
