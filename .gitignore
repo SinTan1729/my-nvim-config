@@ -1,3 +1,4 @@
-# Ignore lazy-lock files
+# Ignore some files
 lazy-lock.json
+pull_script.sh
 
