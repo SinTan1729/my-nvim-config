@@ -6,7 +6,7 @@ local fn = vim.fn
 -- Turn on numbers
 set.number = true
 -- Turn off line wrapping
-set.wrap = false
+-- set.wrap = false
 -- Disable cmdline from bottom
 set.cmdheight = 0
 -- Ignore case while searching except when the search term contains capital letters

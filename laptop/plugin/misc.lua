@@ -12,3 +12,6 @@ require("log-highlight").setup()
 
 -- Load UltiSnips snippets from custom-snippets directory
 vim.g.UltiSnipsSnippetDirectories = { "my-snippets", "UltiSnips" }
+
+-- Default settings for wrapping
+require("wrapping").setup()
