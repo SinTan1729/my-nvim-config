@@ -1,12 +1,10 @@
 local lspconfig = require('lspconfig')
 local map = vim.keymap.set
 
-lspconfig.pyright.setup({
-    settings = {
-        python = {
-            analysis = {
-                typeCheckingMode = "off"
-            }
+lspconfig.ruff.setup({
+    init_options = {
+        settings = {
+            lineLength = 100,
         }
     }
 })
