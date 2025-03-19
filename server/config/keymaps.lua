@@ -7,10 +7,11 @@ g.mapleader = ','
 g.maplocalleader = ';'
 
 
--- Use ,dd for deleting without putting into buffer
+-- Use ,dd for deleting without putting into buffer etc.
 map({ 'v', 'n' }, '<leader>d', '"_d', { remap = false })
 map('n', '<leader>D', '"_D', { remap = false })
 map('n', '<leader>x', '"_x', { remap = false })
+map('n', '<leader>r', '"_viwP', { remap = false })
 
 -- Insert a newline in normal mode by ,o and ,O
 map('n', '<leader>o', ":<c-u>call append(line('.'), repeat([''], v:count1))<cr>", { remap = false })
