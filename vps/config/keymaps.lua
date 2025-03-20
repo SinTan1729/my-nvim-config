@@ -6,11 +6,23 @@ local g = vim.g
 g.mapleader = ','
 g.maplocalleader = ';'
 
+-- Make a dot-repeatable keymaps
+local function drmap(mode, motion, keycodes, opts)
+    local termcodes = vim.api.nvim_replace_termcodes(keycodes, true, true, true)
+    local function dot_repeatable()
+        _G.dot_repeat_callback = vim.api.nvim_feedkeys(termcodes, mode, false)
+        vim.go.operatorfunc = 'v:lua.dot_repeat_callback'
+        return 'g@l'
+    end
+    map(mode, motion, dot_repeatable, opts)
+end
+
 -- Use ,dd for deleting without putting into buffer etc.
-map({ 'v', 'n' }, '<leader>d', '"_d', { remap = false })
-map('n', '<leader>D', '"_D', { remap = false })
-map('n', '<leader>x', '"_x', { remap = false })
-map('n', '<leader>r', '"_viwP', { remap = false })
+drmap('n', '<leader>d', '"_d', { remap = false })
+map('v', '<leader>d', '"_d', { remap = false })
+drmap('n', '<leader>D', '"_D', { remap = false })
+drmap('n', '<leader>x', '"_x', { remap = false })
+drmap('n', '<leader>r', '"_viwP', { remap = false })
 
 -- Insert a newline in normal mode by ,o and ,O
 map('n', '<leader>o', ":<c-u>call append(line('.'), repeat([''], v:count1))<cr>", { remap = false })

@@ -80,7 +80,8 @@ require("lazy").setup(
             version = "1",
             event = "LspAttach",
             config = true,
-        }
+        },
+        "dvrlabs/takeout.nvim",
     },
     {
         lockfile = vim.fn.stdpath("config") .. "/config/lazy-lock.json",

@@ -55,6 +55,17 @@ g.loaded_python_provider = 0
 g.mapleader = ','
 g.maplocalleader = ';'
 
+-- Make a dot-repeatable keymaps
+local function drmap(mode, motion, keycodes, opts)
+    local termcodes = vim.api.nvim_replace_termcodes(keycodes, true, true, true)
+    local function dot_repeatable()
+        _G.dot_repeat_callback = vim.api.nvim_feedkeys(termcodes, mode, false)
+        vim.go.operatorfunc = 'v:lua.dot_repeat_callback'
+        return 'g@l'
+    end
+    map(mode, motion, dot_repeatable, opts)
+end
+
 -- Use ctrl-[hjkl] to select the active split!
 map('n', '<c-k>', ":wincmd k<cr>", { silent = true })
 map('n', '<c-j>', ":wincmd j<cr>", { silent = true })
@@ -62,10 +73,11 @@ map('n', '<c-h>', ":wincmd h<cr>", { silent = true })
 map('n', '<c-l>', ":wincmd l<cr>", { silent = true })
 
 -- Use ,dd for deleting without putting into buffer etc.
-map({ 'v', 'n' }, '<leader>d', '"_d', { remap = false })
-map('n', '<leader>D', '"_D', { remap = false })
-map('n', '<leader>x', '"_x', { remap = false })
-map('n', '<leader>r', '"_viwP', { remap = false })
+drmap('n', '<leader>d', '"_d', { remap = false })
+map('v', '<leader>d', '"_d', { remap = false })
+drmap('n', '<leader>D', '"_D', { remap = false })
+drmap('n', '<leader>x', '"_x', { remap = false })
+drmap('n', '<leader>r', '"_viwP', { remap = false })
 
 -- Insert a newline in normal mode by ,o and ,O
 map('n', '<leader>o', ":<c-u>call append(line('.'), repeat([''], v:count1))<cr>", { remap = false })
