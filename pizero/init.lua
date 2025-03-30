@@ -87,8 +87,8 @@ map('n', '<leader>O', ":<c-u>call append(line('.')-1, repeat([''], v:count1))<cr
 map('n', '<leader>u', "<c-r>", { remap = false })
 
 -- Browser like keymaps
-map('n', '<leader>k', ":tabnext<cr>", { remap = false })
-map('n', '<leader>j', ":tabprevious<cr>", { remap = false })
+map('n', '<leader>k', "gt", { remap = false })
+map('n', '<leader>j', "gT", { remap = false })
 map('n', '<leader>w', ":bdelete<cr>", { remap = false })
 map('n', '<leader>W', ":bdelete!<cr>", { remap = false })
 map('n', '<leader>t', ":tabnew<cr>", { remap = false })
