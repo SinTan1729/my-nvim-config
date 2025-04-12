@@ -36,7 +36,7 @@ set.spell = true
 -- Enable mouse support
 set.mouse = 'n'
 -- Enable programming dictionary
-set.spelllang = { "en", "programming" }
+set.spelllang = { "en", "programming", "en-academic" }
 
 -- Disable unused plugins
 g.loaded_perl_provider = 0
