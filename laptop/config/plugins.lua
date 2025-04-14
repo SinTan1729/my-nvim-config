@@ -51,11 +51,16 @@ require("lazy").setup({
         },
         "SirVer/ultisnips", -- For snippets
         -- Support programming terms
-        { "psliwka/vim-dirtytalk",     build = ":DirtytalkUpdate" },
+        { "psliwka/vim-dirtytalk", build = ":DirtytalkUpdate" },
         -- Support academic terms
-        { "ficcdaf/academic.nvim",     build = ":AcademicBuild" },
+        { "ficcdaf/academic.nvim", build = ":AcademicBuild" },
         -- vim-moonfly theme
-        { "bluz71/vim-moonfly-colors", as = "moonfly" },
+        {
+            "bluz71/vim-moonfly-colors",
+            name = "moonfly",
+            lazy = false,
+            priority = 1000
+        },
         -- Rust tools
         {
             "mrcjkb/rustaceanvim",

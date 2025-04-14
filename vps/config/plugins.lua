@@ -44,7 +44,12 @@ require("lazy").setup({
     -- Support programming terms
     { "psliwka/vim-dirtytalk", build = ":DirtytalkUpdate" },
     -- vim-moonfly theme
-    { "bluz71/vim-moonfly-colors", as = "moonfly" },
+    {
+        "bluz71/vim-moonfly-colors",
+        name = "moonfly",
+        lazy = false,
+        priority = 1000
+    },
     -- Automatically add bracket pairs
     "windwp/nvim-autopairs",
     -- Syntax highlighting for Caddyfile
