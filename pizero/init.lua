@@ -8,6 +8,8 @@ local map = vim.keymap.set
 local api = vim.api
 local opt = vim.opt
 
+-- Turn on colors
+set.termguicolors = true
 -- Turn on relative numbers
 set.relativenumber = true
 -- Turn off line wrapping

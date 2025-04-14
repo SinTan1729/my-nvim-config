@@ -2,6 +2,7 @@
 local set = vim.opt
 local g = vim.g
 
+set.termguicolors = true
 -- Turn on numbers
 set.number = true
 -- Turn off line wrapping
