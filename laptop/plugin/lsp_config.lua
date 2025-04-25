@@ -1,27 +1,6 @@
 local lspconfig = require('lspconfig')
 local map = vim.keymap.set
 
-lspconfig.ruff.setup({
-    init_options = {
-        settings = {
-            lineLength = 100,
-        }
-    }
-})
-
-lspconfig.lua_ls.setup({
-    settings = {
-        Lua = {
-            diagnostics = { globals = { 'vim' } },
-            telemetry = { enable = false },
-        },
-    }
-})
-
-lspconfig.ocamllsp.setup {}
-
-lspconfig.hls.setup {}
-
 -- ;k to hover
 -- ;a to show code actions
 -- ;d to show diagnostic message
@@ -37,10 +16,53 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
--- Enable inlay hints for Rust
-vim.api.nvim_create_autocmd("LspAttach", {
-    pattern = "*.rs",
-    callback = function()
-        vim.lsp.inlay_hint.enable(true)
-    end,
+-- Python
+lspconfig.ruff.setup({
+    init_options = {
+        settings = {
+            lineLength = 100,
+        }
+    }
 })
+lspconfig.pyright.setup {
+    settings = {
+        pyright = {
+            -- Using Ruff's import organizer
+            disableOrganizeImports = true,
+        },
+        python = {
+            analysis = {
+                -- Ignore all files for analysis to exclusively use Ruff for linting
+                ignore = { '*' },
+            },
+        },
+    },
+}
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup('lsp_attach_disable_ruff_hover', { clear = true }),
+    callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if client == nil then
+            return
+        end
+        if client.name == 'ruff' then
+            -- Disable hover in favor of Pyright
+            client.server_capabilities.hoverProvider = false
+        end
+    end,
+    desc = 'LSP: Disable hover capability from Ruff',
+})
+
+-- Misc
+lspconfig.lua_ls.setup({
+    settings = {
+        Lua = {
+            diagnostics = { globals = { 'vim' } },
+            telemetry = { enable = false },
+        },
+    }
+})
+
+lspconfig.ocamllsp.setup {}
+
+lspconfig.hls.setup {}

@@ -64,8 +64,8 @@ require("lazy").setup({
         -- Rust tools
         {
             "mrcjkb/rustaceanvim",
-            version = "^4",
-            ft = { "rust" },
+            version = "^6",
+            lazy = false,
         },
         -- Automatically add bracket pairs
         "windwp/nvim-autopairs",

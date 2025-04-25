@@ -23,4 +23,3 @@ vim.g.moonflyVirtualTextColor = true
 
 --  Use the moonfly colorscheme
 vim.cmd [[colorscheme moonfly]]
-
