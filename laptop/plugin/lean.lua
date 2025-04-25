@@ -13,15 +13,6 @@ local function on_attach(_, bufnr)
     -- gd in normal mode will jump to definition
     cmd('n', 'gd', vim.lsp.buf.definition)
 
-    -- <localleader>n will jump to the next Lean line with a diagnostic message on it
-    -- <localleader>N will jump backwards
-    cmd('n', '<localleader>n', function() vim.diagnostic.goto_next { popup_opts = { show_header = false } } end)
-    cmd('n', '<localleader>N', function() vim.diagnostic.goto_prev { popup_opts = { show_header = false } } end)
-
-    -- <localleader>K will show all diagnostics for the current line in a popup window
-    cmd('n', '<localleader>k',
-        function() vim.diagnostic.open_float(0, { scope = "line", header = false, focus = false }) end)
-
     -- <localleader>q will load all errors in the current lean file into the location list
     -- (and then will open the location list)
     -- see :h location-list if you don't generally use it in other vim contexts
@@ -35,6 +26,14 @@ require('lean').setup {
     lsp3 = { on_attach = on_attach },
     mappings = true,
 }
+
+-- Enable virtual text for Lean
+vim.api.nvim_create_autocmd("LspAttach", {
+    pattern = "*.lean",
+    callback = function()
+        vim.diagnostic.config({ virtual_text = true })
+    end,
+})
 
 -- Update error messages even while you're typing in insert mode
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
