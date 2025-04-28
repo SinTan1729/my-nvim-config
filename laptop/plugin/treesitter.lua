@@ -3,7 +3,7 @@ local configs = require("nvim-treesitter.configs")
 configs.setup({
     ensure_installed = { "rust", "lua", "vim", "vimdoc", "ocaml",
         "yaml", "dockerfile", "bash", "html", "javascript", "css", "go",
-        "json", "python", "fish", "haskell" },
+        "json", "python", "fish", "haskell", "diff" },
     sync_install = false,
     disable = { "latex" },
     highlight = {

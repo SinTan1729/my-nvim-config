@@ -90,7 +90,19 @@ require("lazy").setup({
             event = "LspAttach",
             config = true,
         },
+        {
+            "folke/snacks.nvim",
+            priority = 1000,
+            lazy = false,
+            ---@type snacks.Config
+            opts = {
+                picker = { enabled = true },
+                bigfile = { enabled = true },
+                dashboard = { enabled = true },
+            },
+        },
         "dvrlabs/takeout.nvim",
+        "aznhe21/actions-preview.nvim",
     },
     lockfile = vim.fn.stdpath("config") .. "/config/lazy-lock.json",
     install = { missing = true, colorscheme = { "habamax" } },
