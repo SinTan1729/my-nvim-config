@@ -52,10 +52,6 @@ require("lazy").setup({
     },
     -- Automatically add bracket pairs
     "windwp/nvim-autopairs",
-    -- Syntax highlighting for Caddyfile
-    "isobit/vim-caddyfile",
-    -- Syntax highlighting for Fish scripts
-    "khaveesh/vim-fish-syntax",
     "kylechui/nvim-surround",
     "ibhagwan/fzf-lua",
     "karb94/neoscroll.nvim",
