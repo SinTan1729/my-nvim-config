@@ -7,9 +7,6 @@ fzf.setup({
             ['default'] = fzf.actions.file_tabedit,
         },
     },
-    files = {
-        cmd = "rg --files",
-    },
 })
 
 -- Setup the familiar fzf.nvim commands
