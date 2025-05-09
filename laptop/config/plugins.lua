@@ -77,7 +77,6 @@ require("lazy").setup({
         "ibhagwan/fzf-lua",
         "karb94/neoscroll.nvim",
         "hiphish/rainbow-delimiters.nvim",
-        "andrewferrier/wrapping.nvim",
         "fei6409/log-highlight.nvim",
         {
             "linrongbin16/lsp-progress.nvim",

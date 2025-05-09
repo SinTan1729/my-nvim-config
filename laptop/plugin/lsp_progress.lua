@@ -17,7 +17,7 @@ require("lsp-progress").setup({
         end
 
         local sign = "" -- nf-fa-gear \uf013
-        local lsp_clients = vim.lsp.get_active_clients()
+        local lsp_clients = vim.lsp.get_clients()
         local messages_map = {}
         for _, climsg in ipairs(client_messages) do
             messages_map[climsg.name] = climsg.body

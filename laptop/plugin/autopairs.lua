@@ -89,7 +89,7 @@ npairs.add_rules {
 }
 
 -- Insertion with surrounding check
-function rule2(a1, ins, a2, lang)
+local function rule2(a1, ins, a2, lang)
     npairs.add_rule(
         Rule(ins, ins, lang)
         :with_pair(function(opts) return a1 .. a2 == opts.line:sub(opts.col - #a1, opts.col + #a2 - 1) end)
