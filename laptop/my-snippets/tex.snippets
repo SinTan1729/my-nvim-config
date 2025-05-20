@@ -27,28 +27,41 @@ endglobal
 
 priority -10
 
+snippet math "Inline Math" w
+\( ${0:${VISUAL}} \)
+endsnippet
+
+snippet dmath "Display Math" w
+\[ ${0:${VISUAL}} \]
+endsnippet
+
 snippet questions "Questions" bw
 \begin{questions}
-	\question $1
+	\question $0
 \end{questions}
 endsnippet
 
 snippet parts "Parts" bw
 \begin{parts}
-	\part $1
+	\part $0
 \end{parts}
 endsnippet
 
 snippet itemize "Itemize" bw
 \begin{itemize}
-	\item $1
+	\item ${0:${VISUAL}}
 \end{itemize}
 endsnippet
 
 snippet enumerate "Enumerate" bw
 \begin{enumerate}
-	\item $1
+	\item ${0:${VISUAL}}
 \end{enumerate}
+endsnippet
+
+snippet vstretch "Stretch vspace" bw
+\vspace*{\stretch{${1:1}}}
+$0
 endsnippet
 
 context in_env(["itemize", "enumerate"])

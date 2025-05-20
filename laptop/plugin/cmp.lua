@@ -12,8 +12,8 @@ cmp.setup({
         end,
     },
     window = {
-        completion = cmp.config.window.bordered(winhighlight),
-        documentation = cmp.config.window.bordered(winhighlight),
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -22,15 +22,15 @@ cmp.setup({
         ['<C-e>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
-    sources = cmp.config.sources({
+    sources = {
         { name = 'nvim_lsp' },
         { name = "vimtex" },
         -- { name = 'vsnip' }, -- For vsnip users.
         -- { name = 'luasnip' }, -- For luasnip users.
         { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
-    }, { { name = 'buffer' } }
-    ),
+    },
+    { { name = 'buffer' } },
     experimental = { ghost_text = true },
 })
 
@@ -70,3 +70,7 @@ cmp.event:on(
         }
     })
 )
+
+-- UltiSnips mappings
+vim.g.UltiSnipsExpandOrJumpTrigger = '<tab>'
+vim.g.UltiSnipsJumpBackwardTrigger = '<s-tab>'
