@@ -25,7 +25,39 @@ def suppress_none(s):
 
 endglobal
 
+## Static snippets
+
 priority -10
+
+snippet boilerplate "Add Biolerplate Code" bw
+\documentclass{article}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{amsfonts, mathtools, amsmath, amssymb, enumitem, amsthm}
+\usepackage[parfill]{parskip}
+% \usepackage[backend=biber, style=alphabetic]{biblatex}
+% \usepackage{hyperref, bookmark, cleveref}
+% \addbibresource{references.bib}
+% \usepackage{graphicx}
+% \graphicspath{ {./Images} }
+
+%% Custom theorem environments
+% \newtheorem{theorem}{Theorem}
+% \newtheorem{corollary}{Corollary}[theorem]
+% \newtheorem{lemma}[theorem]{Lemma}
+% \newtheorem{fact}[theorem]{Fact}
+% \newtheorem{definition}{Definition}
+% \newtheorem{example}{Example}
+% \newtheorem{conjecture}{Conjecture}
+
+\title{$1}
+\author{Sayantan Santra}
+
+\begin{document}
+	\maketitle
+
+	${0:${VISUAL}}
+\end{document}
+endsnippet
 
 snippet math "Inline Math" w
 \( ${0:${VISUAL}} \)
@@ -63,6 +95,8 @@ snippet vstretch "Stretch vspace" bw
 \vspace*{\stretch{${1:1}}}
 $0
 endsnippet
+
+## Dynamic snippets
 
 context in_env(["itemize", "enumerate"])
 snippet "\\item\s*\S+.*" "create next item" rb
