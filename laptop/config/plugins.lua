@@ -70,6 +70,7 @@ require("lazy").setup({
         },
         -- Automatically add bracket pairs
         "windwp/nvim-autopairs",
+        "windwp/nvim-ts-autotag",
         -- Plugin for LaTeX
         "lervag/vimtex",
         -- Formatter
