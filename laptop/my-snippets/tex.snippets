@@ -25,39 +25,70 @@ def suppress_none(s):
 
 endglobal
 
-## Static snippets
-
 priority -10
+
+## Convenience snippets
 
 snippet boilerplate "Add Biolerplate Code" bw
 \documentclass{article}
 \usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{amsfonts, mathtools, amsmath, amssymb, enumitem, amsthm}
 \usepackage[parfill]{parskip}
-% \usepackage[backend=biber, style=alphabetic]{biblatex}
-% \usepackage{hyperref, bookmark, cleveref}
-% \addbibresource{references.bib}
-% \usepackage{graphicx}
-% \graphicspath{ {./Images} }
 
-%% Custom theorem environments
-% \newtheorem{theorem}{Theorem}
-% \newtheorem{corollary}{Corollary}[theorem]
-% \newtheorem{lemma}[theorem]{Lemma}
-% \newtheorem{fact}[theorem]{Fact}
-% \newtheorem{definition}{Definition}
-% \newtheorem{example}{Example}
-% \newtheorem{conjecture}{Conjecture}
+%% Some convenience comamnds
+\newcommand{\tbf}[1]{\textbf{#1}}
+\newcommand{\tit}[1]{\textit{#1}}
+%% Implement basics of dirtytalk
+\newcommand{\say}[1]{\`\`#1"}
+\newcommand{\qt}[1]{\`#1'}
 
 \title{$1}
 \author{Sayantan Santra}
 
 \begin{document}
 	\maketitle
-
 	${0:${VISUAL}}
 \end{document}
 endsnippet
+
+snippet image_stuff "Image Related Stuff" bw
+\usepackage{graphicx}
+\graphicspath{ {./Images} }
+$0
+endsnippet
+
+snippet refs_stuff "References Related Stuff" bw
+\usepackage[backend=biber, style=alphabetic]{biblatex}
+\usepackage{hyperref, bookmark, cleveref}
+\addbibresource{references.bib}
+$0
+endsnippet
+
+snippet custom_thms "Custom Theorem Environments" bw
+%% Custom theorem environments
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\providecommand*{\lemmaautorefname}{Lemma}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{conjecture}{Conjecture}
+$0
+endsnippet
+
+snippet common_math "Shorthand for Common Math Stuff" bw
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\mat}[4]{\begin{psmallmatrix}#1 & #2 \\ #3 & #4\end{psmallmatrix}}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\mc}{\mathcal}
+$0
+endsnippet
+
+## Static snippets
 
 snippet math "Inline Math" w
 \( ${0:${VISUAL}} \)
