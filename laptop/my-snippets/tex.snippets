@@ -122,6 +122,12 @@ snippet enumerate "Enumerate" bw
 \end{enumerate}
 endsnippet
 
+snippet enumerate_label "Enumerate with Different Labels" bw
+\begin{enumerate}[label=(${1:\alph*})]
+	\item ${0:${VISUAL}}
+\end{enumerate}
+endsnippet
+
 snippet vstretch "Stretch vspace" bw
 \vspace*{\stretch{${1:1}}}
 $0
