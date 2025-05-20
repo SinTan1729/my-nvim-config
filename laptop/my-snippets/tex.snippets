@@ -27,6 +27,30 @@ endglobal
 
 priority -10
 
+snippet questions "Questions" bw
+\begin{questions}
+	\question $1
+\end{questions}
+endsnippet
+
+snippet parts "Parts" bw
+\begin{parts}
+	\part $1
+\end{parts}
+endsnippet
+
+snippet itemize "Itemize" bw
+\begin{itemize}
+	\item $1
+\end{itemize}
+endsnippet
+
+snippet enumerate "Enumerate" bw
+\begin{enumerate}
+	\item $1
+\end{enumerate}
+endsnippet
+
 context in_env(["itemize", "enumerate"])
 snippet "\\item\s*\S+.*" "create next item" rb
 `!p snip.rv = match.group(0)`
