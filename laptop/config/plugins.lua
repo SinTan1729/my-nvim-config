@@ -47,6 +47,7 @@ require("lazy").setup({
                 "micangl/cmp-vimtex",
                 "hrsh7th/cmp-path",
                 "hrsh7th/cmp-cmdline",
+                "quangnguyen30192/cmp-nvim-ultisnips",
             }
         },
         "SirVer/ultisnips", -- For snippets
@@ -91,7 +92,6 @@ require("lazy").setup({
             "folke/snacks.nvim",
             priority = 1000,
             lazy = false,
-            ---@type snacks.Config
             opts = {
                 picker = { enabled = true },
                 bigfile = { enabled = true },
