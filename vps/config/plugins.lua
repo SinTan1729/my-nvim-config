@@ -55,6 +55,7 @@ require("lazy").setup({
     "kylechui/nvim-surround",
     "ibhagwan/fzf-lua",
     "karb94/neoscroll.nvim",
+    "NMAC427/guess-indent.nvim",
     },
     lockfile = vim.fn.stdpath("config") .. "/config/lazy-lock.json",
     install = { missing = true, colorscheme = { "habamax" } },

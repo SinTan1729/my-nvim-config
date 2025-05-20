@@ -7,3 +7,6 @@ require("nvim-autopairs").setup()
 -- Default settings for nvim-surround
 require("nvim-surround").setup()
 
+-- Default settings for guess-indent.nvim
+require('guess-indent').setup {}
+
