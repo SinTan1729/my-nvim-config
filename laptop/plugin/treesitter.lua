@@ -10,7 +10,10 @@ configs.setup({
         enable = true,
         disable = { "make" },
     },
-    indent = { enable = true },
+    indent = {
+        enable = true,
+        disable = { "html" },
+    },
     incremental_selection = {
         enable = true,
         keymaps = {
