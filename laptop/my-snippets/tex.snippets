@@ -2,26 +2,20 @@ global !p
 
 # def math():
 # 	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+
+def get_env():
+	return vim.eval('vimtex#env#get_inner()["name"]')
+
 def in_env(lst):
 	try:
 		return get_env() in lst
 	except:
 		return False
 
-def get_env():
-	return vim.eval('vimtex#env#get_inner()["name"]')
-
-def delline_exititemize(snip):
-    cursorline = snip.cursor[0] 
+def delline_exit(snip, match):
+    cursorline = snip.line
     del snip.buffer[cursorline]
-    snip.buffer.append("\n", cursorline + 1)
-    snip.cursor.set(cursorline + 1, 0)
-
-def suppress_none(s):
-	if isinstance(s, str):
-		return s
-	else:
-		return ""
+    snip.cursor.set(cursorline, len(match.group(1)) + 2 + len(get_env()))
 
 endglobal
 
@@ -133,53 +127,24 @@ snippet vstretch "Stretch vspace" bw
 $0
 endsnippet
 
+snippet begin "Create an empty env" bw
+\begin{${1:env}}
+	${0:${VISUAL}}
+\end{$1}
+endsnippet
+
 ## Dynamic snippets
 
-context in_env(["itemize", "enumerate"])
-snippet "\\item\s*\S+.*" "create next item" rb
+context in_env(["itemize", "enumerate", "parts"])
+snippet "\\(item|part)\s*\S+.*" "create next item/part" rb
 `!p snip.rv = match.group(0)`
-\item $0
+\\`!p snip.rv = match.group(1)` $0
 endsnippet
 
-context in_env(["parts"])
-snippet "\\part\s*\S+.*" "create next part" rb
-`!p snip.rv = match.group(0)`
-\part $0
-endsnippet
-
-context in_env(["itemize", "enumerate"])
-post_jump "delline_exititemize(snip)"
-snippet "\\item\s*$" "exit itemize_like envs" rb
-endsnippet
-
-context in_env(["parts"])
-post_jump "delline_exititemize(snip)"
-snippet "\\part\s*$" "exit parts" rb
-endsnippet
-
-snippet "\\begin\{(itemize|enumerate)\}(\[\w+\])?" "itemize-like envs multiline begin{} / end{}" rb
-\begin{`!p snip.rv = match.group(1)`}`!p snip.rv = suppress_none(match.group(2))`
-	\item $0
-\end{`!p snip.rv = match.group(1)`}
-endsnippet
-
-snippet "\\begin\{parts\}(\[\w+\])?" "parts multiline begin{} / end{}" rb
-\begin{parts}`!p snip.rv = suppress_none(match.group(1))`
-	\part $0
-\end{parts}
-endsnippet
-
-priority -20
-
-snippet "\\begin\{(\w+)\}(\[\w+\])?" "multiline begin{} / end{}" rb
-\begin{`!p snip.rv = match.group(1)`}`!p snip.rv = suppress_none(match.group(2))`
-	$0
-\end{`!p snip.rv = match.group(1)`}
-endsnippet
-
-priority -30
-
-snippet "(?<!^)\\begin\{(\w+)\}" "inline begin{} / end{}" ri
-\begin{`!p snip.rv = match.group(1)`} $1 \end{`!p snip.rv = match.group(1)`} $0
+context in_env(["itemize", "enumerate", "parts"])
+pre_expand "delline_exit(snip, match)"
+snippet "(\s*)\\(item|part)\s*$" "exit item/part envs" r
+`!p snip.rv = snip.mkline()`
+$0
 endsnippet
 
