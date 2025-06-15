@@ -39,6 +39,7 @@ set.spell = true
 set.mouse = 'n'
 -- Enable programming dictionary
 set.spelllang = { "en", "programming", "en-academic" }
+set.spellfile = vim.fn.stdpath("config") .. "/config/custom.utf-8.add"
 
 -- Disable unused plugins
 g.loaded_perl_provider = 0

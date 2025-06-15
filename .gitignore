@@ -1,4 +1,5 @@
 # Ignore some files
 lazy-lock.json
 pull_script.sh
-
+*.add
+*.add.spl
