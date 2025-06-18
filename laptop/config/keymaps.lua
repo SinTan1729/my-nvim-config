@@ -56,3 +56,6 @@ map('n', '<Esc>', ':noh<cr>', { remap = false })
 
 -- Find files using fzf by ,f
 map('n', '<leader>f', ':Files<cr>', { remap = false })
+
+-- Do LSP renaming with preview
+map("n", "<leader>c", ":IncRename ", { remap = false })
