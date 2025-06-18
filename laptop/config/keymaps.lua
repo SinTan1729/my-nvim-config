@@ -28,7 +28,7 @@ dr_map('n', '<leader>d', '"_d', { remap = false })
 map('v', '<leader>d', '"_d', { remap = false })
 dr_map('n', '<leader>D', '"_D', { remap = false })
 dr_map('n', '<leader>x', '"_x', { remap = false })
-dr_map('n', '<leader>r', '"_viwP', { remap = false })
+dr_map('n', '<leader>c', '"_viwP', { remap = false })
 
 -- Use ,yy for yanking to system clipboard
 map('n', '<leader>y', '"+y', { remap = false })
@@ -58,4 +58,4 @@ map('n', '<Esc>', ':noh<cr>', { remap = false })
 map('n', '<leader>f', ':Files<cr>', { remap = false })
 
 -- Do LSP renaming with preview
-map("n", "<leader>c", ":IncRename ", { remap = false })
+map("n", "<leader>r", ":IncRename ", { remap = false })

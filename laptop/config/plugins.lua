@@ -104,7 +104,7 @@ require("lazy").setup({
         "NMAC427/guess-indent.nvim",
         {
             "smjonas/inc-rename.nvim",
-            opts = {}
+            opts = {},
         }
     },
     lockfile = vim.fn.stdpath("config") .. "/config/lazy-lock.json",
