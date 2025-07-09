@@ -3,8 +3,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
     pattern = "*",
     callback = function()
         local config_path = vim.fn.stdpath("config") -- Get Neovim's config path
-        local add_file = config_path .. "/config/custom.utf-8.add"
-        local spl_file = config_path .. "/config/custom.utf-8.add.spl"
+        local add_file = config_path .. "/config/custom-dict.utf-8.add"
+        local spl_file = config_path .. "/config/custom-dict.utf-8.add.spl"
 
         if vim.fn.filereadable(add_file) == 1 then
             local add_mtime = vim.fn.getftime(add_file) -- Get modification time of .add file
