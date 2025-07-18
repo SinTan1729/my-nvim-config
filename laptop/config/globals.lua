@@ -20,17 +20,21 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = "*",
     callback = function()
         local tabsize
-        if string.find(" haskell ", ' ' .. vim.bo.filetype .. ' ') then
+        if string.find(" haskell javascript ", ' ' .. vim.bo.filetype .. ' ') then
             tabsize = 2
         else
             tabsize = 4
+        end
+        if string.find(" make ", ' ' .. vim.bo.filetype .. ' ') then
+            set.expandtab = false
+        else
+            set.expandtab = true
         end
         set.tabstop = tabsize
         set.shiftwidth = tabsize
         set.softtabstop = tabsize
     end,
 })
-set.expandtab = true
 -- Show LSP signs in the number column
 set.signcolumn = 'number'
 -- Turn on spell checking
