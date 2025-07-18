@@ -64,7 +64,5 @@ lspconfig.lua_ls.setup({
 })
 
 lspconfig.gopls.setup({})
-
 lspconfig.ocamllsp.setup {}
-
 lspconfig.hls.setup {}

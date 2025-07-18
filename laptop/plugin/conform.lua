@@ -5,6 +5,12 @@ local slow_format_filetypes = { "tex" }
 cnf.setup({
     formatters_by_ft = {
         tex = { "latexindent" },
+        javascript = { "prettier" },
+        html = { "prettier" },
+        css = { "prettier" },
+        json = { "prettier" },
+        markdown = { "prettier" },
+        yaml = { "prettier" },
     },
 
     format_on_save = function(bufnr)
