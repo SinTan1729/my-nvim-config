@@ -5,7 +5,7 @@
 require("nvim-surround").setup()
 
 -- Default settings for log-highlight
-require("log-highlight").setup()
+require("log-highlight").setup {}
 
 -- Default settings for guess-indent.nvim
 require('guess-indent').setup {}
