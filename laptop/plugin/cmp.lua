@@ -71,6 +71,25 @@ cmp.event:on(
     })
 )
 
+-- Cmp spell setup
+require("cmp").setup({
+    sources = {
+        {
+            name = "spell",
+            option = {
+                enable_in_context = function()
+                    if vim.lsp.buf_is_attached() then
+                        return require('cmp.config.context').in_treesitter_capture('spell')
+                    else
+                        return true
+                    end
+                end,
+                preselect_correct_word = false,
+            },
+        },
+    },
+})
+
 -- UltiSnips mappings
 vim.g.UltiSnipsExpandOrJumpTrigger = '<tab>'
 vim.g.UltiSnipsJumpBackwardTrigger = '<s-tab>'

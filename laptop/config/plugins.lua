@@ -47,6 +47,7 @@ require("lazy").setup({
                 "micangl/cmp-vimtex",
                 "hrsh7th/cmp-path",
                 "hrsh7th/cmp-cmdline",
+                "f3fora/cmp-spell",
                 "quangnguyen30192/cmp-nvim-ultisnips",
             }
         },
