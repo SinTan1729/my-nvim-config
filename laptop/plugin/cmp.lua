@@ -78,11 +78,7 @@ require("cmp").setup({
             name = "spell",
             option = {
                 enable_in_context = function()
-                    if vim.lsp.buf_is_attached() then
-                        return require('cmp.config.context').in_treesitter_capture('spell')
-                    else
-                        return true
-                    end
+                    return not vim.lsp.buf_is_attached() or require('cmp.config.context').in_treesitter_capture('spell')
                 end,
                 preselect_correct_word = false,
             },
