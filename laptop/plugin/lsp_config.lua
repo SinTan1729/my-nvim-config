@@ -1,5 +1,8 @@
 local lspconfig = require('lspconfig')
 local map = vim.keymap.set
+local default_caps = vim.lsp.protocol.make_client_capabilities()
+local cmp_caps = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = vim.tbl_deep_extend("force", default_caps, cmp_caps)
 
 -- ;k to hover
 -- ;a to show code actions
@@ -18,6 +21,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- Python
 lspconfig.ruff.setup({
+    capabilities = capabilities,
     init_options = {
         settings = {
             lineLength = 100,
@@ -25,6 +29,7 @@ lspconfig.ruff.setup({
     }
 })
 lspconfig.pyright.setup {
+    capabilities = capabilities,
     settings = {
         pyright = {
             -- Using Ruff's import organizer
@@ -55,6 +60,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- Misc
 lspconfig.lua_ls.setup({
+    capabilities = capabilities,
     settings = {
         Lua = {
             diagnostics = { globals = { 'vim' } },
@@ -63,6 +69,12 @@ lspconfig.lua_ls.setup({
     }
 })
 
-lspconfig.gopls.setup({})
-lspconfig.ocamllsp.setup {}
-lspconfig.hls.setup {}
+lspconfig.gopls.setup({
+    capabilities = capabilities,
+})
+lspconfig.ocamllsp.setup({
+    capabilities = capabilities,
+})
+lspconfig.hls.setup({
+    capabilities = capabilities,
+})

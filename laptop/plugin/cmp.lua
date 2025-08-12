@@ -29,6 +29,15 @@ cmp.setup({
         -- { name = 'luasnip' }, -- For luasnip users.
         { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
+        {
+            name = "spell",
+            option = {
+                enable_in_context = function()
+                    return not vim.lsp.buf_is_attached() or require('cmp.config.context').in_treesitter_capture('spell')
+                end,
+                preselect_correct_word = false,
+            },
+        }
     },
     { { name = 'buffer' } },
     experimental = { ghost_text = true },
@@ -70,21 +79,6 @@ cmp.event:on(
         }
     })
 )
-
--- Cmp spell setup
-require("cmp").setup({
-    sources = {
-        {
-            name = "spell",
-            option = {
-                enable_in_context = function()
-                    return not vim.lsp.buf_is_attached() or require('cmp.config.context').in_treesitter_capture('spell')
-                end,
-                preselect_correct_word = false,
-            },
-        },
-    },
-})
 
 -- UltiSnips mappings
 vim.g.UltiSnipsExpandOrJumpTrigger = '<tab>'
