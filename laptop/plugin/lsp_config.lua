@@ -78,3 +78,4 @@ lspconfig.ocamllsp.setup({
 lspconfig.hls.setup({
     capabilities = capabilities,
 })
+vim.lsp.enable 'bashls'
