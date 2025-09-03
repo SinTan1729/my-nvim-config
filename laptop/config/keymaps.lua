@@ -58,4 +58,6 @@ map('n', '<Esc>', ':noh<cr>', { remap = false })
 map('n', '<leader>f', ':Files<cr>', { remap = false })
 
 -- Do LSP renaming with preview
-map("n", "<leader>r", ":IncRename ", { remap = false })
+map("n", "<leader>r", function()
+    return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true, remap = false })
