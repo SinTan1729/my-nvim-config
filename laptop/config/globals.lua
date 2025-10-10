@@ -52,3 +52,10 @@ g.loaded_ruby_provider = 0
 
 -- Make nvim work nicely with python venvs
 g.python3_host_prog = fn.system("which -a python3 | head -n2 | tail -n1 | tr -d '[:space:]'")
+
+-- Use systemd filetype for podman quadlet files
+vim.filetype.add({
+    extension = {
+        container = 'toml',
+    }
+})
