@@ -29,3 +29,15 @@ g.loaded_perl_provider = 0
 g.loaded_node_provider = 0
 g.loaded_ruby_provider = 0
 
+vim.filetype.add({
+    extension = {
+        -- podman quadlets
+        container = 'toml',
+    },
+    pattern = {
+        -- backup_script configs
+        ['${XDG_CONFIG_HOME}/backup_config/.*/.*%.entry'] = 'bash',
+        ['${XDG_CONFIG_HOME}/backup_config/.*/.*%.config'] = 'bash',
+    }
+})
+
