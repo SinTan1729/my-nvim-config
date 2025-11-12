@@ -32,7 +32,11 @@ g.loaded_ruby_provider = 0
 vim.filetype.add({
     extension = {
         -- podman quadlets
-        container = 'toml',
+        container = 'systemd',
+        network = 'systemd',
+        pod = 'systemd',
+        kube = 'systemd',
+        volume = 'systemd',
     },
     pattern = {
         -- backup_script configs

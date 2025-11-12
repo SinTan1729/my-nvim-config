@@ -56,7 +56,11 @@ g.python3_host_prog = fn.system("which -a python3 | head -n2 | tail -n1 | tr -d 
 vim.filetype.add({
     extension = {
         -- podman quadlets
-        container = 'toml',
+        container = 'systemd',
+        network = 'systemd',
+        pod = 'systemd',
+        kube = 'systemd',
+        volume = 'systemd',
     },
     pattern = {
         -- backup_script configs
