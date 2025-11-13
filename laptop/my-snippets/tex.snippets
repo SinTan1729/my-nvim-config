@@ -1,14 +1,14 @@
 global !p
 
-# def math():
-# 	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+def in_math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
 
 def get_env():
 	return vim.eval('vimtex#env#get_inner()["name"]')
 
 def in_env(lst):
 	try:
-		return get_env() in lst
+		return (get_env() in lst) and not in_math()
 	except:
 		return False
 
@@ -133,7 +133,21 @@ snippet begin "Create an empty env" bw
 \end{$1}
 endsnippet
 
+## Math mode snippets
+
+context in_math() 
+snippet frac "Fraction" w
+\frac{$1}{$2}$0
+endsnippet
+
+context in_math() 
+snippet int "Integral" w
+\int_{$1}^{$2} $0 \, dx
+endsnippet
+
 ## Dynamic snippets
+
+priority -20
 
 context in_env(["itemize", "enumerate", "parts"])
 snippet "\\(item|part)\s*\S+.*" "create next item/part" rb
