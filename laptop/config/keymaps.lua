@@ -30,8 +30,9 @@ dr_map('n', '<leader>D', '"_D', { remap = false })
 dr_map('n', '<leader>x', '"_x', { remap = false })
 dr_map('n', '<leader>c', '"_viwP', { remap = false })
 
--- Use ,yy for yanking to system clipboard
+-- Use ,yy for yanking to system clipboard and ,p for pasting
 map('n', '<leader>y', '"+y', { remap = false })
+map('n', '<leader>p', '"+p', { remap = false })
 
 -- Insert a newline in normal mode by ,o and ,O
 map('n', '<leader>o', ":<c-u>call append(line('.'), repeat([''], v:count1))<cr>", { remap = false })
