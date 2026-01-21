@@ -7,6 +7,7 @@ local fn = vim.fn
 local map = vim.keymap.set
 local api = vim.api
 local opt = vim.opt
+local set_hl = vim.api.nvim_set_hl
 
 -- Turn on colors
 set.termguicolors = true
@@ -48,6 +49,10 @@ g.loaded_perl_provider = 0
 g.loaded_node_provider = 0
 g.loaded_ruby_provider = 0
 g.loaded_python_provider = 0
+
+-- Make background transparent
+set_hl(0, "Normal", { bg = "none" })
+set_hl(0, "NormalFloat", { bg = "none" })
 
 -- ----------------------------------------------
 -- Keymaps
@@ -104,3 +109,4 @@ map('n', '<Esc>', ':noh<cr>', { remap = false })
 
 -- Find files using fzf by ,f
 map('n', '<leader>f', ':Files<cr>', { remap = false })
+
