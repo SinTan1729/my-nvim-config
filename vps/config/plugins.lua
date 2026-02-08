@@ -30,7 +30,6 @@ require("lazy").setup({
     -- Treesitter
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     -- LSP related plugins
-    "neovim/nvim-lspconfig",
     {
         "hrsh7th/nvim-cmp",         -- For LSP completion
         event = "InsertLeave",
