@@ -1,8 +1,10 @@
-local lspconfig = require('lspconfig')
 local map = vim.keymap.set
-local default_caps = vim.lsp.protocol.make_client_capabilities()
-local cmp_caps = require("cmp_nvim_lsp").default_capabilities()
-local capabilities = vim.tbl_deep_extend("force", default_caps, cmp_caps)
+
+-- Helper function for LSP configs
+local lsp_config = function(server, config)
+    vim.lsp.config(server, config)
+    vim.lsp.enable(server)
+end
 
 -- ;k to hover
 -- ;a to show code actions
@@ -20,16 +22,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- Python
-lspconfig.ruff.setup({
-    capabilities = capabilities,
+lsp_config('ruff', {
     init_options = {
         settings = {
             lineLength = 100,
         }
     }
 })
-lspconfig.pyright.setup {
-    capabilities = capabilities,
+
+lsp_config('pyright', {
     settings = {
         pyright = {
             -- Using Ruff's import organizer
@@ -42,7 +43,8 @@ lspconfig.pyright.setup {
             },
         },
     },
-}
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup('lsp_attach_disable_ruff_hover', { clear = true }),
     callback = function(args)
@@ -58,9 +60,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
     desc = 'LSP: Disable hover capability from Ruff',
 })
 
--- Misc
-lspconfig.lua_ls.setup({
-    capabilities = capabilities,
+-- Lua
+lsp_config('luals', {
+    cmd = { "lua-language-server" },
+    filetypes = { "lua" },
     settings = {
         Lua = {
             diagnostics = { globals = { 'vim' } },
@@ -69,13 +72,5 @@ lspconfig.lua_ls.setup({
     }
 })
 
-lspconfig.gopls.setup({
-    capabilities = capabilities,
-})
-lspconfig.ocamllsp.setup({
-    capabilities = capabilities,
-})
-lspconfig.hls.setup({
-    capabilities = capabilities,
-})
-vim.lsp.enable 'bashls'
+-- Misc
+vim.lsp.enable({ 'bashls', 'gopls', 'hls' })

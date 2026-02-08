@@ -20,12 +20,13 @@ local function on_attach(_, bufnr)
 end
 
 -- Enable lean.nvim, and enable abbreviations and mappings
-require('lean').setup {
+vim.lsp.config('leanls', {
     abbreviations = { builtin = true },
     lsp = { on_attach = on_attach },
     lsp3 = { on_attach = on_attach },
     mappings = true,
-}
+})
+vim.lsp.enable('leanls')
 
 -- Enable virtual text for Lean
 vim.api.nvim_create_autocmd("LspAttach", {
