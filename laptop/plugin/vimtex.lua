@@ -14,7 +14,8 @@ vim.api.nvim_create_autocmd(
         pattern = 'tex',
         group = vim.api.nvim_create_augroup('vimrc_tex', {}),
         callback = function()
-            vim.keymap.set('n', '<localleader>lo', ":silent VimtexCompileSS<cr>", { buffer = true })
+            vim.keymap.set('n', '<localleader>lo', ":silent VimtexCompileSS<cr>",
+                { buffer = true, desc = 'Compile LaTeX once' })
             vim.opt.linebreak = true
             vim.opt.tw = 140
         end,

@@ -17,36 +17,28 @@ local function dr_map(mode, motion, keycodes, opts)
     map(mode, motion, dot_repeatable, opts)
 end
 
--- Use ,dd for deleting without putting into buffer etc.
-dr_map('n', '<leader>d', '"_d', { remap = false })
-map('v', '<leader>d', '"_d', { remap = false })
-dr_map('n', '<leader>D', '"_D', { remap = false })
-dr_map('n', '<leader>x', '"_x', { remap = false })
-dr_map('n', '<leader>r', '"_viwP', { remap = false })
+dr_map('n', '<leader>d', '"_d', { remap = false, desc = 'Delete without putting into buffer' })
+map('v', '<leader>d', '"_d', { remap = false, desc = 'Delete line without putting into buffer' })
+dr_map('n', '<leader>D', '"_D', { remap = false, desc = 'Delete rest of line without putting into buffer' })
+dr_map('n', '<leader>x', '"_x', { remap = false, desc = 'Delete character without putting into buffer' })
+dr_map('n', '<leader>c', '"_viwP', { remap = false, desc = 'Replace without putting into buffer' })
 
--- Insert a newline in normal mode by ,o and ,O
-map('n', '<leader>o', ":<c-u>call append(line('.'), repeat([''], v:count1))<cr>", { remap = false })
-map('n', '<leader>O', ":<c-u>call append(line('.')-1, repeat([''], v:count1))<cr>", { remap = false })
-
--- Use ,u for redo
-map('n', '<leader>u', "<c-r>", { remap = false })
-
--- Find files using fzf by ,f
-map('n', '<leader>f', ":Files<cr>", { remap = false })
+map('n', '<leader>o', ":<c-u>call append(line('.'), repeat([''], v:count1))<cr>",
+    { remap = false, desc = 'Insert a newline below' })
+map('n', '<leader>O', ":<c-u>call append(line('.')-1, repeat([''], v:count1))<cr>",
+    { remap = false, desc = 'Insert a newline above' })
 
 -- Browser like keymaps
-map('n', '<leader>k', "gt", { remap = false })
-map('n', '<leader>j', "gT", { remap = false })
-map('n', '<leader>w', ":bdelete<cr>", { remap = false })
-map('n', '<leader>W', ":bdelete!<cr>", { remap = false })
-map('n', '<leader>t', ":tabnew<cr>", { remap = false })
-map('n', '<leader>q', ":qa<cr>", { remap = false })
-map('n', '<leader>Q', ":qa!<cr>", { remap = false })
-map('n', '<leader>s', ":w<cr>", { remap = false })
-map('n', '<leader>S', ":x<cr>", { remap = false })
+map('n', '<leader>j', "gT", { remap = false, desc = 'Go to previous tab' })
+map('n', '<leader>k', "gt", { remap = false, desc = 'Go to next tab' })
+map('n', '<leader>w', ":bdelete<cr>", { remap = false, desc = 'Close tab' })
+map('n', '<leader>W', ":bdelete!<cr>", { remap = false, desc = 'Force close tab' })
+map('n', '<leader>t', ":tabnew<cr>", { remap = false, desc = 'Open tab' })
+map('n', '<leader>q', ":qa<cr>", { remap = false, desc = 'Close nvim' })
+map('n', '<leader>Q', ":qa!<cr>", { remap = false, desc = 'Force close nvim' })
+map('n', '<leader>s', ":w<cr>", { remap = false, desc = 'Save current file' })
+map('n', '<leader>S', ":x<cr>", { remap = false, desc = 'Save current file and exit nvim' })
 
--- Clear search highlight by Esc in normal mode
-map('n', '<Esc>', ':noh<cr>', { remap = false })
-
--- Find files using fzf by ,f
-map('n', '<leader>f', ':Files<cr>', { remap = false, silent = true })
+map('n', '<leader>u', "<c-r>", { remap = false, desc = 'Redo' })
+map('n', '<Esc>', ':noh<cr>', { remap = false, desc = 'Remove search highlights' })
+map('n', '<leader>f', ':Files<cr>', { remap = false, desc = 'Find files using fzf', silent = true })
