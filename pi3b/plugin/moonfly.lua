@@ -11,6 +11,6 @@ vim.g.moonflyTransparent = true
 vim.g.moonflyVirtualTextColor = true
 
 --  Use the moonfly colorscheme
-vim.cmd [[colorscheme moonfly]]
+vim.cmd.colorscheme('moonfly')
 
 -- Some more setup is inside cmp.lua
