@@ -59,7 +59,7 @@ end
 
 -- Add space around =
 npairs.add_rules {
-    Rule('=', '', { "-tex", "-vim", "-sh", "-dockerfile", "-make", "-html" })
+    Rule('=', '', { "-tex", "-vim", "-sh", "-dockerfile", "-make", "-html", "-systemd" })
         :with_pair(cond.not_inside_quote())
         :with_pair(function(opts)
             local last_char = opts.line:sub(opts.col - 1, opts.col - 1)
