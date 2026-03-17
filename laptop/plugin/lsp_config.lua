@@ -19,6 +19,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
+
 -- Python
 lsp_config('ruff', {
     init_options = {
@@ -28,7 +29,24 @@ lsp_config('ruff', {
     }
 })
 
+local function get_python_path(workspace)
+    if vim.env.VIRTUAL_ENV then
+        return vim.env.VIRTUAL_ENV .. '/bin/python'
+    end
+
+    workspace = workspace or vim.fn.getcwd()
+    local pycfg = io.open(workspace .. '/.venv/pyvenv.cfg', "r")
+    if pycfg then
+        pycfg:close()
+        return workspace .. '/.venv/bin/python'
+    end
+
+    return 'python'
+end
 lsp_config('pyright', {
+    before_init = function(_, config)
+        config.settings.python.pythonPath = get_python_path(config.root_dir)
+    end,
     settings = {
         pyright = {
             -- Using Ruff's import organizer
@@ -44,7 +62,7 @@ lsp_config('pyright', {
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
-    group = vim.api.nvim_create_augroup('lsp_attach_disable_ruff_hover', { clear = true }),
+    group = vim.api.nvim_create_augroup('lsp_attach_python', { clear = true }),
     callback = function(args)
         local client = vim.lsp.get_client_by_id(args.data.client_id)
         if client == nil then
