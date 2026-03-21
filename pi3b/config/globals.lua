@@ -1,3 +1,14 @@
+-- Open stuff inside tab
+vim.api.nvim_create_autocmd("UIEnter", {
+    callback = function()
+        if vim.fn.argc() > 1 and vim.fn.has("stdin") == 0 then
+            vim.schedule(function()
+                vim.cmd("tab all")
+            end)
+        end
+    end,
+})
+
 -- This file defines all the global configs
 local set = vim.opt
 local g = vim.g
