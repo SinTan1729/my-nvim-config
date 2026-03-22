@@ -11,6 +11,7 @@ vim.api.nvim_create_autocmd("UIEnter", {
 
 -- This file defines all the global config
 local set = vim.opt
+local set_l = vim.opt_local
 local g = vim.g
 local fn = vim.fn
 
@@ -18,8 +19,8 @@ local fn = vim.fn
 set.termguicolors = true
 -- Turn on numbers
 set.number = true
--- Turn off line wrapping
--- set.wrap = false
+-- Turn on line wrapping
+set.wrap = false
 -- Disable cmdline from bottom
 set.cmdheight = 0
 -- Ignore case while searching except when the search term contains capital letters
@@ -37,13 +38,13 @@ vim.api.nvim_create_autocmd("FileType", {
             tabsize = 4
         end
         if string.find(" make ", ' ' .. vim.bo.filetype .. ' ') then
-            set.expandtab = false
+            set_l.expandtab = false
         else
-            set.expandtab = true
+            set_l.expandtab = true
         end
-        set.tabstop = tabsize
-        set.shiftwidth = tabsize
-        set.softtabstop = tabsize
+        set_l.tabstop = tabsize
+        set_l.shiftwidth = tabsize
+        set_l.softtabstop = tabsize
     end,
 })
 -- Show LSP signs in the number column
@@ -78,4 +79,12 @@ vim.filetype.add({
         ['${XDG_CONFIG_HOME}/backup_config/.*/.*%.entry'] = 'bash',
         ['${XDG_CONFIG_HOME}/backup_config/.*/.*%.config'] = 'bash',
     },
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "text", "markdown", "tex" },
+    callback = function()
+        set_l.textwidth = 140
+        set_l.formatoptions:append("tcq")
+    end,
 })
