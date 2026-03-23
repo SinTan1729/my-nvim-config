@@ -10,7 +10,7 @@
 -- Compile once by ;lo and also add proper line-breaking
 vim.api.nvim_create_autocmd(
     'FileType', {
-        desc = 'Compile once by <localleader>lo and also add proper line-breaking',
+        desc = 'Compile once by <localleader>lo',
         pattern = 'tex',
         group = vim.api.nvim_create_augroup('vimrc_tex', {}),
         callback = function()
