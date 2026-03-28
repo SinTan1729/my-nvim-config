@@ -1,6 +1,4 @@
-local configs = require("nvim-treesitter.configs")
-
-configs.setup({
+require("nvim-treesitter").setup({
     ensure_installed = { "lua", "vim", "vimdoc", "yaml", "dockerfile", "caddy", "fish" },
     sync_install = false,
     disable = { "latex" },
@@ -86,14 +84,4 @@ configs.setup({
             },
         },
     }
-})
-
--- Custom filetypes
-vim.filetype.add({
-    extension = {
-        caddy = 'caddy',
-    },
-    filename = {
-        ['Caddyfile'] = 'caddy',
-    },
 })

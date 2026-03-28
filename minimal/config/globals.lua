@@ -55,3 +55,11 @@ vim.filetype.add({
         ['${XDG_CONFIG_HOME}/backup_config/.*/.*%.config'] = 'bash',
     }
 })
+vim.filetype.add({
+    extension = {
+        caddy = 'caddy',
+    },
+    filename = {
+        ['Caddyfile'] = 'caddy',
+    },
+})

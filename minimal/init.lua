@@ -7,4 +7,3 @@ require("globals")
 require("plugins")
 -- Load keymaps
 require("keymaps")
-

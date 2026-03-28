@@ -5,4 +5,3 @@ require("Comment").setup()
 local ft = require("Comment.ft")
 ft.caddy = "#%s"
 ft.systemd = "#%s"
-
