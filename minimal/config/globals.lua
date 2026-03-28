@@ -48,18 +48,14 @@ vim.filetype.add({
         pod = 'systemd',
         kube = 'systemd',
         volume = 'systemd',
+        caddy = 'caddy',
+    },
+    filename = {
+        ['Caddyfile'] = 'caddy',
     },
     pattern = {
         -- backup_script configs
         ['${XDG_CONFIG_HOME}/backup_config/.*/.*%.entry'] = 'bash',
         ['${XDG_CONFIG_HOME}/backup_config/.*/.*%.config'] = 'bash',
-    }
-})
-vim.filetype.add({
-    extension = {
-        caddy = 'caddy',
-    },
-    filename = {
-        ['Caddyfile'] = 'caddy',
     },
 })
