@@ -1,9 +1,8 @@
 local ts = require("nvim-treesitter")
 local map = vim.keymap.set
 
-local ts_filetypes = { "rust", "lua", "vim", "vimdoc", "ocaml",
-    "yaml", "dockerfile", "bash", "html", "javascript", "css", "go",
-    "json", "python", "fish", "haskell", "diff" }
+local ts_filetypes = { "lua", "vim", "vimdoc", "yaml", "dockerfile",
+    "bash", "json", "python", "fish", "diff" }
 
 ts.install(ts_filetypes):wait(60000)
 
