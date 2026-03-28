@@ -28,7 +28,13 @@ require("lazy").setup({
         -- Auto toggle for number mode when vim isn't focused
         "sitiom/nvim-numbertoggle",
         -- Treesitter
-        { "nvim-treesitter/nvim-treesitter", lazy = false,              build = ":TSUpdate" },
+        {
+            "nvim-treesitter/nvim-treesitter",
+            build = ":TSUpdate",
+            lazy = false,
+            branch = "main",
+            dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" }
+        },
         -- LSP related plugins
         {
             "hrsh7th/nvim-cmp", -- For LSP completion
@@ -41,7 +47,7 @@ require("lazy").setup({
             }
         },
         -- Support programming terms
-        { "psliwka/vim-dirtytalk",           build = ":DirtytalkUpdate" },
+        { "psliwka/vim-dirtytalk", build = ":DirtytalkUpdate" },
         -- vim-moonfly theme
         {
             "bluz71/vim-moonfly-colors",

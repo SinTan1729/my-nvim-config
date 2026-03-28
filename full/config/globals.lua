@@ -67,12 +67,16 @@ g.python3_host_prog = fn.system("which -a python3 | head -n2 | tail -n1 | tr -d 
 -- Treat some files as systemd
 vim.filetype.add({
     extension = {
+        caddy = 'caddy',
         -- podman quadlets
         container = 'systemd',
         network = 'systemd',
         pod = 'systemd',
         kube = 'systemd',
         volume = 'systemd',
+    },
+    filename = {
+        Caddyfile = 'caddy',
     },
     pattern = {
         -- backup_script configs

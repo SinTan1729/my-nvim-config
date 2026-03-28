@@ -42,13 +42,13 @@ g.loaded_ruby_provider = 0
 
 vim.filetype.add({
     extension = {
+        caddy = 'caddy',
         -- podman quadlets
         container = 'systemd',
         network = 'systemd',
         pod = 'systemd',
         kube = 'systemd',
         volume = 'systemd',
-        caddy = 'caddy',
     },
     filename = {
         ['Caddyfile'] = 'caddy',

@@ -33,6 +33,7 @@ require("lazy").setup({
         {
             "nvim-treesitter/nvim-treesitter",
             build = ":TSUpdate",
+            lazy = false,
             dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" }
         },
         -- LSP related plugins
