@@ -13,12 +13,8 @@ vim.api.nvim_create_autocmd('FileType', {
         vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 
         require('nvim-treesitter-textobjects').setup {
-            select = {
-                lookahead = true,
-            },
-            move = {
-                set_jumps = true,
-            },
+            select = { lookahead = true },
+            move = { set_jumps = true },
         }
 
         local tobj_select = require('nvim-treesitter-textobjects.select')
