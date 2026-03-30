@@ -59,7 +59,3 @@ map('n', '<leader>S', ":x<cr>", { remap = false, desc = 'Save current file and e
 map('n', '<leader>u', "<c-r>", { remap = false, desc = "Redo" })
 map('n', '<Esc>', ':noh<cr>', { remap = false, desc = 'Remove search highlights' })
 map('n', '<leader>f', ':Files<cr>', { remap = false, desc = 'Find files using fzf', silent = true })
-
-map("n", "<leader>r", function()
-    return ":IncRename " .. vim.fn.expand("<cword>")
-end, { expr = true, remap = false, desc = 'Rename variable using LSP' })
