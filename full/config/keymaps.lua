@@ -7,14 +7,23 @@ g.mapleader = ','
 g.maplocalleader = ';'
 
 -- Make a dot-repeatable keymap
-local function dr_map(mode, motion, keycodes, opts)
-    local termcodes = vim.api.nvim_replace_termcodes(keycodes, true, true, true)
-    local function dot_repeatable()
-        _G.dot_repeat_callback = vim.api.nvim_feedkeys(termcodes, mode, false)
-        vim.go.operatorfunc = 'v:lua.dot_repeat_callback'
-        return 'g@l'
+local function dr_map(mode, lhs, rhs, opts)
+    opts = opts or {}
+    opts.expr = true
+
+    local termcodes = vim.api.nvim_replace_termcodes(rhs, true, true, true)
+    local fn_name = "__dr_op_" .. lhs:gsub("[^%w]", "")
+
+    _G[fn_name] = function()
+        local count = vim.v.count1
+        local keys = (count > 1 and tostring(count) or "") .. termcodes
+        vim.api.nvim_feedkeys(keys, "n", false)
     end
-    map(mode, motion, dot_repeatable, opts)
+
+    vim.keymap.set(mode, lhs, function()
+        vim.go.operatorfunc = "v:lua." .. fn_name
+        return "g@l"
+    end, opts)
 end
 
 map('n', '<c-h>', ":wincmd h<cr>", { silent = true, desc = 'Move to split to the left' })
@@ -26,7 +35,7 @@ dr_map('n', '<leader>d', '"_d', { remap = false, desc = 'Delete without putting 
 map('v', '<leader>d', '"_d', { remap = false, desc = 'Delete line without putting into buffer' })
 dr_map('n', '<leader>D', '"_D', { remap = false, desc = 'Delete rest of line without putting into buffer' })
 dr_map('n', '<leader>x', '"_x', { remap = false, desc = 'Delete character without putting into buffer' })
-dr_map('n', '<leader>c', '"_viwP', { remap = false, desc = 'Replace without putting into buffer' })
+dr_map('n', '<leader>c', '"_c', { remap = false, desc = 'Replace without putting into buffer' })
 
 map('n', '<leader>y', '"+y', { remap = false, desc = 'Copy to system clipboard' })
 map('n', '<leader>p', '"+p', { remap = false, desc = 'Paste from system clipboard' })
