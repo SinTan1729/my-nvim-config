@@ -47,7 +47,7 @@ vim.api.nvim_create_autocmd('FileType', {
         for key, spec in pairs(tobj_select_maps) do
             map({ "o", "x" }, key, function()
                 tobj_select.select_textobject(spec.query, "textobjects")
-            end, { desc = spec.desc })
+            end, { remap = false, desc = spec.desc })
         end
 
         local tobj_move = require('nvim-treesitter-textobjects.move')
@@ -90,7 +90,7 @@ vim.api.nvim_create_autocmd('FileType', {
             for key, spec in pairs(group) do
                 map({ "n", "o", "x" }, key, function()
                     tobj_move[group_name](spec.query, "textobjects")
-                end, { desc = spec.desc })
+                end, { remap = false, desc = spec.desc })
             end
         end
     end,

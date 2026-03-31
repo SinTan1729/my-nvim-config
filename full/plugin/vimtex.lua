@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd(
         group = vim.api.nvim_create_augroup('vimrc_tex', {}),
         callback = function()
             vim.keymap.set('n', '<localleader>lo', ":silent VimtexCompileSS<cr>",
-                { buffer = true, desc = 'Compile LaTeX once' })
+                { buffer = true, remap = false, desc = 'Compile LaTeX once' })
         end,
     }
 )
