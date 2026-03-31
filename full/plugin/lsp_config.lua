@@ -16,15 +16,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
         map('n', '<localleader>n', vim.diagnostic.goto_next, { remap = false, desc = 'Go to next diagnostic message' })
         map('n', '<localleader>N', vim.diagnostic.goto_prev,
             { remap = false, desc = 'Go to previous diagnostic message' })
-        -- Temporary workaround ultil https://github.com/saecki/live-rename.nvim/issues/18 is fixed
-        map("n", "<leader>r",
-            function()
-                require("live-rename").rename({ cursorpos = -1 })
-                vim.schedule(function()
-                    vim.api.nvim_feedkeys("A", "n", false)
-                end)
-            end,
-            { remap = false, desc = 'Rename variable using LSP' })
+        map("n", "<leader>r", function() return ":IncRename " .. vim.fn.expand("<cword>") end,
+            { remap = false, expr = true, desc = 'Rename variable using LSP' })
     end,
 })
 

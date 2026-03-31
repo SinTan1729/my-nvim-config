@@ -24,6 +24,8 @@ set.number = true
 set.wrap = false
 -- Disable cmdline from bottom
 set.cmdheight = 0
+set.cmdwinheight = 10
+set.inccommand = 'split'
 -- Ignore case while searching except when the search term contains capital letters
 set.ignorecase = true
 set.smartcase = true

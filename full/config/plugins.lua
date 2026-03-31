@@ -103,7 +103,7 @@ require("lazy").setup({
         },
         "dvrlabs/takeout.nvim",
         "aznhe21/actions-preview.nvim",
-        "saecki/live-rename.nvim",
+        { "smjonas/inc-rename.nvim", opts = {} },
     },
     lockfile = vim.fn.stdpath("config") .. "/config/lazy-lock.json",
     install = { missing = true, colorscheme = { "habamax" } },
