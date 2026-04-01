@@ -17,7 +17,7 @@ require("lsp-progress").setup({
         end
 
         local sign = "" -- nf-fa-gear \uf013
-        local lsp_clients = vim.lsp.get_clients()
+        local lsp_clients = vim.lsp.get_active_clients()
         local messages_map = {}
         for _, climsg in ipairs(client_messages) do
             messages_map[climsg.name] = climsg.body
@@ -35,7 +35,10 @@ require("lsp-progress").setup({
                     and string.len(cli.name) > 0
                 then
                     if messages_map[cli.name] then
-                        table.insert(builder, stringify(cli.name, messages_map[cli.name]))
+                        table.insert(
+                            builder,
+                            stringify(cli.name, messages_map[cli.name])
+                        )
                     else
                         table.insert(builder, stringify(cli.name))
                     end
