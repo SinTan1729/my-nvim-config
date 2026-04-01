@@ -67,7 +67,7 @@ require("lazy").setup({
         -- Rust tools
         {
             "mrcjkb/rustaceanvim",
-            version = "^6",
+            version = "^8",
             lazy = false,
         },
         -- Automatically add bracket pairs

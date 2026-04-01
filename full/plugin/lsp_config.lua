@@ -1,17 +1,19 @@
 local map = vim.keymap.set
+local lsp = vim.lsp
 
 -- Helper function for LSP configs
 local lsp_config = function(server, config)
-    vim.lsp.config(server, config)
-    vim.lsp.enable(server)
+    lsp.config(server, config)
+    lsp.enable(server)
 end
 
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function()
-        map('n', '<localleader>k', vim.lsp.buf.hover, { remap = false, desc = 'Hover using LSP' })
+        lsp.inlay_hint.enable(true)
+        map('n', '<localleader>k', lsp.buf.hover, { remap = false, desc = 'Hover using LSP' })
         map({ 'v', 'n' }, '<localleader>a', require("actions-preview").code_actions,
             { remap = false, desc = 'Preview LSP actions' })
-        map('n', '<localleader>f', vim.lsp.buf.definition, { remap = false, desc = 'Jump to definition' })
+        map('n', '<localleader>f', lsp.buf.definition, { remap = false, desc = 'Jump to definition' })
         map('n', '<localleader>d', vim.diagnostic.open_float, { remap = false, desc = 'Show current diagnostic message' })
         map('n', '<localleader>n', vim.diagnostic.goto_next, { remap = false, desc = 'Go to next diagnostic message' })
         map('n', '<localleader>N', vim.diagnostic.goto_prev,
@@ -23,7 +25,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 
 -- Python
-vim.lsp.enable('ty')
+lsp.enable('ty')
 lsp_config('ruff', {
     init_options = {
         settings = {
@@ -45,4 +47,4 @@ lsp_config('luals', {
 })
 
 -- Misc
-vim.lsp.enable({ 'bashls', 'gopls', 'hls' })
+lsp.enable({ 'bashls', 'gopls', 'hls' })
