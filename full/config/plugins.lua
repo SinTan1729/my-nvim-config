@@ -19,8 +19,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = {
         -- Use lualine for statusbar
-        "nvim-lualine/lualine.nvim",
-        "nvim-tree/nvim-web-devicons",
+        {
+            "nvim-lualine/lualine.nvim",
+            dependencies = { "nvim-tree/nvim-web-devicons" },
+        },
         -- Auto commenting per filetype
         "numToStr/Comment.nvim",
         -- Give option to save files using sudo, if needed
@@ -71,17 +73,17 @@ require("lazy").setup({
             lazy = false,
         },
         -- Automatically add bracket pairs
-        "windwp/nvim-autopairs",
+        { "windwp/nvim-autopairs",  opts = {} },
         "windwp/nvim-ts-autotag",
         -- Plugin for LaTeX
         "lervag/vimtex",
         -- Formatter
         "stevearc/conform.nvim",
-        "kylechui/nvim-surround",
+        { "kylechui/nvim-surround", opts = {} },
         "ibhagwan/fzf-lua",
         "karb94/neoscroll.nvim",
         "hiphish/rainbow-delimiters.nvim",
-        "fei6409/log-highlight.nvim",
+        { "fei6409/log-highlight.nvim", opts = {} },
         {
             "linrongbin16/lsp-progress.nvim",
             event = "LspAttach",
@@ -103,7 +105,7 @@ require("lazy").setup({
         },
         "dvrlabs/takeout.nvim",
         "aznhe21/actions-preview.nvim",
-        { "smjonas/inc-rename.nvim", opts = {} },
+        { "smjonas/inc-rename.nvim",    opts = {} },
     },
     lockfile = vim.fn.stdpath("config") .. "/config/lazy-lock.json",
     install = { missing = true, colorscheme = { "habamax" } },

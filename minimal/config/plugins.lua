@@ -19,8 +19,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = {
         -- Use lualine for statusbar
-        "nvim-lualine/lualine.nvim",
-        "nvim-tree/nvim-web-devicons",
+        {
+            "nvim-lualine/lualine.nvim",
+            dependencies = { "nvim-tree/nvim-web-devicons" },
+        },
         -- Auto commenting per filetype
         "numToStr/Comment.nvim",
         -- Give option to save files using sudo, if needed
@@ -47,7 +49,7 @@ require("lazy").setup({
             }
         },
         -- Support programming terms
-        { "psliwka/vim-dirtytalk", build = ":DirtytalkUpdate" },
+        { "psliwka/vim-dirtytalk",  build = ":DirtytalkUpdate" },
         -- vim-moonfly theme
         {
             "bluz71/vim-moonfly-colors",
@@ -56,8 +58,8 @@ require("lazy").setup({
             priority = 1000
         },
         -- Automatically add bracket pairs
-        "windwp/nvim-autopairs",
-        "kylechui/nvim-surround",
+        { "windwp/nvim-autopairs",  opts = {} },
+        { "kylechui/nvim-surround", opts = {} },
         "ibhagwan/fzf-lua",
         "karb94/neoscroll.nvim",
     },

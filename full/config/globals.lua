@@ -95,3 +95,6 @@ api.nvim_create_autocmd("FileType", {
         set_l.formatoptions:append("tcq")
     end,
 })
+
+-- Set UltiSnips snippets directory
+g.UltiSnipsSnippetDirectories = { "my-snippets", "UltiSnips" }
