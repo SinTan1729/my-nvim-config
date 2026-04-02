@@ -4,6 +4,10 @@ local function counts()
     return string.format('%d L, %d W', lc, wc)
 end
 
+local function lua_progress()
+    return require('lsp-progress').progress()
+end
+
 require("lualine").setup {
     options = {
         theme = 'moonfly',
@@ -19,7 +23,7 @@ require("lualine").setup {
     sections = {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = { 'filename', require('lsp-progress').progress, 'searchcount' },
+        lualine_c = { 'filename', lua_progress, 'searchcount' },
         lualine_x = { 'encoding', 'fileformat', 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' }

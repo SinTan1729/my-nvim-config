@@ -21,7 +21,10 @@ require("lazy").setup({
         -- Use lualine for statusbar
         {
             "nvim-lualine/lualine.nvim",
-            dependencies = { "nvim-tree/nvim-web-devicons" },
+            dependencies = {
+                "nvim-tree/nvim-web-devicons",
+                { "linrongbin16/lsp-progress.nvim", event = "LspAttach" },
+            },
         },
         -- Auto commenting per filetype
         "numToStr/Comment.nvim",
@@ -84,10 +87,6 @@ require("lazy").setup({
         "karb94/neoscroll.nvim",
         "hiphish/rainbow-delimiters.nvim",
         { "fei6409/log-highlight.nvim", opts = {} },
-        {
-            "linrongbin16/lsp-progress.nvim",
-            event = "LspAttach",
-        },
         {
             "felpafel/inlay-hint.nvim",
             event = "LspAttach",
