@@ -15,14 +15,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local config = vim.fn.stdpath("config")
-package.path = package.path
-    .. ";" .. config .. "/plugins/?.lua"
-    .. ";" .. config .. "/plugins/init.lua"
 -- Load plugins via lazy.nvim
 require("lazy").setup({
-    spec = require("plugins"),
-    lockfile = vim.fn.stdpath("config") .. "/config/lazy-lock.json",
+    spec = { { import = "plugins" } },
     install = { missing = true, colorscheme = { "habamax" } },
     checker = { enabled = true, notify = false },
 
