@@ -8,15 +8,18 @@ return {
         "hrsh7th/cmp-path",
         { "windwp/nvim-autopairs", opts = {} },
     },
-    config = function()
+    opts = function()
         local cmp = require('cmp')
-        local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-        local winhighlight = "Normal:#51A266,NormalNC:#0C0C0C"
-
-        cmp.setup({
+        return {
             window = {
-                completion = cmp.config.window.bordered(winhighlight),
-                documentation = cmp.config.window.bordered(winhighlight),
+                completion = {
+                    border = "rounded",
+                    winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel",
+                },
+                documentation = {
+                    border = "rounded",
+                    winhighlight = "Normal:CmpDoc,FloatBorder:CmpBorder",
+                },
             },
             mapping = cmp.mapping.preset.insert({
                 ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -36,8 +39,13 @@ return {
             }, { { name = 'buffer' } }
             ),
             experimental = { ghost_text = true },
-        })
+        }
+    end,
+    config = function(_, opts)
+        local cmp = require('cmp')
+        local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
+        cmp.setup(opts)
         -- Set configuration for specific filetype.
         cmp.setup.filetype('gitcommit', {
             sources = cmp.config.sources({
