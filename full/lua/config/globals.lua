@@ -97,6 +97,13 @@ api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- Temporary shim needed for academic.nvim and nvim-ts-autotag
+vim.fn["spellfile#WritableSpellDir"] = function()
+    local dir = vim.fn.stdpath("data") .. "/site/spell"
+    vim.fn.mkdir(dir, "p")
+    return dir
+end
+
 -- Ensure that the binary spl file is up-to-date with the source add file
 vim.api.nvim_create_autocmd("BufEnter", {
     pattern = "*",
