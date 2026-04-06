@@ -1,8 +1,11 @@
 return {
     "SirVer/ultisnips",
     init = function()
-        vim.g.UltiSnipsSnippetDirectories = {
+        local g = vim.g
+        g.UltiSnipsSnippetDirectories = {
             "my-snippets", "UltiSnips"
         }
+        g.UltiSnipsExpandOrJumpTrigger = '<tab>'
+        g.UltiSnipsJumpBackwardTrigger = '<s-tab>'
     end,
 }

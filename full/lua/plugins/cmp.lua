@@ -1,10 +1,6 @@
 return {
     "hrsh7th/nvim-cmp", -- For LSP completion
     event = "InsertEnter",
-    init = function()
-        vim.g.UltiSnipsExpandOrJumpTrigger = '<tab>'
-        vim.g.UltiSnipsJumpBackwardTrigger = '<s-tab>'
-    end,
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
