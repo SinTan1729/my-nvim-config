@@ -40,9 +40,9 @@ dr_map('n', '<leader>c', '"_c', { remap = false, desc = 'Replace without putting
 map('n', '<leader>y', '"+y', { remap = false, desc = 'Copy to system clipboard' })
 map('n', '<leader>p', '"+p', { remap = false, desc = 'Paste from system clipboard' })
 
-map('n', '<leader>o', ":<c-u>call append(line('.'), repeat([''], v:count1))<cr>",
+dr_map('n', '<leader>o', ":<c-u>call append(line('.'), repeat([''], v:count1))<cr>",
     { remap = false, desc = 'Insert a newline below' })
-map('n', '<leader>O', ":<c-u>call append(line('.')-1, repeat([''], v:count1))<cr>",
+dr_map('n', '<leader>O', ":<c-u>call append(line('.')-1, repeat([''], v:count1))<cr>",
     { remap = false, desc = 'Insert a newline above' })
 
 -- Browser like keymaps

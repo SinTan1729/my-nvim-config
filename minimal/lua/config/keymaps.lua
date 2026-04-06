@@ -32,9 +32,9 @@ dr_map('n', '<leader>D', '"_D', { remap = false, desc = 'Delete rest of line wit
 dr_map('n', '<leader>x', '"_x', { remap = false, desc = 'Delete character without putting into buffer' })
 dr_map('n', '<leader>c', '"_c', { remap = false, desc = 'Replace without putting into buffer' })
 
-map('n', '<leader>o', ":<c-u>call append(line('.'), repeat([''], v:count1))<cr>",
+dr_map('n', '<leader>o', ":<c-u>call append(line('.'), repeat([''], v:count1))<cr>",
     { remap = false, desc = 'Insert a newline below' })
-map('n', '<leader>O', ":<c-u>call append(line('.')-1, repeat([''], v:count1))<cr>",
+dr_map('n', '<leader>O', ":<c-u>call append(line('.')-1, repeat([''], v:count1))<cr>",
     { remap = false, desc = 'Insert a newline above' })
 
 -- Browser like keymaps

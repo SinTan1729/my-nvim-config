@@ -1,5 +1,13 @@
 return {
     "neovim/nvim-lspconfig",
+    dependencies = {
+        { "smjonas/inc-rename.nvim", opts = {} },
+        {
+            "felpafel/inlay-hint.nvim",
+            event = "LspAttach",
+            config = true,
+        },
+    },
     config = function()
         local map = vim.keymap.set
         local lsp = vim.lsp

@@ -3,6 +3,8 @@ return {
     build        = ":TSUpdate",
     lazy         = false,
     dependencies = {
+        { "kylechui/nvim-surround", opts = {} },
+        "hiphish/rainbow-delimiters.nvim",
         "nvim-treesitter/nvim-treesitter-textobjects",
         init = function()
             vim.g.no_plugin_maps = true
