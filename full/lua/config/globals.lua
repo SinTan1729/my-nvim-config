@@ -56,8 +56,6 @@ set.spell = true
 set.mouse = 'n'
 -- Enable programming dictionary
 set.spelllang = { "en" }
--- The custom dicts are not committed to the GitHub repo for obvious reasons
-set.spellfile = fn.stdpath("config") .. "/dicts/custom-dict.utf-8.add"
 
 -- Disable unused plugins
 g.loaded_perl_provider = 0
@@ -97,29 +95,33 @@ api.nvim_create_autocmd("FileType", {
     end,
 })
 
+local spell_dir = vim.fn.stdpath("data") .. "/site/spell"
 -- Temporary shim needed for academic.nvim and nvim-ts-autotag
 vim.fn["spellfile#WritableSpellDir"] = function()
-    local dir = vim.fn.stdpath("data") .. "/site/spell"
-    vim.fn.mkdir(dir, "p")
-    return dir
+    vim.fn.mkdir(spell_dir, "p")
+    return spell_dir
 end
 
--- Ensure that the binary spl file is up-to-date with the source add file
-vim.api.nvim_create_autocmd("BufEnter", {
+-- Auto compile custom dictionaries and load them
+vim.api.nvim_create_autocmd("VimEnter", {
     pattern = "*",
     callback = function()
-        local config_path = vim.fn.stdpath("config") -- Get Neovim's config path
-        local add_file = config_path .. "/config/custom-dict.utf-8.add"
-        local spl_file = config_path .. "/config/custom-dict.utf-8.add.spl"
+        local dict_dir = vim.fn.stdpath("config") .. "/spell"
+        local files = vim.fn.glob(dict_dir .. "/*.utf-8.add", false, true)
+        for _, file in ipairs(files) do
+            local name = file:match(".*/([a-z%-]+)%.utf%-8%.add$")
+            local spl = spell_dir .. "/" .. name .. "utf-8.spl"
+            local add = dict_dir .. "/" .. name .. ".utf-8.add"
 
-        if vim.fn.filereadable(add_file) == 1 then
-            local add_mtime = vim.fn.getftime(add_file) -- Get modification time of .add file
-            local spl_mtime = vim.fn.getftime(spl_file) -- Get modification time of .add.spl file
+            local add_time = vim.fn.getftime(file)
+            local spl_time = vim.fn.getftime(spl)
 
-            -- Run mkspell! only if .add is newer than .add.spl or .add.spl doesn't exist
-            if (add_mtime > spl_mtime) or (spl_mtime == -1) then
-                vim.cmd("silent! mkspell! " .. spl_file .. " " .. add_file)
+            if vim.fn.filereadable(add) == 1
+                and (spl_time == -1 or add_time > spl_time)
+            then
+                vim.cmd("silent! mkspell! " .. spell_dir .. "/" .. name .. " " .. add)
             end
+            set.spelllang:append(name)
         end
     end,
 })

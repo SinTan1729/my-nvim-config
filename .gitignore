@@ -1,5 +1,3 @@
 # Ignore some files
-dicts/
+spell/
 *.sh
-*.add
-*.add.spl
