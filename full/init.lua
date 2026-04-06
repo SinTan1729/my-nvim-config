@@ -1,9 +1,6 @@
--- Load the different config files
-package.path = vim.fn.stdpath("config") .. "/config/?.lua" .. ';' .. package.path
-
 -- Load global configs
-require("globals")
--- Load plugins using lazy.nvim
-require("plugins")
+require("config.globals")
 -- Load keymaps
-require("keymaps")
+require("config.keymaps")
+-- Load plugins using lazy.nvim
+require("config.lazy")

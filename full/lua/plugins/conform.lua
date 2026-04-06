@@ -1,0 +1,51 @@
+return {
+    "stevearc/conform.nvim",
+    opts = function()
+        local slow_format_filetypes = { "tex" }
+        return {
+            formatters_by_ft = {
+                tex = { "latexindent" },
+                javascript = { "prettier" },
+                html = { "prettier" },
+                css = { "prettier" },
+                json = { "prettier" },
+                markdown = { "prettier" },
+                yaml = { "prettier" },
+            },
+
+            format_on_save = function(bufnr)
+                if slow_format_filetypes[vim.bo[bufnr].filetype] then
+                    return
+                end
+                local function on_format(err)
+                    if err and err:match("timeout$") then
+                        slow_format_filetypes[vim.bo[bufnr].filetype] = true
+                    end
+                end
+
+                return { timeout_ms = 200, lsp_fallback = true }, on_format
+            end,
+
+            format_after_save = function(bufnr)
+                if not slow_format_filetypes[vim.bo[bufnr].filetype] then
+                    return
+                end
+                return { lsp_fallback = true }
+            end,
+        }
+    end,
+    config = function(_, opts)
+        local cnf = require("conform")
+
+        -- Setup autoformat on save, with async for slow formatters
+        cnf.setup(opts)
+
+        cnf.formatters.latexindent = {
+            -- command = "/usr/bin/latexindent",
+            prepend_args = { "-g", "/dev/null" }, -- Do not create an indent.log file
+            range_args = function(ctx)
+                return { "--lines", ctx.range.start[1] .. "-" .. ctx.range["end"][1] }
+            end,
+        }
+    end,
+}

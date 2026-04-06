@@ -1,8 +1,7 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    lazy = false,
-    branch = "main",
+    build        = ":TSUpdate",
+    lazy         = false,
     dependencies = {
         "nvim-treesitter/nvim-treesitter-textobjects",
         init = function()
@@ -13,12 +12,13 @@ return {
             move = { set_jumps = true },
         },
     },
-    config = function()
+    config       = function()
         local ts = require("nvim-treesitter")
         local map = vim.keymap.set
 
-        local ts_filetypes = { "lua", "vim", "vimdoc", "yaml", "dockerfile",
-            "bash", "json", "python", "fish", "diff" }
+        local ts_filetypes = { "rust", "lua", "vim", "vimdoc", "ocaml",
+            "yaml", "dockerfile", "bash", "html", "javascript", "css", "go",
+            "json", "python", "fish", "haskell", "diff" }
 
         ts.install(ts_filetypes):wait(60000)
 
