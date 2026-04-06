@@ -1,6 +1,5 @@
 # Ignore some files
-lazy-lock.json
-dict/
+dicts/
 *.sh
 *.add
 *.add.spl

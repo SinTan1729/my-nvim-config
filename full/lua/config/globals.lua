@@ -56,6 +56,7 @@ set.spell = true
 set.mouse = 'n'
 -- Enable programming dictionary
 set.spelllang = { "en" }
+-- The custom dicts are not committed to the GitHub repo for obvious reasons
 set.spellfile = fn.stdpath("config") .. "/dicts/custom-dict.utf-8.add"
 
 -- Disable unused plugins
