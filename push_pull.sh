@@ -2,11 +2,11 @@ DIR="$HOME/Code/git/my-nvim-config"
 
 if [ "$1" = "push" ]; then
     echo "Sending to laptop..."
-    rsync -aSXHhP --exclude={'*.md','*.sh','LICENSE','.git/'} "$DIR/" "$HOME/.config/nvim/" --delete-excluded
+    rsync -aSXHhP --exclude={'*.md','*.sh','LICENSE','.*'} "$DIR/" "$HOME/.config/nvim/" --delete-excluded
     for server in server vps pi3b pizero; do
         if ping -qc2 -W5 $server-ts >/dev/null; then
             echo "Sending to $server..."
-            rsync -aSXHhP --exclude={'*.md','*.sh','LICENSE','.git/','snips/','spell/'} "$DIR/" $server-ts-rsync:"~/.config/nvim/" --delete-excluded
+            rsync -aSXHhP --exclude={'*.md','*.sh','LICENSE','.*','snips/','spell/'} "$DIR/" $server-ts-rsync:"~/.config/nvim/" --delete-excluded
         else
             echo "Could not connect to $server!"
         fi
