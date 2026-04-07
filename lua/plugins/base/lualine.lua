@@ -15,7 +15,7 @@ return {
                 lualine_a = { 'buffers' },
                 lualine_b = {},
                 lualine_c = {},
-                lualine_x = { 'filename' },
+                lualine_x = { { "filename", path = 1 } },
                 lualine_y = {},
                 lualine_z = { counts },
             },

@@ -16,25 +16,11 @@ api.nvim_create_autocmd("UIEnter", {
     end,
 })
 
--- Turn on colors
-set.termguicolors = true
--- Turn on numbers
-set.number = true
--- Turn on line wrapping
-set.wrap = false
--- Disable cmdline from bottom
-set.cmdheight = 0
+-- Customize inccommand
 set.cmdwinheight = 10
 set.inccommand = 'split'
--- Ignore case while searching except when the search term contains capital letters
-set.ignorecase = true
-set.smartcase = true
 
--- Use 4 spaces and properly adjust them for files using TAB, with some exceptions
-set.expandtab = true
-set.tabstop = 4
-set.shiftwidth = 0
-set.softtabstop = -1
+-- Custom tab sizes for filetypes
 api.nvim_create_autocmd("FileType", {
     pattern = { "haskell", "javascript" },
     callback = function()
@@ -50,41 +36,9 @@ api.nvim_create_autocmd("FileType", {
 
 -- Show LSP signs in the number column
 set.signcolumn = 'number'
--- Turn on spell checking
-set.spell = true
--- Enable mouse support
-set.mouse = 'n'
--- Enable programming dictionary
-set.spelllang = { "en" }
-
--- Disable unused plugins
-g.loaded_perl_provider = 0
-g.loaded_node_provider = 0
-g.loaded_ruby_provider = 0
 
 -- Make nvim work nicely with python venvs
 g.python3_host_prog = fn.system("which -a python3 | head -n2 | tail -n1 | tr -d '[:space:]'")
-
--- Treat some files as systemd
-vim.filetype.add({
-    extension = {
-        caddy = 'caddy',
-        -- podman quadlets
-        container = 'systemd',
-        network = 'systemd',
-        pod = 'systemd',
-        kube = 'systemd',
-        volume = 'systemd',
-    },
-    filename = {
-        Caddyfile = 'caddy',
-    },
-    pattern = {
-        -- backup_script configs
-        ['${XDG_CONFIG_HOME}/backup_config/.*/.*%.entry'] = 'bash',
-        ['${XDG_CONFIG_HOME}/backup_config/.*/.*%.config'] = 'bash',
-    },
-})
 
 -- Auto wrap text in text-like files
 api.nvim_create_autocmd("FileType", {

@@ -1,6 +1,4 @@
 return {
-    -- Auto toggle for number mode when vim isn't focused
-    "sitiom/nvim-numbertoggle",
     -- LSP related plugins
     "nvim-lua/plenary.nvim",
     -- Support academic terms

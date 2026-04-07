@@ -13,17 +13,18 @@ return {
             move = { set_jumps = true },
         },
     },
-    config = function()
+    opts = {
+        ts_filetypes = { "lua", "vim", "vimdoc", "yaml", "dockerfile",
+            "bash", "json", "python", "fish", "diff" }
+    },
+    config = function(_, opts)
         local ts = require("nvim-treesitter")
         local map = vim.keymap.set
 
-        local ts_filetypes = { "lua", "vim", "vimdoc", "yaml", "dockerfile",
-            "bash", "json", "python", "fish", "diff" }
-
-        ts.install(ts_filetypes):wait(60000)
+        ts.install(opts.ts_filetypes):wait(60000)
 
         vim.api.nvim_create_autocmd('FileType', {
-            pattern = ts_filetypes,
+            pattern = opts.ts_filetypes,
             callback = function()
                 vim.treesitter.start()
                 vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"

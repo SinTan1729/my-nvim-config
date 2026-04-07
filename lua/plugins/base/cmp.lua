@@ -28,15 +28,10 @@ return {
                 -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
                 ['<CR>'] = cmp.mapping.confirm({ select = true }),
             }),
-            sources = cmp.config.sources({
-                { name = 'nvim_lsp' },
-                { name = "omni" },
-                -- { name = 'vsnip' }, -- For vsnip users.
-                -- { name = 'luasnip' }, -- For luasnip users.
-                { name = 'ultisnips' }, -- For ultisnips users.
-                -- { name = 'snippy' }, -- For snippy users.
-            }, { { name = 'buffer' } }
-            ),
+            sources = {
+                { { name = "omni" } },
+                { { name = 'buffer' } },
+            },
             experimental = { ghost_text = true },
         }
     end,
