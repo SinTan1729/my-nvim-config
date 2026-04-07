@@ -58,6 +58,21 @@ return {
                 },
             }
         })
+        -- Hack to make the diagnostics appear at launch
+        vim.api.nvim_create_autocmd("LspAttach", {
+            callback = function(args)
+                if vim.bo[args.buf].filetype ~= "lua" then return end
+                vim.defer_fn(function()
+                    local view = vim.fn.winsaveview()
+                    if vim.bo.modified then
+                        return
+                    end
+                    vim.cmd("silent keepjumps normal! >>")
+                    vim.cmd("silent keepjumps undo")
+                    vim.fn.winrestview(view)
+                end, 1000)
+            end,
+        })
 
         -- Misc
         lsp.enable({ 'bashls', 'gopls', 'hls' })
