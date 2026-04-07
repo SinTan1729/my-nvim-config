@@ -1,11 +1,15 @@
--- Load base configs
-require("config.base.globals")
-require("config.base.keymaps")
+local configs = { "globals", "keymaps" }
+
+-- Load core configs
+for _, config in ipairs(configs) do
+    require("config.core." .. config)
+end
 
 -- Optionally load extra configs
 if os.getenv("NVIM_CONFIG_MODE") == "full" then
-    require("config.extra.globals")
-    require("config.extra.keymaps")
+    for _, config in ipairs(configs) do
+        require("config.extra." .. config)
+    end
 end
 
 -- Load plugins using lazy.nvim
