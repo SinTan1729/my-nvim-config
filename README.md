@@ -15,7 +15,7 @@ Feel free to use it as a baseline for your personal [neovim](https://neovim.io) 
    prefer having control over which binaries are in my system. So, the following binaries must be installed
    manually for it to work.
    ```
-   ty, ruff, luals, gopls, hls, clippy, bashls
+   ty, ruff, luals, gopls, hls, clippy, bashls, fish-lsp
    ```
 1. In the `extra` config, `vimtex` assumes that packages related to compiling and editing LaTeX files are installed
    in your system. Please take a look at its documentation to figure out the details.

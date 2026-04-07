@@ -74,6 +74,6 @@ return {
         })
 
         -- Misc
-        lsp.enable({ 'bashls', 'gopls', 'hls' })
+        lsp.enable({ 'bashls', 'fish_lsp', 'gopls', 'hls' })
     end,
 }
