@@ -36,7 +36,6 @@ return {
             end,
         })
 
-
         -- Python
         lsp.enable('ty')
         lsp_config('ruff', {
