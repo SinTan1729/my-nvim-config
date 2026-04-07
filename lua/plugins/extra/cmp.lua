@@ -7,6 +7,7 @@ return {
         "quangnguyen30192/cmp-nvim-ultisnips",
     },
     opts = function(_, opts)
+        local cmp = require("cmp") ---@type any
         -- Add snippet support
         opts.snippet = {
             expand = function(args)
@@ -16,7 +17,7 @@ return {
 
         -- Override sources, merging is more hassle that it's worth
         -- rebuild sources cleanly
-        opts.sources = {
+        opts.sources = cmp.config.sources(
             {
                 { name = "nvim_lsp" },
                 { name = "omni" },
@@ -33,8 +34,8 @@ return {
                     },
                 }
             },
-            { { name = 'buffer' } },
-        }
+            { { name = 'buffer' } }
+        )
 
         return opts
     end,

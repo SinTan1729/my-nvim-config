@@ -10,6 +10,11 @@ return {
     opts = function()
         local cmp = require('cmp')
         return {
+            snippet = {
+                expand = function(args)
+                    vim.snippet.expand(args.body)
+                end,
+            },
             window = {
                 completion = {
                     border = "rounded",
@@ -28,10 +33,10 @@ return {
                 -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
                 ['<CR>'] = cmp.mapping.confirm({ select = true }),
             }),
-            sources = {
+            sources = cmp.config.sources(
                 { { name = "omni" } },
-                { { name = 'buffer' } },
-            },
+                { { name = 'buffer' } }
+            ),
             experimental = { ghost_text = true },
         }
     end,
