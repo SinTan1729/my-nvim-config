@@ -1,4 +1,4 @@
-local configs = { "globals", "keymaps" }
+local configs = { "autocmds", "globals", "keymaps" }
 local load_extras = os.getenv("NVIM_CONFIG_MODE") == "full"
 
 for _, config in ipairs(configs) do
