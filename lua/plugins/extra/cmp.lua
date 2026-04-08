@@ -16,7 +16,6 @@ return {
         }
 
         -- Override sources, merging is more hassle that it's worth
-        -- rebuild sources cleanly
         opts.sources = cmp.config.sources(
             {
                 { name = "nvim_lsp" },
