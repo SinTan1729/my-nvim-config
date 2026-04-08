@@ -1,6 +1,6 @@
 return {
     -- LSP related plugins
-    { "nvim-lua/plenary.nvim" },
+    { "nvim-lua/plenary.nvim",      lazy = true },
     -- Support academic terms
     { "ficcdaf/academic.nvim",      build = ":AcademicBuild" },
     -- Formatter
