@@ -1,8 +1,11 @@
 DIR="$HOME/Code/git/my-nvim-config"
 
+set -e
+
 if [ "$1" = "push" ]; then
     echo "Sending to laptop..."
     rsync -achP --exclude={'*.md','*.sh','LICENSE','.*'} "$DIR/" "$HOME/.config/nvim/" --delete-excluded
+    [ "$2" = "laptop-only" ] && exit
     for server in server vps pi3b pizero; do
         if ping -qc2 -W5 $server-ts >/dev/null; then
             echo "Sending to $server..."
