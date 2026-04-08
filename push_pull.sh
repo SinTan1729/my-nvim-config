@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 DIR="$HOME/Code/git/my-nvim-config"
 
 set -e
