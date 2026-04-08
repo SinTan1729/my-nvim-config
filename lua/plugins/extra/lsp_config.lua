@@ -1,7 +1,8 @@
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
-        { "smjonas/inc-rename.nvim", opts = {} },
+        { "smjonas/inc-rename.nvim",     opts = {} },
+        { "aznhe21/actions-preview.nvim" },
         {
             "felpafel/inlay-hint.nvim",
             event = "LspAttach",

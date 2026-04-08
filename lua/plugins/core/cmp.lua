@@ -2,9 +2,9 @@ return {
     "hrsh7th/nvim-cmp", -- For LSP completion
     event = "InsertEnter",
     dependencies = {
-        "hrsh7th/cmp-cmdline",
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/cmp-path",
+        { "hrsh7th/cmp-cmdline" },
+        { "hrsh7th/cmp-buffer" },
+        { "hrsh7th/cmp-path" },
         { "windwp/nvim-autopairs", opts = {} },
     },
     opts = function()

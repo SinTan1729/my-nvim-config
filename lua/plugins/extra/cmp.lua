@@ -1,10 +1,10 @@
 return {
     "hrsh7th/nvim-cmp",
     dependencies = {
-        "hrsh7th/cmp-nvim-lsp",
-        "micangl/cmp-vimtex",
-        "f3fora/cmp-spell",
-        "quangnguyen30192/cmp-nvim-ultisnips",
+        { "hrsh7th/cmp-nvim-lsp" },
+        { "micangl/cmp-vimtex" },
+        { "f3fora/cmp-spell" },
+        { "quangnguyen30192/cmp-nvim-ultisnips" },
     },
     opts = function(_, opts)
         local cmp = require("cmp") ---@type any
