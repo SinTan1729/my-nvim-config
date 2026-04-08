@@ -2,7 +2,7 @@
 vim.pack.add({ 'https://github.com/zuqini/zpack.nvim' })
 
 
--- Load plugins via lazy.nvim
+-- Load plugins via zpack.nvim
 require("zpack").setup({
     spec = {
         { import = "plugins.core" },
