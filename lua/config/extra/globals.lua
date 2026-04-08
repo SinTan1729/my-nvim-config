@@ -5,29 +5,20 @@ local g = vim.g
 local fn = vim.fn
 local api = vim.api
 
--- Open stuff inside tab
-api.nvim_create_autocmd("UIEnter", {
-    callback = function()
-        if fn.argc() > 1 and fn.has("stdin") == 0 then
-            vim.schedule(function()
-                vim.cmd("tab all")
-            end)
-        end
-    end,
-})
-
 -- Customize inccommand
 set.cmdwinheight = 10
 set.inccommand = 'split'
 
 -- Custom tab sizes for filetypes
 api.nvim_create_autocmd("FileType", {
+    desc = "Haskell and JS should have 2 space tabs",
     pattern = { "haskell", "javascript" },
     callback = function()
         set_l.tabstop = 2
     end,
 })
 api.nvim_create_autocmd("FileType", {
+    desc = "Do not expand tabs using saces inside Makefiles",
     pattern = "make",
     callback = function()
         set_l.expandtab = false
@@ -40,8 +31,8 @@ set.signcolumn = 'number'
 -- Make nvim work nicely with python venvs
 g.python3_host_prog = fn.system("which -a python3 | head -n2 | tail -n1 | tr -d '[:space:]'")
 
--- Auto wrap text in text-like files
 api.nvim_create_autocmd("FileType", {
+    desc = "Auto wrap text in tex-like files",
     pattern = { "text", "markdown", "tex" },
     callback = function()
         set_l.textwidth = 140
@@ -56,8 +47,8 @@ vim.fn["spellfile#WritableSpellDir"] = function()
     return spell_dir
 end
 
--- Auto compile custom dictionaries and load them
 vim.api.nvim_create_autocmd("VimEnter", {
+    desc = "Auto compile and load custom dictionaries",
     pattern = "*",
     callback = function()
         local dict_dir = vim.fn.stdpath("config") .. "/spell"
