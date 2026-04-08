@@ -21,7 +21,7 @@ api.nvim_create_autocmd("TextYankPost", {
 })
 
 api.nvim_create_autocmd("BufReadPost", {
-    desc = "Go to last loc when opening a buffer",
+    desc = "Go to last location when opening a buffer",
     callback = function()
         local mark = api.nvim_buf_get_mark(0, '"')
         local lcount = api.nvim_buf_line_count(0)
