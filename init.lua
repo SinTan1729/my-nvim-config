@@ -10,5 +10,5 @@ for _, config in ipairs(configs) do
     end
 end
 
--- Load plugins using lazy.nvim
+-- Load plugins using zpack.nvim
 require("config.zpack")
