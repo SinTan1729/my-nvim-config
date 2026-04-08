@@ -24,6 +24,7 @@ return {
         ts.install(opts.ts_filetypes):wait(60000)
 
         vim.api.nvim_create_autocmd('FileType', {
+            desc = "Configure treesitter based movements",
             pattern = opts.ts_filetypes,
             callback = function()
                 vim.treesitter.start()

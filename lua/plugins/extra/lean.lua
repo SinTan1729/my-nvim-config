@@ -15,8 +15,8 @@ return {
             on_attach = on_attach,
         })
 
-        -- Enable virtual text for Lean
         vim.api.nvim_create_autocmd("LspAttach", {
+            desc = "Enable virtual text for Lean",
             pattern = "*.lean",
             callback = function()
                 vim.diagnostic.config({ virtual_text = true })
