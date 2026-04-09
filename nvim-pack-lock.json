@@ -151,7 +151,7 @@
       "src": "https://github.com/lervag/vimtex"
     },
     "zpack.nvim": {
-      "rev": "a782b9dffd22e0465f93bb541f75d9fd536338dd",
+      "rev": "7ea1529ba20e0b9a8a1f4f976926a1500d542f4e",
       "src": "https://github.com/zuqini/zpack.nvim"
     },
     "zshow.nvim": {
