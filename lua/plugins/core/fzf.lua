@@ -15,5 +15,7 @@ return {
         fzf.setup(opts)
         -- Setup the familiar fzf.nvim commands
         fzf.setup_fzfvim_cmds()
+        vim.keymap.set('n', '<leader>f', fzf.files,
+            { remap = false, silent = true, desc = 'Find files using fzf' })
     end,
 }
