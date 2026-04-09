@@ -1,5 +1,4 @@
 -- This fine defines all the global auto-commands
-local fn = vim.fn
 local api = vim.api
 local set_l = vim.opt_local
 local set = vim.opt
