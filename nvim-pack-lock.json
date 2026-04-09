@@ -155,7 +155,7 @@
       "src": "https://github.com/zuqini/zpack.nvim"
     },
     "zshow.nvim": {
-      "rev": "993b3ae73dc36e22055c115b925cad37d33df0e1",
+      "rev": "5ba379e82a2bbb56c3ea5709b56523171b006c99",
       "src": "https://github.com/sairyy/zshow.nvim"
     }
   }
