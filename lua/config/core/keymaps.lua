@@ -50,4 +50,3 @@ map('n', '<leader>S', ':x<cr>', { remap = false, desc = 'Save current file and e
 
 map('n', '<leader>u', '<c-r>', { remap = false, desc = 'Redo' })
 map('n', '<Esc>', ':noh<cr>', { remap = false, desc = 'Remove search highlights' })
-map('n', '<leader>f', ':Files<cr>', { remap = false, silent = true, desc = 'Find files using fzf' })
