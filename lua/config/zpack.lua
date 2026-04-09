@@ -1,14 +1,13 @@
 -- Install zpack with vim.pack directly
 vim.pack.add({ 'https://github.com/zuqini/zpack.nvim' })
 
-
 -- Load plugins via zpack.nvim
-require("zpack").setup({
+require('zpack').setup({
     spec = {
-        { import = "plugins.core" },
+        { import = 'plugins.core' },
         {
-            import = "plugins.extra",
-            enabled = os.getenv("NVIM_CONFIG_MODE") == "full"
+            import = 'plugins.extra',
+            enabled = os.getenv('NVIM_CONFIG_MODE') == 'full'
         }
     },
 })

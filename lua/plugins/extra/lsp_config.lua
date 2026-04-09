@@ -1,11 +1,11 @@
 return {
-    "neovim/nvim-lspconfig",
+    'neovim/nvim-lspconfig',
     dependencies = {
-        { "smjonas/inc-rename.nvim",     opts = {} },
-        { "aznhe21/actions-preview.nvim" },
+        { 'smjonas/inc-rename.nvim',     opts = {} },
+        { 'aznhe21/actions-preview.nvim' },
         {
-            "felpafel/inlay-hint.nvim",
-            event = "LspAttach",
+            'felpafel/inlay-hint.nvim',
+            event = 'LspAttach',
             config = true,
         },
     },
@@ -19,12 +19,12 @@ return {
             lsp.enable(server)
         end
 
-        vim.api.nvim_create_autocmd("LspAttach", {
-            desc = "Configure LSP based movements",
+        vim.api.nvim_create_autocmd('LspAttach', {
+            desc = 'Configure LSP based movements',
             callback = function()
                 lsp.inlay_hint.enable(true)
                 map('n', '<localleader>k', lsp.buf.hover, { remap = false, desc = 'Hover using LSP' })
-                map({ 'v', 'n' }, '<localleader>a', require("actions-preview").code_actions,
+                map({ 'v', 'n' }, '<localleader>a', require('actions-preview').code_actions,
                     { remap = false, desc = 'Preview LSP actions' })
                 map('n', '<localleader>f', lsp.buf.definition, { remap = false, desc = 'Jump to definition' })
                 map('n', '<localleader>d', vim.diagnostic.open_float,
@@ -33,7 +33,7 @@ return {
                     { remap = false, desc = 'Go to next diagnostic message' })
                 map('n', '<localleader>N', vim.diagnostic.goto_prev,
                     { remap = false, desc = 'Go to previous diagnostic message' })
-                map("n", "<leader>r", function() return ":IncRename " .. vim.fn.expand("<cword>") end,
+                map('n', '<leader>r', function() return ':IncRename ' .. vim.fn.expand('<cword>') end,
                     { remap = false, expr = true, desc = 'Rename variable using LSP' })
             end,
         })
@@ -50,8 +50,8 @@ return {
 
         -- Lua
         lsp_config('luals', {
-            cmd = { "lua-language-server" },
-            filetypes = { "lua" },
+            cmd = { 'lua-language-server' },
+            filetypes = { 'lua' },
             settings = {
                 Lua = {
                     diagnostics = { globals = { 'vim' } },
@@ -59,17 +59,17 @@ return {
                 },
             }
         })
-        vim.api.nvim_create_autocmd("LspAttach", {
-            desc = "Hack to make the diagnostics appear at launch",
+        vim.api.nvim_create_autocmd('LspAttach', {
+            desc = 'Hack to make the diagnostics appear at launch',
             callback = function(args)
-                if vim.bo[args.buf].filetype ~= "lua" then return end
+                if vim.bo[args.buf].filetype ~= 'lua' then return end
                 vim.defer_fn(function()
                     local view = vim.fn.winsaveview()
                     if vim.bo.modified then
                         return
                     end
-                    vim.cmd("silent keepjumps normal! >>")
-                    vim.cmd("silent keepjumps undo")
+                    vim.cmd('silent keepjumps normal! >>')
+                    vim.cmd('silent keepjumps undo')
                     vim.fn.winrestview(view)
                 end, 1000)
             end,

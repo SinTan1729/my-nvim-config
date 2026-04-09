@@ -1,6 +1,6 @@
 return {
-    "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = function()
         local counts = function()
             local lc = vim.fn.line('$')
@@ -15,7 +15,7 @@ return {
                 lualine_a = { 'buffers' },
                 lualine_b = {},
                 lualine_c = {},
-                lualine_x = { { "filename", path = 1 } },
+                lualine_x = { { 'filename', path = 1 } },
                 lualine_y = {},
                 lualine_z = { counts },
             },
@@ -30,11 +30,11 @@ return {
         }
     end,
     config = function(_, opts)
-        require("lualine").setup(opts)
-        vim.api.nvim_create_autocmd("User", {
-            desc = "Update lualine progress",
-            pattern = "LspProgressStatusUpdated",
-            callback = require("lualine").refresh,
+        require('lualine').setup(opts)
+        vim.api.nvim_create_autocmd('User', {
+            desc = 'Update lualine progress',
+            pattern = 'LspProgressStatusUpdated',
+            callback = require('lualine').refresh,
         })
     end,
 }

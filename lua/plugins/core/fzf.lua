@@ -1,7 +1,7 @@
 return {
-    "ibhagwan/fzf-lua",
+    'ibhagwan/fzf-lua',
     opts = function()
-        local fzf = require("fzf-lua")
+        local fzf = require('fzf-lua')
         return {
             actions = {
                 files = {
@@ -11,7 +11,7 @@ return {
         }
     end,
     config = function(_, opts)
-        local fzf = require("fzf-lua")
+        local fzf = require('fzf-lua')
         fzf.setup(opts)
         -- Setup the familiar fzf.nvim commands
         fzf.setup_fzfvim_cmds()

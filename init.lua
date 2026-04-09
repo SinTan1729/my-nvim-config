@@ -1,14 +1,14 @@
-local configs = { "autocmds", "globals", "keymaps" }
-local load_extras = os.getenv("NVIM_CONFIG_MODE") == "full"
+local configs = { 'autocmds', 'globals', 'keymaps' }
+local load_extras = os.getenv('NVIM_CONFIG_MODE') == 'full'
 
 for _, config in ipairs(configs) do
     -- Load core configs
-    require("config.core." .. config)
+    require('config.core.' .. config)
     -- Optionally load extra configs
     if load_extras then
-        require("config.extra." .. config)
+        require('config.extra.' .. config)
     end
 end
 
 -- Load plugins using zpack.nvim
-require("config.zpack")
+require('config.zpack')
