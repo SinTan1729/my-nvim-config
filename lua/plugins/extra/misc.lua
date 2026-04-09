@@ -1,14 +1,14 @@
 return {
     -- LSP related plugins
-    { "nvim-lua/plenary.nvim",      lazy = true },
+    { 'nvim-lua/plenary.nvim',      lazy = true },
     -- Support academic terms
-    { "ficcdaf/academic.nvim",      build = ":AcademicBuild" },
+    { 'ficcdaf/academic.nvim',      build = ':AcademicBuild' },
     -- Formatter
-    { "fei6409/log-highlight.nvim", opts = {} },
+    { 'fei6409/log-highlight.nvim', opts = {} },
     {
-        "aznhe21/actions-preview.nvim",
+        'aznhe21/actions-preview.nvim',
         dependencies = {
-            "folke/snacks.nvim",
+            'folke/snacks.nvim',
             priority = 1000,
             lazy = false,
             opts = {
@@ -17,8 +17,8 @@ return {
                 dashboard = {
                     enabled = true,
                     sections = {
-                        { section = "header" },
-                        { section = "keys",  gap = 1, padding = 1 },
+                        { section = 'header' },
+                        { section = 'keys',  gap = 1, padding = 1 },
                     },
                 },
             },

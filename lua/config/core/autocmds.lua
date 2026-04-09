@@ -2,26 +2,26 @@
 local fn = vim.fn
 local api = vim.api
 
-api.nvim_create_autocmd("UIEnter", {
-    desc = "Open stuff inside tabs",
+api.nvim_create_autocmd('UIEnter', {
+    desc = 'Open stuff inside tabs',
     callback = function()
-        if fn.argc() > 1 and fn.has("stdin") == 0 then
+        if fn.argc() > 1 and fn.has('stdin') == 0 then
             vim.schedule(function()
-                vim.cmd("tab all")
+                vim.cmd('tab all')
             end)
         end
     end,
 })
 
-api.nvim_create_autocmd("TextYankPost", {
-    desc = "Highlight on yank",
+api.nvim_create_autocmd('TextYankPost', {
+    desc = 'Highlight on yank',
     callback = function()
         vim.highlight.on_yank({ timeout = 125 })
     end,
 })
 
-api.nvim_create_autocmd("BufReadPost", {
-    desc = "Go to last location when opening a buffer",
+api.nvim_create_autocmd('BufReadPost', {
+    desc = 'Go to last location when opening a buffer',
     callback = function()
         local mark = api.nvim_buf_get_mark(0, '"')
         local lcount = api.nvim_buf_line_count(0)

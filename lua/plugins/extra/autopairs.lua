@@ -1,8 +1,8 @@
 return {
-    "windwp/nvim-autopairs",
+    'windwp/nvim-autopairs',
     dependencies = {
         {
-            "windwp/nvim-ts-autotag",
+            'windwp/nvim-ts-autotag',
             opts = {
                 enable_close = true,          -- Auto close tags
                 enable_rename = true,         -- Auto rename pairs of tags
@@ -18,7 +18,7 @@ return {
     },
     opts = {
         -- will ignore alphanumeric and `.` symbol
-        ignored_next_char = "[%w%.]",
+        ignored_next_char = '[%w%.]',
     },
     config = function(_, opts)
         local Rule = require('nvim-autopairs.rule')
@@ -28,11 +28,11 @@ return {
         npairs.setup(opts)
 
         npairs.add_rules({
-                Rule("\\(", "\\)", { "tex", "latex" }),
-                Rule("\\[", "\\]", { "tex", "latex" }),
+                Rule('\\(', '\\)', { 'tex', 'latex' }),
+                Rule('\\[', '\\]', { 'tex', 'latex' }),
             },
             -- disable for .vim files, but it work for another filetypes
-            Rule("a", "a", "-vim")
+            Rule('a', 'a', '-vim')
         )
 
         -- Add spaces between brackets
@@ -79,7 +79,7 @@ return {
 
         -- Add space around =
         npairs.add_rules {
-            Rule('=', '', { "-tex", "-vim", "-sh", "-dockerfile", "-make", "-html", "-systemd" })
+            Rule('=', '', { '-tex', '-vim', '-sh', '-dockerfile', '-make', '-html', '-systemd' })
                 :with_pair(cond.not_inside_quote())
                 :with_pair(function(opts1)
                     local last_char = opts1.line:sub(opts1.col - 1, opts1.col - 1)

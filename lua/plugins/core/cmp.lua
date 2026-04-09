@@ -1,11 +1,11 @@
 return {
-    "hrsh7th/nvim-cmp", -- For LSP completion
-    event = "InsertEnter",
+    'hrsh7th/nvim-cmp', -- For LSP completion
+    event = 'InsertEnter',
     dependencies = {
-        { "hrsh7th/cmp-cmdline" },
-        { "hrsh7th/cmp-buffer" },
-        { "hrsh7th/cmp-path" },
-        { "windwp/nvim-autopairs", opts = {} },
+        { 'hrsh7th/cmp-cmdline' },
+        { 'hrsh7th/cmp-buffer' },
+        { 'hrsh7th/cmp-path' },
+        { 'windwp/nvim-autopairs', opts = {} },
     },
     opts = function()
         local cmp = require('cmp')
@@ -17,12 +17,12 @@ return {
             },
             window = {
                 completion = {
-                    border = "rounded",
-                    winhighlight = "Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel",
+                    border = 'rounded',
+                    winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpBorder,CursorLine:PmenuSel',
                 },
                 documentation = {
-                    border = "rounded",
-                    winhighlight = "Normal:CmpDoc,FloatBorder:CmpBorder",
+                    border = 'rounded',
+                    winhighlight = 'Normal:CmpDoc,FloatBorder:CmpBorder',
                 },
             },
             mapping = cmp.mapping.preset.insert({
@@ -34,7 +34,7 @@ return {
                 ['<CR>'] = cmp.mapping.confirm({ select = true }),
             }),
             sources = cmp.config.sources(
-                { { name = "omni" } },
+                { { name = 'omni' } },
                 { { name = 'buffer' } }
             ),
             experimental = { ghost_text = true },

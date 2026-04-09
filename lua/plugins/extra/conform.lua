@@ -1,16 +1,16 @@
 return {
-    "stevearc/conform.nvim",
+    'stevearc/conform.nvim',
     opts = function()
-        local slow_format_filetypes = { "tex" }
+        local slow_format_filetypes = { 'tex' }
         return {
             formatters_by_ft = {
-                tex = { "latexindent" },
-                javascript = { "prettier" },
-                html = { "prettier" },
-                css = { "prettier" },
-                json = { "prettier" },
-                markdown = { "prettier" },
-                yaml = { "prettier" },
+                tex = { 'latexindent' },
+                javascript = { 'prettier' },
+                html = { 'prettier' },
+                css = { 'prettier' },
+                json = { 'prettier' },
+                markdown = { 'prettier' },
+                yaml = { 'prettier' },
             },
 
             format_on_save = function(bufnr)
@@ -18,7 +18,7 @@ return {
                     return
                 end
                 local function on_format(err)
-                    if err and err:match("timeout$") then
+                    if err and err:match('timeout$') then
                         slow_format_filetypes[vim.bo[bufnr].filetype] = true
                     end
                 end
@@ -35,16 +35,16 @@ return {
         }
     end,
     config = function(_, opts)
-        local cnf = require("conform")
+        local cnf = require('conform')
 
         -- Setup autoformat on save, with async for slow formatters
         cnf.setup(opts)
 
         cnf.formatters.latexindent = {
-            -- command = "/usr/bin/latexindent",
-            prepend_args = { "-g", "/dev/null" }, -- Do not create an indent.log file
+            -- command = '/usr/bin/latexindent',
+            prepend_args = { '-g', '/dev/null' }, -- Do not create an indent.log file
             range_args = function(ctx)
-                return { "--lines", ctx.range.start[1] .. "-" .. ctx.range["end"][1] }
+                return { '--lines', ctx.range.start[1] .. '-' .. ctx.range['end'][1] }
             end,
         }
     end,
