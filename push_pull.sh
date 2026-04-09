@@ -11,8 +11,9 @@ if [ "$1" = "push" ]; then
     git reset --hard origin/private
     git clean -fd
     rm -f *.sh *md LICENSE
-    echo "Updating plugins in neovim..."
-    nvim --headless +ZRestore +w +ZClean +qa &>/dev/null
+    git log -1 --pretty=%B | grep -q 'chore: Updated nvim-pack-lock.json' &&
+        echo "Updating plugins in neovim..." &&
+        nvim --headless +ZRestore +w +ZClean +qa &>/dev/null
     for server in server vps pi3b pizero; do
         if ping -qc2 -W5 $server-ts >/dev/null; then
             echo "Sending to $server..."
@@ -23,8 +24,10 @@ if [ "$1" = "push" ]; then
                 git clean -fd
                 rm -rf snips
                 rm -f *md LICENSE
-                echo "Updating plugins in neovim..."
-                nvim --headless +ZRestore +w +ZClean +qa &>/dev/null
+                git log -1 --pretty=%B | grep -q 'chore: Updated nvim-pack-lock.json' &&
+                    echo "Updating plugins in neovim..." &&
+                    nvim --headless +ZRestore +w +ZClean +qa &>/dev/null
+                true
 EOF
         else
             echo "Could not connect to $server!"
