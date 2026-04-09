@@ -9,7 +9,7 @@
       "src": "https://github.com/ficcdaf/academic.nvim"
     },
     "actions-preview.nvim": {
-      "rev": "cb938c25edaac38d362555f19244a9cb85d561e8",
+      "rev": "2b604b2e8e662c03b716436f6ffebcb19663e66a",
       "src": "https://github.com/aznhe21/actions-preview.nvim"
     },
     "cmp-buffer": {
