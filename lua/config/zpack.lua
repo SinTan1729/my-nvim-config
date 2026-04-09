@@ -7,7 +7,7 @@ require('zpack').setup({
         { import = 'plugins.core' },
         {
             import = 'plugins.extra',
-            enabled = os.getenv('NVIM_CONFIG_MODE') == 'full'
+            enabled = os.getenv('NVIM_CONFIG_MODE') == 'full',
         }
     },
 })
