@@ -118,7 +118,7 @@
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "plenary.nvim": {
-      "rev": "b9fd5226c2f76c951fc8ed5923d85e4de065e509",
+      "rev": "fcb3e9ac127d178b4c189088396165b3facc219e",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "rainbow-delimiters.nvim": {
@@ -155,8 +155,8 @@
       "src": "https://github.com/zuqini/zpack.nvim"
     },
     "zshow.nvim": {
-      "rev": "5ba379e82a2bbb56c3ea5709b56523171b006c99",
-      "src": "https://github.com/sairyy/zshow.nvim"
+      "rev": "4ccb89a7fc38df7d5b340a31ac89b852fa67dc61",
+      "src": "https://github.com/SinTan1729/zshow.nvim"
     }
   }
 }
