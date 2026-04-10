@@ -1,17 +1,5 @@
 -- This fine defines all the global auto-commands
-local fn = vim.fn
 local api = vim.api
-
-api.nvim_create_autocmd('UIEnter', {
-    desc = 'Open stuff inside tabs',
-    callback = function()
-        if fn.argc() > 1 and fn.has('stdin') == 0 then
-            vim.schedule(function()
-                vim.cmd('tab all')
-            end)
-        end
-    end,
-})
 
 api.nvim_create_autocmd('TextYankPost', {
     desc = 'Highlight on yank',
