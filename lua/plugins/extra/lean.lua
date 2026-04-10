@@ -1,5 +1,6 @@
 return {
     'julian/lean.nvim',
+    ft = 'lean',
     opts = {
         mappings = true,
     },

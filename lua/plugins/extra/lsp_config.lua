@@ -79,5 +79,20 @@ return {
 
         -- Misc
         lsp.enable({ 'bashls', 'fish_lsp', 'gopls', 'hls' })
+
+        vim.api.nvim_create_autocmd('FileType', {
+            desc = 'Warn about failed LSP configs',
+            pattern = { 'lua', 'python', 'rust', 'fish', 'bash', 'sh', 'go', 'haskell', 'rust' },
+            callback = function(args)
+                local bufnr = args.buf
+
+                vim.defer_fn(function()
+                    local clients = vim.lsp.get_clients({ bufnr = bufnr })
+                    if #clients == 0 then
+                        vim.notify('No LSP attached (possible startup failure)', vim.log.levels.WARN)
+                    end
+                end, 2000)
+            end,
+        })
     end,
 }
