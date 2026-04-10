@@ -43,7 +43,7 @@ elif [ "$1" = "push-local" ]; then
 elif [ "$1" = "pull" ]; then
     echo "Pulling from laptop..."
     rsync -achP --delete \
-        --exclude='.git' \
+        --exclude='.git' --filter='P Makefile' \
         --filter='P *.sh' --filter='P *.md' \
         --filter='P LICENSE' --filter='P .*' \
         "$HOME/.config/nvim/" "$DIR/"
