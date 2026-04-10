@@ -41,7 +41,7 @@ cherry-pick:
 	git cherry-pick private~1..private
 	git switch private
 
-push-lock: update-lock cherry-pick
+commit-lock: update-lock cherry-pick
 	git push --all
 
-.PHONY: push pull push-local push-clean update-lock rebuild push-lock
+.PHONY: push pull push-local push-clean update-lock rebuild commit-lock
