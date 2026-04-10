@@ -6,7 +6,7 @@ local g = vim.g
 g.mapleader = ','
 g.maplocalleader = ';'
 
--- Make a dot-repeatable keymap
+-- Make a dot-repeabufferle keymap
 local function dr_map(mode, lhs, rhs, opts)
     opts = opts or {}
     opts.expr = true
@@ -38,11 +38,11 @@ dr_map('n', '<leader>O', ":<c-u>call append(line('.')-1, repeat([''], v:count1))
     { remap = false, desc = 'Insert a newline above' })
 
 -- Browser like keymaps
-map('n', '<leader>j', 'gT', { remap = false, desc = 'Go to previous tab' })
-map('n', '<leader>k', 'gt', { remap = false, desc = 'Go to next tab' })
-map('n', '<leader>w', ':bdelete<cr>', { remap = false, desc = 'Close tab' })
-map('n', '<leader>W', ':bdelete!<cr>', { remap = false, desc = 'Force close tab' })
-map('n', '<leader>t', ':tabnew<cr>', { remap = false, desc = 'Open tab' })
+map('n', '<leader>j', ':bprevious<cr>', { remap = false, desc = 'Go to previous buffer' })
+map('n', '<leader>k', ':bnext<cr>', { remap = false, desc = 'Go to next buffer' })
+map('n', '<leader>w', ':bdelete<cr>', { remap = false, desc = 'Close buffer' })
+map('n', '<leader>W', ':bdelete!<cr>', { remap = false, desc = 'Force close buffer' })
+map('n', '<leader>t', ':enew<cr>', { remap = false, desc = 'Open buffer' })
 map('n', '<leader>q', ':qa<cr>', { remap = false, desc = 'Close nvim' })
 map('n', '<leader>Q', ':qa!<cr>', { remap = false, desc = 'Force close nvim' })
 map('n', '<leader>s', ':w<cr>', { remap = false, desc = 'Save current file' })

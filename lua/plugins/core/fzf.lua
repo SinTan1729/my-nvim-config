@@ -5,17 +5,20 @@ return {
         return {
             actions = {
                 files = {
-                    ['default'] = fzf.actions.file_tabedit,
+                    ['default'] = fzf.actions.file_edit,
                 },
             },
         }
     end,
     config = function(_, opts)
         local fzf = require('fzf-lua')
+        local map = vim.keymap.set
         fzf.setup(opts)
         -- Setup the familiar fzf.nvim commands
         fzf.setup_fzfvim_cmds()
-        vim.keymap.set('n', '<leader>f', fzf.files,
+        map('n', '<leader>f', fzf.files,
             { remap = false, silent = true, desc = 'Find files using fzf' })
+        map('n', '<leader>b', fzf.buffers,
+            { remap = false, desc = 'Search buffers and go' })
     end,
 }
