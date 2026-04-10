@@ -14,7 +14,7 @@ push-clean:
 	rm -rf ~/.config/nvim
 	git clone --branch private --single-branch $(DIR) ~/.config/nvim
 	for server in server vps pi3b pizero; do \
-		echo "Cleaning $$server..." \
+		echo "Cleaning $$server..." && \
 		ssh -o ConnectTimeout=5 $$server-ts-plain \
 		"rm -rf ~/.config/nvim && \
 		git clone https://github.com/SinTan1729/my-nvim-config ~/.config/nvim"; \
@@ -24,7 +24,7 @@ rebuild:
 	nvim --headless +ZRestore +w +qa &>/dev/null
 	nvim --headless +ZClean +qa &>/dev/null
 	for server in server vps pi3b pizero; do \
-		echo "Syncing plugins in $$server..."
+		echo "Syncing plugins in $$server..." && \
 		ssh -o ConnectTimeout=5 $$server-ts-plain \
 		"nvim --headless +ZRestore +w +qa >/dev/null 2>&1 && \
 		 nvim --headless +ZClean +qa >/dev/null 2>&1"; \
@@ -44,4 +44,6 @@ cherry-pick:
 commit-lock: update-lock cherry-pick
 	git push --all
 
-.PHONY: push pull push-local push-clean update-lock rebuild commit-lock
+rebuild-all: push rebuild
+
+.PHONY: push pull push-local push-clean update-lock rebuild commit-lock rebuild-all
