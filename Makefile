@@ -7,8 +7,8 @@ push:
 pull: 
 	./push_pull.sh pull
 
-pull-local: 
-	./push_pull.sh pull-local
+push-local: 
+	./push_pull.sh push-local
 
 push-clean:
 	rm -rf ~/.config/nvim
