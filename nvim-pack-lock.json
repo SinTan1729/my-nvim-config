@@ -5,8 +5,9 @@
       "src": "https://github.com/numToStr/Comment.nvim"
     },
     "academic.nvim": {
-      "rev": "d22b713fee63f7ca92d4772872c0f2ce7e79176e",
-      "src": "https://github.com/ficcdaf/academic.nvim"
+      "rev": "48048fed33fa862d12bd61a864721bf1ad5a1ee9",
+      "src": "https://github.com/danielfleischer/academic.nvim",
+      "version": "'patch-1'"
     },
     "actions-preview.nvim": {
       "rev": "2b604b2e8e662c03b716436f6ffebcb19663e66a",
@@ -57,7 +58,7 @@
       "src": "https://github.com/felpafel/inlay-hint.nvim"
     },
     "lean.nvim": {
-      "rev": "9337a20eb1b87f628e952d91e1d48084c1a9b69b",
+      "rev": "169414c4f6133ecd11898bb97b3b922b37eb939c",
       "src": "https://github.com/julian/lean.nvim"
     },
     "log-highlight.nvim": {
@@ -89,7 +90,7 @@
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "c588db330592fa477a70d2fee6ba20a57194bdc3",
+      "rev": "cb5bc0b2b35a6d513e3298d285db81453e791f4f",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-numbertoggle": {
@@ -118,7 +119,7 @@
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "plenary.nvim": {
-      "rev": "fcb3e9ac127d178b4c189088396165b3facc219e",
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "rainbow-delimiters.nvim": {
@@ -143,15 +144,16 @@
       "src": "https://github.com/SirVer/ultisnips"
     },
     "vim-dirtytalk": {
-      "rev": "aa57ba902b04341a04ff97214360f56856493583",
-      "src": "https://github.com/psliwka/vim-dirtytalk"
+      "rev": "88f7423b0627bbe37fb434ef9c71dd7fe41cc5b5",
+      "src": "https://github.com/sak96/vim-dirtytalk",
+      "version": "'88f7423b0627bbe37fb434ef9c71dd7fe41cc5b5'"
     },
     "vimtex": {
       "rev": "9306903316c3ddd250676b7cf97c84a84c9c8f99",
       "src": "https://github.com/lervag/vimtex"
     },
     "zpack.nvim": {
-      "rev": "7ea1529ba20e0b9a8a1f4f976926a1500d542f4e",
+      "rev": "b1eab4799cbe42f0db8a4599ec6bb6733dc25f84",
       "src": "https://github.com/zuqini/zpack.nvim"
     },
     "zshow.nvim": {
