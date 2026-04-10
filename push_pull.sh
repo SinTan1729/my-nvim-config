@@ -10,7 +10,7 @@ if [ "$1" = "push" ]; then
     git fetch origin
     git reset --hard origin/private
     git clean -fd
-    rm -f *.sh *md LICENSE
+    rm -f *.sh *md LICENSE Makefile
     git log -1 --pretty=%B | grep -q 'chore: Updated nvim-pack-lock.json' &&
         echo "Updating plugins in neovim..." &&
         nvim --headless +ZRestore +w +qa &>/dev/null
