@@ -10,9 +10,7 @@ return {
             },
             config = function(_, opts)
                 -- Needed due to some weird behavior of this plugin
-                require('nvim-ts-autotag').setup({
-                    opts = opts
-                })
+                require('nvim-ts-autotag').setup({ opts = opts })
             end,
         }
     },
