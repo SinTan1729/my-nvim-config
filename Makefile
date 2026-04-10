@@ -17,7 +17,7 @@ push-clean:
 		echo "Cleaning $$server..." \
 		ssh -o ConnectTimeout=5 $$server-ts-plain \
 		"rm -rf ~/.config/nvim && \
-		git clone https://github.com/SinTan1729/my-nvim-config ~/.config/nvim" \
+		git clone https://github.com/SinTan1729/my-nvim-config ~/.config/nvim"; \
 	done
 
 rebuild:
