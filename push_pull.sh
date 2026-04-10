@@ -5,7 +5,7 @@ DIR="$HOME/Code/git/my-nvim-config"
 set -e
 
 if [ "$1" = "push" ]; then
-    echo "Sending to laptop..."
+    echo "Syncing on laptop..."
     cd ~/.config/nvim
     git fetch origin
     git reset --hard origin/private
@@ -19,7 +19,7 @@ if [ "$1" = "push" ]; then
     for server in server vps pi3b pizero; do
         echo "Trying to connect to $server..."
         if ping -qc2 -W5 $server-ts >/dev/null; then
-            echo "Sending to $server..."
+            echo "Syncing on $server..."
             ssh $server-ts-plain -T /bin/bash <<'EOF'
                 cd ~/.config/nvim
                 git fetch origin
