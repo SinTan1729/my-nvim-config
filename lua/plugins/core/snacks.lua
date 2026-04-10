@@ -10,8 +10,16 @@ return {
         },
     },
     config = function(_, opts)
-        require("snacks").setup(opts)
+        require('snacks').setup(opts)
         -- Override default notify
-        vim.notify = require("snacks.notifier").notify
+        vim.notify = require('snacks.notifier').notify
+        vim.api.nvim_create_user_command('Logs', function(opts1)
+            require('snacks.notifier').show_history({
+                filter = opts1.args ~= '' and opts1.args or nil,
+            })
+        end, {
+            nargs = '?',
+            desc = 'Show notification history, with optional filter',
+        })
     end,
 }
