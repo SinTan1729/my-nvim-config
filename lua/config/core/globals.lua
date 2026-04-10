@@ -39,6 +39,9 @@ vim.filetype.add({
         pod = 'systemd',
         kube = 'systemd',
         volume = 'systemd',
+        -- Needed for gopls
+        tmpl = 'gotmpl',
+        work = 'gowork',
     },
     filename = {
         ['Caddyfile'] = 'caddy',
