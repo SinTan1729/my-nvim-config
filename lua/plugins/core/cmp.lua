@@ -33,10 +33,10 @@ return {
                 -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
                 ['<CR>'] = cmp.mapping.confirm({ select = true }),
             }),
-            sources = cmp.config.sources(
+            raw_sources = {
                 { { name = 'omni' } },
                 { { name = 'buffer' } }
-            ),
+            },
             experimental = { ghost_text = true },
         }
     end,
@@ -44,6 +44,7 @@ return {
         local cmp = require('cmp')
         local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
+        opts.sources = cmp.config.sources(opts.raw_sources[1], opts.raw_sources[2])
         cmp.setup(opts)
         -- Set configuration for specific filetype.
         cmp.setup.filetype('gitcommit', {

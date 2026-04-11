@@ -14,7 +14,8 @@ return {
         },
     },
     opts = {
-        ts_filetypes = { 'lua', 'vim', 'vimdoc', 'yaml', 'dockerfile', 'bash', 'json', 'python', 'fish', 'diff' }
+        ts_filetypes = { 'lua', 'vim', 'vimdoc', 'yaml', 'dockerfile',
+            'bash', 'json', 'python', 'fish', 'diff' }
     },
     config = function(_, opts)
         local ts = require('nvim-treesitter')
