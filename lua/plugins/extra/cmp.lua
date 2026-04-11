@@ -7,7 +7,6 @@ return {
         { 'quangnguyen30192/cmp-nvim-ultisnips' },
     },
     opts = function(_, opts)
-        local cmp = require('cmp') ---@type any
         -- Add snippet support
         opts.snippet = {
             expand = function(args)
@@ -15,26 +14,27 @@ return {
             end,
         }
 
-        -- Override sources, merging is more hassle that it's worth
-        opts.sources = cmp.config.sources(
+        -- Some extra completion sources
+        local extra_primary = {
+            { name = 'nvim_lsp' },
+            { name = 'vimtex' },
+            { name = 'ultisnips' },
             {
-                { name = 'nvim_lsp' },
-                { name = 'omni' },
-                { name = 'vimtex' },
-                { name = 'ultisnips' },
-                {
-                    name = 'spell',
-                    option = {
-                        enable_in_context = function()
-                            return not vim.lsp.buf_is_attached()
-                                or require('cmp.config.context').in_treesitter_capture('spell')
-                        end,
-                        preselect_correct_word = false,
-                    },
-                }
-            },
-            { { name = 'buffer' } }
-        )
+                name = 'spell',
+                option = {
+                    enable_in_context = function()
+                        return not vim.lsp.buf_is_attached()
+                            or require('cmp.config.context').in_treesitter_capture('spell')
+                    end,
+                    preselect_correct_word = false,
+                },
+            }
+        }
+
+        opts.raw_sources = {
+            table.move(opts.raw_sources[1], 1, #opts.raw_sources[1], #extra_primary + 1, extra_primary),
+            opts.raw_sources[2] or { { name = "buffer" } },
+        }
 
         return opts
     end,
