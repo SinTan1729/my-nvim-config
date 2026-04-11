@@ -58,7 +58,7 @@
       "src": "https://github.com/felpafel/inlay-hint.nvim"
     },
     "lean.nvim": {
-      "rev": "6d512716fd7a7d151b39f5088ad6535715263ae1",
+      "rev": "87392e189f091cbcca70b9dfa43462fd1aa65bfa",
       "src": "https://github.com/julian/lean.nvim"
     },
     "log-highlight.nvim": {
