@@ -46,7 +46,7 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "fzf-lua": {
-      "rev": "eee072d89ccdc0a4627bf67d0757d2e4981c7292",
+      "rev": "657c1bbb7357c61e26a20d868b53a460b05c18c0",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "inc-rename.nvim": {
@@ -58,7 +58,7 @@
       "src": "https://github.com/felpafel/inlay-hint.nvim"
     },
     "lean.nvim": {
-      "rev": "169414c4f6133ecd11898bb97b3b922b37eb939c",
+      "rev": "6d512716fd7a7d151b39f5088ad6535715263ae1",
       "src": "https://github.com/julian/lean.nvim"
     },
     "log-highlight.nvim": {
@@ -153,12 +153,12 @@
       "src": "https://github.com/lervag/vimtex"
     },
     "zpack.nvim": {
-      "rev": "b1eab4799cbe42f0db8a4599ec6bb6733dc25f84",
+      "rev": "d3cc74dcfa29a209665b9e2957a76b75f35e4f24",
       "src": "https://github.com/zuqini/zpack.nvim"
     },
     "zshow.nvim": {
-      "rev": "4ccb89a7fc38df7d5b340a31ac89b852fa67dc61",
-      "src": "https://github.com/SinTan1729/zshow.nvim"
+      "rev": "1978e42ed6e23d25872ad94bfaddd68f298c0693",
+      "src": "https://github.com/sairyy/zshow.nvim"
     }
   }
 }
