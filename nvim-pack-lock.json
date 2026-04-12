@@ -139,6 +139,10 @@
       "rev": "c492741b4679b3cdd4d9e34138209784e061d916",
       "src": "https://github.com/lambdalisue/suda.vim"
     },
+    "todo-comments.nvim": {
+      "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
+      "src": "https://github.com/folke/todo-comments.nvim"
+    },
     "ultisnips": {
       "rev": "347567792219f089d9d3091bab49ce94f76fb10f",
       "src": "https://github.com/SirVer/ultisnips"
