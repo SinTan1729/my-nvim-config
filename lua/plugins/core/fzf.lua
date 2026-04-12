@@ -20,5 +20,7 @@ return {
             { remap = false, silent = true, desc = 'Find files using fzf' })
         map('n', '<leader>b', fzf.buffers,
             { remap = false, desc = 'Search buffers and go' })
+        map('n', '<leader>g', fzf.live_grep_native,
+            { remap = false, desc = 'Live grep the current project' })
     end,
 }
