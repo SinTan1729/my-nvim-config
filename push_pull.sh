@@ -16,7 +16,7 @@ if [ "$1" = "push" ]; then
         nvim --headless +ZRestore +w +qa &>/dev/null
     echo "Cleaning plugins in neovim..."
     nvim --headless +ZClean +qa &>/dev/null
-    for server in server vps pi3b pizero; do
+    for server in server vps pi3b; do
         echo "Trying to connect to $server..."
         if ping -qc2 -W5 $server-ts >/dev/null; then
             echo "Syncing on $server..."

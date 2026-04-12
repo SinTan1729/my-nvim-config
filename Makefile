@@ -13,7 +13,7 @@ push-local:
 push-clean:
 	rm -rf ~/.config/nvim
 	git clone --branch private --single-branch $(DIR) ~/.config/nvim
-	for server in server vps pi3b pizero; do \
+	for server in server vps pi3b; do \
 		echo "Cleaning $$server..." && \
 		ssh -o ConnectTimeout=5 $$server-ts-plain \
 		"rm -rf ~/.config/nvim && \
@@ -23,7 +23,7 @@ push-clean:
 rebuild:
 	nvim --headless +ZRestore +w +qa &>/dev/null
 	nvim --headless +ZClean +qa &>/dev/null
-	for server in server vps pi3b pizero; do \
+	for server in server vps pi3b; do \
 		echo "Syncing plugins in $$server..." && \
 		ssh -o ConnectTimeout=5 $$server-ts-plain \
 		"nvim --headless +ZRestore +w +qa >/dev/null 2>&1 && \
