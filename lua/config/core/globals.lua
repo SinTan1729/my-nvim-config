@@ -12,7 +12,6 @@ set.cmdheight = 0
 -- Ignore case while searching except when the search term contains capital letters
 set.ignorecase = true
 set.smartcase = true
-
 -- Use 4 spaces and properly adjust them for files using TAB
 set.expandtab = true
 set.tabstop = 4
@@ -20,11 +19,9 @@ set.shiftwidth = 0
 set.softtabstop = -1
 -- Turn on spell checking
 set.spell = true
+set.spelllang = { 'en' }
 -- Enable mouse support
 set.mouse = 'n'
--- Enable programming dictionary
-set.spelllang = { 'en' }
-
 -- Disable unused plugins
 g.loaded_perl_provider = 0
 g.loaded_node_provider = 0
