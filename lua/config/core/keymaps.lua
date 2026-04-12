@@ -50,14 +50,3 @@ map('n', '<leader>S', ':x<cr>', { remap = false, desc = 'Save current file and e
 
 map('n', '<leader>u', '<c-r>', { remap = false, desc = 'Redo' })
 map('n', '<Esc>', ':noh<cr>', { remap = false, desc = 'Remove search highlights' })
-
--- Use lowercase for global marks and uppercase for local marks.
-local low = function(i) return string.char(97 + i) end
-local upp = function(i) return string.char(65 + i) end
-
-for i = 0, 25 do map("n", "m" .. low(i), "m" .. upp(i), { remap = false, desc = 'Switch local and global marks' }) end
-for i = 0, 25 do map("n", "m" .. upp(i), "m" .. low(i), { remap = false, desc = 'Switch local and global marks' }) end
-for i = 0, 25 do map("n", "'" .. low(i), "'" .. upp(i), { remap = false, desc = 'Switch local and global marks' }) end
-for i = 0, 25 do map("n", "'" .. upp(i), "'" .. low(i), { remap = false, desc = 'Switch local and global marks' }) end
-for i = 0, 25 do map("n", "`" .. low(i), "`" .. upp(i), { remap = false, desc = 'Switch local and global marks' }) end
-for i = 0, 25 do map("n", "`" .. upp(i), "`" .. low(i), { remap = false, desc = 'Switch local and global marks' }) end
