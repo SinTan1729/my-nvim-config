@@ -29,12 +29,4 @@ return {
             },
         }
     end,
-    config = function(_, opts)
-        require('lualine').setup(opts)
-        vim.api.nvim_create_autocmd('User', {
-            desc = 'Update lualine progress',
-            pattern = 'LspProgressStatusUpdated',
-            callback = require('lualine').refresh,
-        })
-    end,
 }
