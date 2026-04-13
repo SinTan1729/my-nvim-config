@@ -92,10 +92,10 @@ return {
 
                 vim.defer_fn(function()
                     local clients = vim.lsp.get_clients({ bufnr = bufnr })
-                    if #clients == 0 then
-                        vim.notify('No LSP attached (possible startup failure)', vim.log.levels.WARN)
+                    if #clients <= 0 then
+                        vim.notify('No LSP attached\n(possible startup failure)', vim.log.levels.WARN)
                     end
-                end, 2000)
+                end, 5000)
             end,
         })
     end,
