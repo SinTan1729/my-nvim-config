@@ -7,11 +7,12 @@ return {
         vim.g.vimtex_compiler_latexmk = { aux_dir = '/tmp/latexmk' }
     end,
     config = function()
+        local group = vim.api.nvim_create_augroup('latex-lsp', { clear = true })
         vim.api.nvim_create_autocmd(
             'FileType', {
                 desc = 'Compile LaTeX once by ;lo',
+                group = group,
                 pattern = 'tex',
-                group = vim.api.nvim_create_augroup('vimrc_tex', {}),
                 callback = function()
                     vim.keymap.set('n', '<localleader>lo', ':silent VimtexCompileSS<cr>',
                         { buffer = true, remap = false, desc = 'Compile LaTeX once' })

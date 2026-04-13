@@ -16,8 +16,10 @@ return {
             on_attach = on_attach,
         })
 
+        local group = vim.api.nvim_create_augroup('lean-lsp', { clear = true })
         vim.api.nvim_create_autocmd('LspAttach', {
             desc = 'Enable virtual text for Lean',
+            group = group,
             pattern = '*.lean',
             callback = function()
                 vim.diagnostic.config({ virtual_text = true })
