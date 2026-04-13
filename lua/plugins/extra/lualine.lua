@@ -9,12 +9,34 @@ return {
             return require('lsp-progress').progress()
         end
 
-        local function arrow_status() -- from lualine documentation
-            return require('arrow.statusline').text_for_statusline_with_icons()
+        local arrow_buffer_label = function(name, context)
+            local bufnr = context.bufnr
+            local path = vim.fn.bufname(bufnr)
+
+            if path == "" then
+                return name
+            end
+
+            local marks = vim.g.arrow_filenames or {}
+            local fullpath = vim.fn.fnamemodify(path, ":p")
+
+            for i, file in ipairs(marks) do
+                if vim.fn.fnamemodify(file, ":p") == fullpath then
+                    return string.format("%s %s %d", name, '󱡁', i)
+                end
+            end
+
+            return name
         end
 
         opts.sections.lualine_c = { 'filename', lua_progress, 'searchcount' }
-        opts.tabline.lualine_y = { arrow_status }
+        opts.tabline.lualine_a = {
+            {
+                'buffers',
+                mode = 2,
+                fmt = arrow_buffer_label,
+            },
+        }
 
         return opts
     end,
