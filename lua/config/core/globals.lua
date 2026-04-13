@@ -17,6 +17,9 @@ set.expandtab = true
 set.tabstop = 4
 set.shiftwidth = 0
 set.softtabstop = -1
+-- Set a color column
+set.textwidth = 100
+set.colorcolumn = '+1'
 -- Turn on spell checking
 set.spell = true
 set.spelllang = { 'en' }
