@@ -3,9 +3,12 @@ local api = vim.api
 local set_l = vim.opt_local
 local set = vim.opt
 
+local group = vim.api.nvim_create_augroup('globals', { clear = false })
+
 -- Custom tab sizes for filetypes
 api.nvim_create_autocmd('FileType', {
     desc = 'Haskell and JS should have 2 space tabs',
+    group = group,
     pattern = { 'haskell', 'javascript' },
     callback = function()
         set_l.tabstop = 2
@@ -13,6 +16,7 @@ api.nvim_create_autocmd('FileType', {
 })
 api.nvim_create_autocmd('FileType', {
     desc = 'Do not expand tabs using saces inside Makefiles',
+    group = group,
     pattern = 'make',
     callback = function()
         set_l.expandtab = false
@@ -21,6 +25,7 @@ api.nvim_create_autocmd('FileType', {
 
 api.nvim_create_autocmd('FileType', {
     desc = 'Auto wrap text in tex-like files',
+    group = group,
     pattern = { 'text', 'markdown', 'tex' },
     callback = function()
         set_l.textwidth = 140
@@ -30,6 +35,7 @@ api.nvim_create_autocmd('FileType', {
 
 vim.api.nvim_create_autocmd('VimEnter', {
     desc = 'Auto compile and load custom dictionaries',
+    group = group,
     pattern = '*',
     callback = function()
         local spell_dir = vim.fn.stdpath('data') .. '/site/spell'

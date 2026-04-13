@@ -20,8 +20,10 @@ return {
     end,
     config = function(_, opts)
         require('lualine').setup(opts)
+        local group = vim.api.nvim_create_augroup('lualine', { clear = true })
         vim.api.nvim_create_autocmd('User', {
             desc = 'Update lualine progress',
+            group = group,
             pattern = 'LspProgressStatusUpdated',
             callback = require('lualine').refresh,
         })

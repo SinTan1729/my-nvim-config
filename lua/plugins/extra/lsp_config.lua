@@ -19,8 +19,10 @@ return {
             lsp.enable(server)
         end
 
+        local group = vim.api.nvim_create_augroup('lspconfig', { clear = true })
         vim.api.nvim_create_autocmd('LspAttach', {
             desc = 'Configure LSP based movements',
+            group = group,
             callback = function()
                 lsp.inlay_hint.enable(true)
                 map('n', '<localleader>k', lsp.buf.hover, { remap = false, desc = 'Hover using LSP' })
@@ -61,6 +63,7 @@ return {
         })
         vim.api.nvim_create_autocmd('LspAttach', {
             desc = 'Hack to make the diagnostics appear at launch',
+            group = group,
             callback = function(args)
                 if vim.bo[args.buf].filetype ~= 'lua' then return end
                 vim.defer_fn(function()
@@ -82,6 +85,7 @@ return {
 
         vim.api.nvim_create_autocmd('FileType', {
             desc = 'Warn about failed LSP configs',
+            group = group,
             pattern = { 'lua', 'python', 'rust', 'fish', 'bash', 'sh', 'go', 'haskell', 'rust' },
             callback = function(args)
                 local bufnr = args.buf

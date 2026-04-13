@@ -25,8 +25,10 @@ return {
 
         ts.install(opts.ts_filetypes):wait(60000)
 
+        local group = vim.api.nvim_create_augroup('treesitter', { clear = true })
         vim.api.nvim_create_autocmd('FileType', {
             desc = 'Configure treesitter based movements',
+            group = group,
             pattern = opts.ts_filetypes,
             callback = function()
                 vim.treesitter.start()
@@ -100,8 +102,8 @@ return {
                         ['[L'] = { query = '@loop.outer', desc = 'Prev loop end' },
                     },
                 }
-                for group_name, group in pairs(tobj_move_maps) do
-                    for key, spec in pairs(group) do
+                for group_name, move_group in pairs(tobj_move_maps) do
+                    for key, spec in pairs(move_group) do
                         map({ 'n', 'o', 'x' }, key, function()
                             tobj_move[group_name](spec.query, 'textobjects')
                         end, { remap = false, desc = spec.desc })
