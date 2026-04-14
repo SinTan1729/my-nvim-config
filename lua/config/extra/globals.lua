@@ -7,8 +7,5 @@ local fn = vim.fn
 set.cmdwinheight = 10
 set.inccommand = 'split'
 
--- Show LSP signs in the number column
-set.signcolumn = 'number'
-
 -- Make nvim work nicely with python venvs
 g.python3_host_prog = fn.system("which -a python3 | head -n2 | tail -n1 | tr -d '[:space:]'")

@@ -9,22 +9,28 @@ set.number = true
 set.wrap = false
 -- Disable cmdline from bottom
 set.cmdheight = 0
--- Ignore case while searching except when the search term contains capital letters
-set.ignorecase = true
-set.smartcase = true
+
 -- Use 4 spaces and properly adjust them for files using TAB
 set.expandtab = true
 set.tabstop = 4
 set.shiftwidth = 0
 set.softtabstop = -1
+
 -- Set a color column
 set.textwidth = 100
 set.colorcolumn = '+1'
+-- Show signs in the number column
+set.signcolumn = 'auto:4'
+-- Enable mouse support
+set.mouse = 'n'
+
+-- Ignore case while searching except when the search term contains capital letters
+set.ignorecase = true
+set.smartcase = true
 -- Turn on spell checking
 set.spell = true
 set.spelllang = { 'en' }
--- Enable mouse support
-set.mouse = 'n'
+
 -- Disable unused plugins
 g.loaded_perl_provider = 0
 g.loaded_node_provider = 0
