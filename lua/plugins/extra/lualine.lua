@@ -13,7 +13,7 @@ return {
             local bufnr = context.bufnr
             local path = vim.fn.bufname(bufnr)
 
-            if path == "" then
+            if path == '' then
                 return name
             end
 
@@ -21,8 +21,8 @@ return {
             local fullpath = vim.fn.fnamemodify(path, ":p")
 
             for i, file in ipairs(marks) do
-                if vim.fn.fnamemodify(file, ":p") == fullpath then
-                    return string.format("%s %s %d", name, '󱡁', i)
+                if vim.fn.fnamemodify(file, ':p') == fullpath then
+                    return string.format('%s %s %d', name, '󱡁', i)
                 end
             end
 

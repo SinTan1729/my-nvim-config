@@ -86,16 +86,22 @@ return {
         vim.api.nvim_create_autocmd('FileType', {
             desc = 'Warn about failed LSP configs',
             group = group,
-            pattern = { 'lua', 'python', 'rust', 'fish', 'bash', 'sh', 'go', 'haskell', 'rust' },
+            pattern = { 'lua', 'python', 'rust', 'fish', 'bash',
+                'sh', 'go', 'haskell' },
             callback = function(args)
                 local bufnr = args.buf
+                local tick = vim.api.nvim_buf_get_changedtick(bufnr)
 
                 vim.defer_fn(function()
+                    if not vim.api.nvim_buf_is_valid(bufnr) then return end
+                    if vim.api.nvim_buf_get_changedtick(bufnr) ~= tick then return end
+
                     local clients = vim.lsp.get_clients({ bufnr = bufnr })
                     if #clients <= 0 then
-                        vim.notify('No LSP attached\n(possible startup failure)', vim.log.levels.WARN)
+                        vim.notify('No LSP attached\n(possible startup failure)',
+                            vim.log.levels.WARN)
                     end
-                end, 5000)
+                end, 2000)
             end,
         })
     end,
