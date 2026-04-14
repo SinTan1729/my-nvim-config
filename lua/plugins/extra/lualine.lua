@@ -5,7 +5,7 @@ return {
         'otavioschwanck/arrow.nvim',
     },
     opts = function(_, opts)
-        local lua_progress = function()
+        local lsp_progress = function()
             return require('lsp-progress').progress()
         end
 
@@ -29,7 +29,7 @@ return {
             return name
         end
 
-        opts.sections.lualine_c = { 'filename', lua_progress, 'searchcount' }
+        opts.sections.lualine_c = { 'filename', lsp_progress, 'searchcount' }
         opts.tabline.lualine_a = {
             {
                 'buffers',
