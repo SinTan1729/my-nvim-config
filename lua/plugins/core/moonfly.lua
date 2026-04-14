@@ -16,6 +16,5 @@ return {
     config = function()
         --  Use the moonfly colorscheme
         vim.cmd.colorscheme('moonfly')
-        vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#1d1d1d" })
     end,
 }
