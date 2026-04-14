@@ -20,7 +20,7 @@ set.softtabstop = -1
 set.textwidth = 100
 set.colorcolumn = '+1'
 -- Show signs in the number column
-set.signcolumn = 'auto:4'
+set.signcolumn = 'auto:2'
 -- Enable mouse support
 set.mouse = 'n'
 

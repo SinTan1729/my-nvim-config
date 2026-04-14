@@ -94,6 +94,7 @@ return {
 
                 vim.defer_fn(function()
                     if not vim.api.nvim_buf_is_valid(bufnr) then return end
+                    if not vim.api.nvim_buf_is_loaded(bufnr) then return end
                     if vim.api.nvim_buf_get_changedtick(bufnr) ~= tick then return end
 
                     local clients = vim.lsp.get_clients({ bufnr = bufnr })
