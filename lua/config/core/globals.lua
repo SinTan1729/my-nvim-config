@@ -1,6 +1,8 @@
 -- This file defines all the global configs
 local set = vim.opt
 local g = vim.g
+local diag = vim.diagnostic
+local sev = diag.severity
 
 set.termguicolors = true
 -- Turn on numbers
@@ -19,17 +21,28 @@ set.softtabstop = -1
 -- Set a color column
 set.textwidth = 100
 set.colorcolumn = '+1'
--- Show signs in the number column
-set.signcolumn = 'auto:2'
--- Enable mouse support
-set.mouse = 'n'
-
+-- Fancy status bar
+set.signcolumn = 'yes:1'
+set.statuscolumn = '%l%s'
+diag.config({
+    signs = {
+        text = {
+            [sev.ERROR] = "",
+            [sev.WARN]  = "",
+            [sev.INFO]  = "",
+            [sev.HINT]  = "󰌵",
+        },
+    },
+})
 -- Ignore case while searching except when the search term contains capital letters
 set.ignorecase = true
 set.smartcase = true
 -- Turn on spell checking
 set.spell = true
 set.spelllang = { 'en' }
+
+-- Enable mouse support
+set.mouse = 'n'
 
 -- Disable unused plugins
 g.loaded_perl_provider = 0
