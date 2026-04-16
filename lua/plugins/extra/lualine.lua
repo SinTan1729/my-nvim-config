@@ -22,7 +22,12 @@ return {
 
             for i, file in ipairs(marks) do
                 if vim.fn.fnamemodify(file, ':p') == fullpath then
-                    return string.format('%s %s %d', name, '󱡁', i)
+                    local index = ({
+                        'a', 's', 'd', 'f',
+                        'z', 'x', 'c', 'v',
+                        'q', 'w', 'e', 'r'
+                    })[i]
+                    return string.format('%s %s %s', name, '󱡁', index)
                 end
             end
 
