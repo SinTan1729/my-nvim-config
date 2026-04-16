@@ -46,7 +46,7 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "fzf-lua": {
-      "rev": "1e866cce085cc6df3d3e4fb59f00105fa84cef6c",
+      "rev": "69b0d5d045cc039e68ba4c82190ce471464226b6",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "inc-rename.nvim": {
@@ -58,7 +58,7 @@
       "src": "https://github.com/felpafel/inlay-hint.nvim"
     },
     "lean.nvim": {
-      "rev": "9e1367b424059461b5b85ceee6e4752d9863c4bd",
+      "rev": "6876abd06efb6789081b9f4a3e81503ce07b3c6c",
       "src": "https://github.com/julian/lean.nvim"
     },
     "log-highlight.nvim": {
@@ -90,7 +90,7 @@
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "8a9378a822719346a0288fa004dab302ca3c0a8f",
+      "rev": "4b7fbaa239c5db6b36f424a4521ca9f1a401be33",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-numbertoggle": {
@@ -111,7 +111,7 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
     },
     "nvim-ts-autotag": {
-      "rev": "8e1c0a389f20bf7f5b0dd0e00306c1247bda2595",
+      "rev": "88c1453db4ba7dd24131086fe51fdf74e587d275",
       "src": "https://github.com/windwp/nvim-ts-autotag"
     },
     "nvim-web-devicons": {
@@ -157,11 +157,11 @@
       "src": "https://github.com/lervag/vimtex"
     },
     "zpack.nvim": {
-      "rev": "d3cc74dcfa29a209665b9e2957a76b75f35e4f24",
+      "rev": "43e8d65bebd95107736f4162673cd451ee75e463",
       "src": "https://github.com/zuqini/zpack.nvim"
     },
     "zshow.nvim": {
-      "rev": "1978e42ed6e23d25872ad94bfaddd68f298c0693",
+      "rev": "880bcde84efaf325d638eed2ae32a308d7727d95",
       "src": "https://github.com/sairyy/zshow.nvim"
     }
   }
