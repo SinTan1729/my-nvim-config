@@ -9,7 +9,7 @@ return {
         buffer_leader_key = 'm', -- Per Buffer Mappings
         index_keys = 'asdfzxcv', -- Use letters for the indices
         mappings = {
-            toggle = 'q',
+            toggle = 'e',
         }
     },
     config = function(_, opts)
