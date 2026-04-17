@@ -25,7 +25,6 @@ return {
                     local index = ({
                         'a', 's', 'd', 'f',
                         'z', 'x', 'c', 'v',
-                        'q', 'w', 'e', 'r'
                     })[i]
                     return string.format('%s %s %s', name, '󱡁', index)
                 end

@@ -5,11 +5,11 @@ return {
     },
     opts = {
         show_icons = true,
-        leader_key = "'",            -- Recommended to be a single key
-        buffer_leader_key = 'm',     -- Per Buffer Mappings
-        index_keys = 'asdfzxcvqwer', -- Use letters for the indices
+        leader_key = "'",        -- Recommended to be a single key
+        buffer_leader_key = 'm', -- Per Buffer Mappings
+        index_keys = 'asdfzxcv', -- Use letters for the indices
         mappings = {
-            toggle = '/',
+            toggle = 'q',
         }
     },
     config = function(_, opts)
