@@ -23,7 +23,7 @@ set.textwidth = 100
 set.colorcolumn = '+1'
 -- Fancy status bar
 set.signcolumn = 'yes:1'
-set.statuscolumn = '%l %s '
+set.statuscolumn = '%s%l  '
 diag.config({
     signs = {
         text = {
