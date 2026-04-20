@@ -12,20 +12,4 @@ return {
             toggle = 'e',
         }
     },
-    config = function(_, opts)
-        require('arrow').setup(opts)
-
-        local group = vim.api.nvim_create_augroup('arrow', { clear = false })
-        vim.api.nvim_create_autocmd({ 'BufLeave' }, {
-            desc = 'Enable relative line number when leaving arrow buffer',
-            group = group,
-            callback = function(args)
-                if vim.bo[args.buf].buftype ~= '' then
-                    vim.schedule(function()
-                        vim.opt.relativenumber = true
-                    end)
-                end
-            end,
-        })
-    end
 }

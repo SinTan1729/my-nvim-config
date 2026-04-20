@@ -1,5 +1,5 @@
 return {
     -- Some miscellaneous plugins
-    { 'sitiom/nvim-numbertoggle' },
-    { 'kylechui/nvim-surround',  opts = {} },
+    { 'SinTan1729/nvim-numbertoggle' },
+    { 'kylechui/nvim-surround',      opts = {} },
 }
