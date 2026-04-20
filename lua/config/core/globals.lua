@@ -22,7 +22,7 @@ set.softtabstop = -1
 set.textwidth = 100
 set.colorcolumn = '+1'
 -- Fancy status bar
-set.signcolumn = 'yes:1'
+set.signcolumn = 'auto:1-2'
 set.statuscolumn = '%s%l  '
 diag.config({
     signs = {
