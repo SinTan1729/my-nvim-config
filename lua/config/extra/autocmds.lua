@@ -44,10 +44,10 @@ vim.api.nvim_create_autocmd('VimEnter', {
 
         for _, file in ipairs(files) do
             local name = file:match('.*/([a-z%-]+)%.utf%-8%.add$')
-            local spl = spell_dir .. '/' .. name .. 'utf-8.spl'
+            local spl = spell_dir .. '/' .. name .. '.utf-8.spl'
             local add = dict_dir .. '/' .. name .. '.utf-8.add'
 
-            local add_time = vim.fn.getftime(file)
+            local add_time = vim.fn.getftime(add)
             local spl_time = vim.fn.getftime(spl)
 
             if vim.fn.filereadable(add) == 1
