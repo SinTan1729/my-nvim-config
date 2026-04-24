@@ -1,12 +1,11 @@
 {
   "plugins": {
     "academic.nvim": {
-      "rev": "48048fed33fa862d12bd61a864721bf1ad5a1ee9",
-      "src": "https://github.com/danielfleischer/academic.nvim",
-      "version": "'patch-1'"
+      "rev": "fa6aa4deae2df95e117e04ca2bb42cded50f5b5d",
+      "src": "https://github.com/ficd0/academic.nvim"
     },
     "actions-preview.nvim": {
-      "rev": "2b604b2e8e662c03b716436f6ffebcb19663e66a",
+      "rev": "0ac9c2aa3cfc8c885321c0862b50b6b1c3392405",
       "src": "https://github.com/aznhe21/actions-preview.nvim"
     },
     "arrow.nvim": {
@@ -42,11 +41,11 @@
       "src": "https://github.com/micangl/cmp-vimtex"
     },
     "conform.nvim": {
-      "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
+      "rev": "dca1a190aa85f9065979ef35802fb77131911106",
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "fzf-lua": {
-      "rev": "fcabe3cb7cfa6bd5148ffac0188997196401937d",
+      "rev": "ffa44ee9470743a7697d28df3a1a216fdfe2b09d",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "inc-rename.nvim": {
@@ -58,7 +57,7 @@
       "src": "https://github.com/felpafel/inlay-hint.nvim"
     },
     "lean.nvim": {
-      "rev": "7f56f904fb83a7325111855b6d250f9af08f269a",
+      "rev": "b7f567577aff0eb298d5702cf09f2b9ad451277d",
       "src": "https://github.com/julian/lean.nvim"
     },
     "log-highlight.nvim": {
@@ -90,7 +89,7 @@
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "e05fb8c3bd61d909dacff24f77f23beb644daf54",
+      "rev": "81878de76c0de4ce289513734ad80c31ec7871b8",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-numbertoggle": {
