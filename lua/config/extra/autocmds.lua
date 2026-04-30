@@ -9,7 +9,7 @@ local group = vim.api.nvim_create_augroup('globals', { clear = false })
 api.nvim_create_autocmd('FileType', {
     desc = 'Haskell and JS should have 2 space tabs',
     group = group,
-    pattern = { 'haskell', 'javascript' },
+    pattern = { 'haskell', 'javascript', 'css', 'html' },
     callback = function()
         set_l.tabstop = 2
     end,
