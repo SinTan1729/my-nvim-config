@@ -45,7 +45,7 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "fzf-lua": {
-      "rev": "b437bafc981a180d609bb4092c56ce8999f7a2c4",
+      "rev": "97376e364f51f1b5ae3efaa3eb2e929430ca8419",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "inc-rename.nvim": {
@@ -57,11 +57,11 @@
       "src": "https://github.com/felpafel/inlay-hint.nvim"
     },
     "lean.nvim": {
-      "rev": "999fab45a246478148ea54501f3bfc1e07a208a2",
+      "rev": "7142f06ed3deba64871dc213869d70c34a692a17",
       "src": "https://github.com/julian/lean.nvim"
     },
     "log-highlight.nvim": {
-      "rev": "ca88628f6dd3b9bb46f9a7401669e24cf7de47a4",
+      "rev": "b2e00cfd41ca94338265a595f3f3f423d9f9322e",
       "src": "https://github.com/fei6409/log-highlight.nvim"
     },
     "lsp-progress.nvim": {
@@ -81,7 +81,7 @@
       "src": "https://github.com/karb94/neoscroll.nvim"
     },
     "nvim-autopairs": {
-      "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
+      "rev": "7b9923abad60b903ece7c52940e1321d39eccc79",
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-cmp": {
@@ -89,7 +89,7 @@
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "f7e89f3d19fb436e1fbeff3bf4291eef35da94e3",
+      "rev": "451d4ef9abd4f0f08e379ef0d55d1c391b6125a7",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-numbertoggle": {
@@ -97,7 +97,7 @@
       "src": "https://github.com/SinTan1729/nvim-numbertoggle"
     },
     "nvim-surround": {
-      "rev": "9291040de8cd8a4439eb64c441e8d5d2bf884a5a",
+      "rev": "2e93e154de9ff326def6480a4358bfc149d5da2c",
       "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
@@ -114,7 +114,7 @@
       "src": "https://github.com/windwp/nvim-ts-autotag"
     },
     "nvim-web-devicons": {
-      "rev": "4fc505ac7bd7692824a142e96e5f529c133862f8",
+      "rev": "2795c26c916bb3c57dde308b82be51971fa92747",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "plenary.nvim": {
@@ -143,7 +143,7 @@
       "src": "https://github.com/folke/todo-comments.nvim"
     },
     "ultisnips": {
-      "rev": "0223456b89f7f797c5424ddef07cfc28b5cd86a5",
+      "rev": "ef87daa648a4e5b2b010ed96458bef4d1610e37c",
       "src": "https://github.com/SirVer/ultisnips"
     },
     "vim-dirtytalk": {
@@ -152,11 +152,11 @@
       "version": "'6d5abdd8430a68d887ee89d3910ecb6082c6118e'"
     },
     "vimtex": {
-      "rev": "0f42a5130432d4af2e6fd21fb93a76915ff1f090",
+      "rev": "97e11bd4f56d46a87f8593d6ccb27820e19c4ab0",
       "src": "https://github.com/lervag/vimtex"
     },
     "zpack.nvim": {
-      "rev": "8fffbafdcf24587cad705881ae0900e4df56f95d",
+      "rev": "8d02f50245ec43bd5dc835dc574d460e4c61bcec",
       "src": "https://github.com/zuqini/zpack.nvim"
     },
     "zshow.nvim": {
