@@ -11,11 +11,12 @@ return {
         },
         close_automatic_events = { 'unsupported' },
         on_attach = function(bufnr)
-            vim.keymap.set('n', '<localleader>{', '<cmd>AerialPrev<CR>',
+            local map = vim.keymap.set
+            map('n', '<localleader>{', '<cmd>AerialPrev<CR>',
                 { buffer = bufnr, remap = false, desc = 'Jump to previous item on Aerial' })
-            vim.keymap.set('n', '<localleader>}', '<cmd>AerialNext<CR>',
+            map('n', '<localleader>}', '<cmd>AerialNext<CR>',
                 { buffer = bufnr, remap = false, desc = 'Jump to next item on Aerial' })
-            vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>',
+            map('n', '<leader>a', '<cmd>AerialToggle!<CR>',
                 { remap = false, desc = 'Toggle Aerial bar' })
         end,
     },
