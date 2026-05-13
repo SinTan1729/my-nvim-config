@@ -8,6 +8,10 @@
       "rev": "0ac9c2aa3cfc8c885321c0862b50b6b1c3392405",
       "src": "https://github.com/aznhe21/actions-preview.nvim"
     },
+    "aerial.nvim": {
+      "rev": "645d108a5242ec7b378cbe643eb6d04d4223f034",
+      "src": "https://github.com/stevearc/aerial.nvim"
+    },
     "arrow.nvim": {
       "rev": "6e0f726f55f99332dd726a53effd6813786b6d49",
       "src": "https://github.com/otavioschwanck/arrow.nvim"
@@ -57,7 +61,7 @@
       "src": "https://github.com/felpafel/inlay-hint.nvim"
     },
     "lean.nvim": {
-      "rev": "7142f06ed3deba64871dc213869d70c34a692a17",
+      "rev": "da55583c966745aaddb6e1fd4f8287b759126649",
       "src": "https://github.com/julian/lean.nvim"
     },
     "log-highlight.nvim": {
@@ -89,7 +93,7 @@
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "451d4ef9abd4f0f08e379ef0d55d1c391b6125a7",
+      "rev": "75e49cfa588a89ca667d767c0afef3ceac205faa",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-numbertoggle": {
@@ -143,7 +147,7 @@
       "src": "https://github.com/folke/todo-comments.nvim"
     },
     "ultisnips": {
-      "rev": "ef87daa648a4e5b2b010ed96458bef4d1610e37c",
+      "rev": "ceb2973c8bcec134947884f06488373c28c6410e",
       "src": "https://github.com/SirVer/ultisnips"
     },
     "vim-dirtytalk": {
@@ -152,11 +156,11 @@
       "version": "'6d5abdd8430a68d887ee89d3910ecb6082c6118e'"
     },
     "vimtex": {
-      "rev": "97e11bd4f56d46a87f8593d6ccb27820e19c4ab0",
+      "rev": "182ad387e3f3107699483606c9a2b6648f8437b2",
       "src": "https://github.com/lervag/vimtex"
     },
     "zpack.nvim": {
-      "rev": "8d02f50245ec43bd5dc835dc574d460e4c61bcec",
+      "rev": "552ca4431d450a0f027ca8ee6255d4f6d497c92f",
       "src": "https://github.com/zuqini/zpack.nvim"
     },
     "zshow.nvim": {
