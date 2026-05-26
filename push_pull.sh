@@ -13,9 +13,9 @@ if [ "$1" = "push" ]; then
     rm -f *.sh *md LICENSE Makefile
     git log -1 --pretty=%B | grep -q 'chore: Updated nvim-pack-lock.json' &&
         echo "Updating plugins in neovim..." &&
-        nvim --headless +ZRestore +w +qa &>/dev/null
+        nvim --headless +'ZPack restore' +w +qa &>/dev/null
     echo "Cleaning plugins in neovim..."
-    nvim --headless +ZClean +qa &>/dev/null
+    nvim --headless +'ZPack clean' +qa &>/dev/null
     for server in server vps pi3b; do
         echo "Trying to connect to $server..."
         if ping -qc2 -W5 $server-ts >/dev/null; then
@@ -29,9 +29,9 @@ if [ "$1" = "push" ]; then
                 rm -f *md LICENSE
                 git log -1 --pretty=%B | grep -q 'chore: Updated nvim-pack-lock.json' &&
                     echo "Updating plugins in neovim..." &&
-                    nvim --headless +ZRestore +w +qa &>/dev/null
+                    nvim --headless +'ZPack restore' +w +qa &>/dev/null
                 echo "Cleaning plugins in neovim..."
-                nvim --headless +ZClean +qa &>/dev/null
+                nvim --headless +'ZPack clean' +qa &>/dev/null
 EOF
         else
             echo "Could not connect to $server!"
@@ -40,6 +40,10 @@ EOF
 elif [ "$1" = "push-local" ]; then
     echo "Sending to laptop locally..."
     rsync -achP --exclude={'*.md','*.sh','LICENSE','.*'} "$DIR/" "$HOME/.config/nvim/" --delete
+    echo "Updating plugins in neovim..."
+    nvim --headless +'ZPack restore' +w +qa &>/dev/null
+    echo "Cleaning plugins in neovim..."
+    nvim --headless +'ZPack clean' +qa &>/dev/null
 elif [ "$1" = "pull" ]; then
     echo "Pulling from laptop..."
     rsync -achP --delete \
