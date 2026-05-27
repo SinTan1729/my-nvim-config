@@ -1,4 +1,4 @@
--- This fine defines all the global auto-commands
+-- This file defines all the global auto-commands
 local api = vim.api
 
 local group = vim.api.nvim_create_augroup('globals', { clear = true })
