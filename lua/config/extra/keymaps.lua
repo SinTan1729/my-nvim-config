@@ -1,4 +1,4 @@
--- This file lists all the global keymaps
+-- This file defines all the global keymaps
 local map = vim.keymap.set
 
 map('n', '<c-h>', ':wincmd h<cr>', { remap = false, silent = true, desc = 'Move to split to the left' })
