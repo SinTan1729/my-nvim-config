@@ -118,7 +118,7 @@
       "src": "https://github.com/windwp/nvim-ts-autotag"
     },
     "nvim-web-devicons": {
-      "rev": "0d7d35fa946837b8738b17c18d1faa1ac351e7f9",
+      "rev": "dfbfaa967a6f7ec50789bead7ef87e336c1fa63c",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "plenary.nvim": {
@@ -156,11 +156,11 @@
       "version": "'6d5abdd8430a68d887ee89d3910ecb6082c6118e'"
     },
     "vimtex": {
-      "rev": "182ad387e3f3107699483606c9a2b6648f8437b2",
+      "rev": "24e229914182ff301496a3e2c4214b28c4928d3f",
       "src": "https://github.com/lervag/vimtex"
     },
     "zpack.nvim": {
-      "rev": "a815e941a180615942bf27d51f4834537b2e3c21",
+      "rev": "d52f0ddf85cf8fe74952f7825d3f9ea5f31b2968",
       "src": "https://github.com/zuqini/zpack.nvim"
     },
     "zshow.nvim": {
