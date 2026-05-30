@@ -61,7 +61,7 @@
       "src": "https://github.com/felpafel/inlay-hint.nvim"
     },
     "lean.nvim": {
-      "rev": "8c7ea37917ac4c061a4d6a6fcefa68a42b1e150b",
+      "rev": "647a785021ee76a9d5ad7fae28b45ef6d105e3be",
       "src": "https://github.com/julian/lean.nvim"
     },
     "log-highlight.nvim": {
@@ -77,7 +77,7 @@
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "moonfly": {
-      "rev": "1c0a9994bb6bb5b43859c67924aabd061c4b7905",
+      "rev": "261664f92ed51cf0c077555b2d4b2530307eac17",
       "src": "https://github.com/bluz71/vim-moonfly-colors"
     },
     "neoscroll.nvim": {
@@ -93,7 +93,7 @@
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "a4ed4e761c400849e8c9f8bda33e5083f890268c",
+      "rev": "9573948c38bfabeec353ae7dd7d3ffec4c506a6b",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-numbertoggle": {
