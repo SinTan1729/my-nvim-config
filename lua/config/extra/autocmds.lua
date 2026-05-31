@@ -24,7 +24,7 @@ api.nvim_create_autocmd('FileType', {
 })
 
 api.nvim_create_autocmd('FileType', {
-    desc = 'Auto wrap text in tex-like files',
+    desc = 'Auto wrap text in text-like files',
     group = group,
     pattern = { 'text', 'markdown', 'tex' },
     callback = function()
