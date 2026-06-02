@@ -49,7 +49,7 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "fzf-lua": {
-      "rev": "e3a71496027f2e3c4a60340170c04d66053d5c4c",
+      "rev": "988416cc782dfe28bff3f0da9b8c943b236cd86a",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "inc-rename.nvim": {
@@ -61,7 +61,7 @@
       "src": "https://github.com/felpafel/inlay-hint.nvim"
     },
     "lean.nvim": {
-      "rev": "647a785021ee76a9d5ad7fae28b45ef6d105e3be",
+      "rev": "bf040dc5a6454ee318bf280950780d3eb5c61265",
       "src": "https://github.com/julian/lean.nvim"
     },
     "log-highlight.nvim": {
