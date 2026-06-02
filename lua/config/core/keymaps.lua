@@ -6,22 +6,23 @@ local g = vim.g
 g.mapleader = ','
 g.maplocalleader = ';'
 
--- Make a dot-repeabufferle keymap
+-- Make dot-repeatable keymaps
+local current_dr_op
+_G.__dr_dispatch = function()
+    current_dr_op()
+end
 local function dr_map(mode, lhs, rhs, opts)
     opts = opts or {}
     opts.expr = true
-
     local termcodes = vim.api.nvim_replace_termcodes(rhs, true, true, true)
-    local fn_name = '__dr_op_' .. lhs:gsub('[^%w]', '')
-
-    _G[fn_name] = function()
+    local op = function()
         local count = vim.v.count1
         local keys = (count > 1 and tostring(count) or '') .. termcodes
         vim.api.nvim_feedkeys(keys, 'n', false)
     end
-
     vim.keymap.set(mode, lhs, function()
-        vim.go.operatorfunc = 'v:lua.' .. fn_name
+        current_dr_op = op
+        vim.go.operatorfunc = 'v:lua.__dr_dispatch'
         return 'g@l'
     end, opts)
 end
