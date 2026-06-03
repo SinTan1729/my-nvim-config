@@ -21,7 +21,7 @@ push-clean:
 	done
 
 rebuild:
-	nvim --headless +'ZPack restore' +w +qa &>/dev/null
+	nvim --headless +'ZPack! restore' +qa &>/dev/null
 	nvim --headless +'ZPack clean' +qa &>/dev/null
 	for server in server vps pi3b; do \
 		echo "Syncing plugins in $$server..." && \
@@ -31,7 +31,7 @@ rebuild:
 	done
 
 update-lock:
-	nvim --headless +'ZPack update' +w +qa &>/dev/null
+	nvim --headless +'ZPack! update' +qa &>/dev/null
 	cp ~/.config/nvim/$(LOCKFILE) $(DIR)
 	git add $(LOCKFILE)
 	git commit -m "chore: Updated $(LOCKFILE)"
