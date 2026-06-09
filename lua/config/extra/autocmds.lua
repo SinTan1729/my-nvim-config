@@ -6,16 +6,26 @@ local set = vim.opt
 local group = vim.api.nvim_create_augroup('globals', { clear = false })
 
 -- Custom tab sizes for filetypes
+local tab_widths = {
+    { pattern = { 'haskell', 'javascript', 'css', 'html' }, width = 2 },
+    { pattern = { 'markdown' },                             width = 3 },
+}
+for _, cfg in ipairs(tab_widths) do
+    vim.api.nvim_create_autocmd('FileType', {
+        desc = string.format('Set %d-space tabs for %s', cfg.width,
+            table.concat(cfg.pattern, ', ')),
+        group = group,
+        pattern = cfg.pattern,
+        callback = function()
+            set_l.tabstop = cfg.width
+            set_l.shiftwidth = 0
+            set_l.softtabstop = -1
+        end,
+    })
+end
+
 api.nvim_create_autocmd('FileType', {
-    desc = 'Haskell and JS should have 2 space tabs',
-    group = group,
-    pattern = { 'haskell', 'javascript', 'css', 'html' },
-    callback = function()
-        set_l.tabstop = 2
-    end,
-})
-api.nvim_create_autocmd('FileType', {
-    desc = 'Do not expand tabs using saces inside Makefiles',
+    desc = 'Do not expand tabs using spaces inside Makefiles',
     group = group,
     pattern = 'make',
     callback = function()
