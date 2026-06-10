@@ -58,6 +58,11 @@ return {
                 Lua = {
                     diagnostics = { globals = { 'vim' } },
                     telemetry = { enable = false },
+                    format = {
+                        defaultConfig = {
+                            quote_style = 'single',
+                        },
+                    },
                 },
             }
         })
