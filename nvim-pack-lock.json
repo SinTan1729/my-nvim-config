@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "Comment.nvim": {
+      "rev": "e30b7f2008e52442154b66f7c519bfd2f1e32acb",
+      "src": "https://github.com/numToStr/Comment.nvim"
+    },
     "academic.nvim": {
       "rev": "fa6aa4deae2df95e117e04ca2bb42cded50f5b5d",
       "src": "https://github.com/ficd0/academic.nvim"
@@ -61,7 +65,7 @@
       "src": "https://github.com/felpafel/inlay-hint.nvim"
     },
     "lean.nvim": {
-      "rev": "0773e20595bbfa79a9dbd6afc8c14411042a3d98",
+      "rev": "fde0d5692edcc0a0cadad77067dfd49a51332236",
       "src": "https://github.com/julian/lean.nvim"
     },
     "log-highlight.nvim": {
@@ -93,7 +97,7 @@
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "ed19590a3a9792901553c388d1aadafce012f80d",
+      "rev": "a683e0ddf0cf64c6cd689e18ffb480ade3c162b7",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-numbertoggle": {
