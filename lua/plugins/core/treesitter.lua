@@ -4,6 +4,7 @@ return {
     lazy = false,
     branch = 'main',
     dependencies = {
+        { 'numToStr/Comment.nvim', opts = {} },
         {
             'nvim-treesitter/nvim-treesitter-textobjects',
             init = function()
