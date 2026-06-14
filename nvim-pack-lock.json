@@ -160,7 +160,7 @@
       "version": "'6d5abdd8430a68d887ee89d3910ecb6082c6118e'"
     },
     "vimtex": {
-      "rev": "24e229914182ff301496a3e2c4214b28c4928d3f",
+      "rev": "fedb7ffc1bebf254cc74e7419c3a5930b6719065",
       "src": "https://github.com/lervag/vimtex"
     },
     "zpack.nvim": {
