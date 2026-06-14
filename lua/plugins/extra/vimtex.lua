@@ -1,10 +1,12 @@
 return {
     'lervag/vimtex',
     init = function()
+        local g = vim.g
         -- Use zathura with vimtex, the zathura_simple one makes synctex work in Wayland
-        vim.g.vimtex_view_method = 'zathura_simple'
+        g.vimtex_view_method = 'zathura_simple'
         -- Use a temporary directory for aux files
-        vim.g.vimtex_compiler_latexmk = { aux_dir = '/tmp/latexmk' }
+        g.vimtex_compiler_latexmk = { aux_dir = '/tmp/latexmk' }
+        g.vimtex_quickfix_method = 'pplatex'
     end,
     config = function()
         local group = vim.api.nvim_create_augroup('latex-lsp', { clear = true })
