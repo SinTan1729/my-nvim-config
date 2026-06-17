@@ -13,9 +13,9 @@ return {
         on_attach = function(bufnr)
             local map = vim.keymap.set
             map('n', '<localleader>{', '<cmd>AerialPrev<CR>',
-                { buffer = bufnr, desc = 'Jump to previous item on Aerial' })
+                { buf = bufnr, desc = 'Jump to previous item on Aerial' })
             map('n', '<localleader>}', '<cmd>AerialNext<CR>',
-                { buffer = bufnr, desc = 'Jump to next item on Aerial' })
+                { buf = bufnr, desc = 'Jump to next item on Aerial' })
             map('n', '<leader>a', '<cmd>AerialToggle!<CR>',
                 { desc = 'Toggle Aerial bar' })
         end,

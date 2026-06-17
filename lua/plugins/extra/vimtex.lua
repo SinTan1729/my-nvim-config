@@ -17,7 +17,7 @@ return {
                 pattern = 'tex',
                 callback = function(args)
                     vim.keymap.set('n', '<localleader>lo', ':silent VimtexCompileSS<cr>',
-                        { buffer = args.bufnr, desc = 'Compile current LaTeX file once' })
+                        { buf = args.buf, desc = 'Compile current LaTeX file once' })
                 end,
             }
         )
