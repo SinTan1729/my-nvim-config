@@ -66,7 +66,7 @@ return {
                 for key, spec in pairs(tobj_select_maps) do
                     map({ 'o', 'x' }, key, function()
                         tobj_select.select_textobject(spec.query, 'textobjects')
-                    end, { buffer = args.bufnr, desc = spec.desc })
+                    end, { buf = args.buf, desc = spec.desc })
                 end
 
                 local tobj_move = require('nvim-treesitter-textobjects.move')
@@ -109,7 +109,7 @@ return {
                     for key, spec in pairs(move_group) do
                         map({ 'n', 'o', 'x' }, key, function()
                             tobj_move[group_name](spec.query, 'textobjects')
-                        end, { buffer = args.bufnr, desc = spec.desc })
+                        end, { buf = args.buf, desc = spec.desc })
                     end
                 end
             end,

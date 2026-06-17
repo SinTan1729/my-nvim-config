@@ -25,21 +25,21 @@ return {
             group = group,
             callback = function(args)
                 lsp.inlay_hint.enable(true)
-                local buf = args.bufnr
+                local buf = args.buf
                 map('n', '<localleader>k', lsp.buf.hover,
-                    { buffer = buf, desc = 'Hover using LSP' })
+                    { buf = buf, desc = 'Hover using LSP' })
                 map({ 'v', 'n' }, '<localleader>a', require('actions-preview').code_actions,
-                    { buffer = buf, desc = 'Preview LSP actions' })
+                    { buf = buf, desc = 'Preview LSP actions' })
                 map('n', '<localleader>f', lsp.buf.definition,
-                    { buffer = buf, desc = 'Jump to definition' })
+                    { buf = buf, desc = 'Jump to definition' })
                 map('n', '<localleader>d', vim.diagnostic.open_float,
-                    { buffer = buf, desc = 'Show current diagnostic message' })
+                    { buf = buf, desc = 'Show current diagnostic message' })
                 map('n', '<localleader>n', vim.diagnostic.goto_next,
-                    { buffer = buf, desc = 'Go to next diagnostic message' })
+                    { buf = buf, desc = 'Go to next diagnostic message' })
                 map('n', '<localleader>N', vim.diagnostic.goto_prev,
-                    { buffer = buf, desc = 'Go to previous diagnostic message' })
+                    { buf = buf, desc = 'Go to previous diagnostic message' })
                 map('n', '<leader>r', function() return ':IncRename ' .. vim.fn.expand('<cword>') end,
-                    { buffer = buf, expr = true, desc = 'Rename variable using LSP' })
+                    { buf = buf, expr = true, desc = 'Rename variable using LSP' })
             end,
         })
 
