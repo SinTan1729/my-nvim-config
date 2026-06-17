@@ -164,7 +164,7 @@
       "src": "https://github.com/lervag/vimtex"
     },
     "zpack.nvim": {
-      "rev": "1a5a7f2f4452d6057c5eb33e53cb8bab4f977430",
+      "rev": "c8b4e8d597ec5da5102e66ce7d73b77fa727b90c",
       "src": "https://github.com/zuqini/zpack.nvim"
     },
     "zshow.nvim": {
