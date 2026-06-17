@@ -15,9 +15,9 @@ return {
                 desc = 'Compile LaTeX once by ;lo',
                 group = group,
                 pattern = 'tex',
-                callback = function()
+                callback = function(args)
                     vim.keymap.set('n', '<localleader>lo', ':silent VimtexCompileSS<cr>',
-                        { buffer = true, remap = false, desc = 'Compile LaTeX once' })
+                        { buffer = args.bufnr, desc = 'Compile current LaTeX file once' })
                 end,
             }
         )

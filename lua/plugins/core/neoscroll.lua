@@ -33,7 +33,7 @@ return {
 
         local modes = { 'n', 'v', 'x' }
         for key, func in pairs(keymap) do
-            vim.keymap.set(modes, key, func, { remap = false, desc = 'Smooth scrolling maps' })
+            vim.keymap.set(modes, key, func, { desc = 'Smooth scrolling maps' })
         end
     end,
 }
