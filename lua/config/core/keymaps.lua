@@ -48,6 +48,7 @@ map('n', '<leader>q', ':qa<cr>', { desc = 'Close nvim' })
 map('n', '<leader>Q', ':qa!<cr>', { desc = 'Force close nvim' })
 map('n', '<leader>s', ':w<cr>', { desc = 'Save current file' })
 map('n', '<leader>S', ':x<cr>', { desc = 'Save current file and exit nvim' })
+map('n', '<leader>x', ':ccl<cr>', { desc = 'Close quickfix' })
 
 map('n', '<leader>u', '<c-r>', { desc = 'Redo' })
 map('n', '<Esc>', ':noh<cr>', { desc = 'Remove search highlights' })
