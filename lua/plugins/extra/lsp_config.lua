@@ -32,6 +32,8 @@ return {
                     { buf = buf, desc = 'Preview LSP actions' })
                 map('n', '<localleader>f', lsp.buf.definition,
                     { buf = buf, desc = 'Jump to definition' })
+                map('n', '<localleader>i', lsp.buf.references,
+                    { buf = buf, desc = 'List all uses' })
                 map('n', '<localleader>d', vim.diagnostic.open_float,
                     { buf = buf, desc = 'Show current diagnostic message' })
                 map('n', '<localleader>n', vim.diagnostic.goto_next,
