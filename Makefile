@@ -3,6 +3,8 @@ LOCKFILE := nvim-pack-lock.json
 
 push: 
 	./push_pull.sh push
+push-pizero:
+	./push_pull.sh push pizero
 
 pull: 
 	./push_pull.sh pull
@@ -46,4 +48,4 @@ commit-lock: update-lock cherry-pick
 
 rebuild-all: push rebuild
 
-.PHONY: push pull push-local push-clean update-lock rebuild commit-lock rebuild-all
+.PHONY: push push-pizero pull push-local push-clean update-lock rebuild commit-lock rebuild-all

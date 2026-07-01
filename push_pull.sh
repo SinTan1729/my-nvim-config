@@ -16,8 +16,10 @@ if [ "$1" = "push" ]; then
         nvim --headless +'ZPack! restore' +qa &>/dev/null
     echo "Cleaning plugins in neovim..."
     nvim --headless +'ZPack clean' +qa &>/dev/null
-    for server in server vps pi3b; do
-        echo "Trying to connect to $server..."
+    servers="server vps pi3b"
+    [ "$2" = "pizero" ] && servers="pizero"
+    for server in $servers; do
+        echo -e "\nTrying to connect to $server..."
         if ping -qc2 -W5 $server-ts >/dev/null; then
             echo "Syncing on $server..."
             ssh $server-ts-plain -T /bin/bash <<'EOF'
