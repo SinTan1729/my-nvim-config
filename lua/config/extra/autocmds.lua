@@ -7,8 +7,8 @@ local group = vim.api.nvim_create_augroup('globals', { clear = false })
 
 -- Custom tab sizes for filetypes
 local tab_widths = {
-    { pattern = { 'haskell', 'javascript', 'css', 'html' }, width = 2 },
-    { pattern = { 'markdown' },                             width = 3 },
+    { pattern = { 'haskell', 'javascript', 'css', 'html', 'json' }, width = 2 },
+    { pattern = { 'markdown' },                                     width = 3 },
 }
 for _, cfg in ipairs(tab_widths) do
     vim.api.nvim_create_autocmd('FileType', {
