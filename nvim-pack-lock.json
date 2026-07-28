@@ -53,7 +53,7 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "fzf-lua": {
-      "rev": "237b7e7f2bd07becc83144933b6058cc15bef2dc",
+      "rev": "28440c741e927592877514fba3db21eb188caec8",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "inc-rename.nvim": {
@@ -65,7 +65,7 @@
       "src": "https://github.com/felpafel/inlay-hint.nvim"
     },
     "lean.nvim": {
-      "rev": "32fb8aa2edf3f172c307957dc7083e6c7f6caa7e",
+      "rev": "41a759066abb9c88394835208d026b492ab514a5",
       "src": "https://github.com/julian/lean.nvim"
     },
     "log-highlight.nvim": {
@@ -93,11 +93,11 @@
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-cmp": {
-      "rev": "a1d504892f2bc56c2e79b65c6faded2fd21f3eca",
+      "rev": "2ffe79f1f021def8dd1fcd81deb16f1bb0d989f3",
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "d224a1920728ba129880efc700d4a0180ac4ecbb",
+      "rev": "b7b920947f21339ee41fbb38c79d6445e12900aa",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-numbertoggle": {
@@ -109,12 +109,12 @@
       "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
-      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "rev": "61df84986b4b4ec469ee745a182e433d49f8c27e",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
     "nvim-treesitter-textobjects": {
-      "rev": "851e865342e5a4cb1ae23d31caf6e991e1c99f1e",
+      "rev": "898ee307df58f854d11cd7edd06472574d48014e",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
     },
     "nvim-ts-autotag": {
@@ -122,7 +122,7 @@
       "src": "https://github.com/windwp/nvim-ts-autotag"
     },
     "nvim-web-devicons": {
-      "rev": "dad71387de386a946b123079d0e53f23028f3abd",
+      "rev": "2ae6958df7ced50baac5035cec0c15799eedfbf7",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "plenary.nvim": {
@@ -160,7 +160,7 @@
       "version": "'6d5abdd8430a68d887ee89d3910ecb6082c6118e'"
     },
     "vimtex": {
-      "rev": "5e6a06f5cec5ede3dc6ba045ef6eda13b6dccb1f",
+      "rev": "853eb587873a7061a083655578be56dd8027b834",
       "src": "https://github.com/lervag/vimtex"
     },
     "zpack.nvim": {
