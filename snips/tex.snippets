@@ -104,6 +104,12 @@ snippet parts "Parts" bw
 \end{parts}
 endsnippet
 
+snippet choices "Choices" bw
+\begin{choices}
+	\choice $0
+\end{choices}
+endsnippet
+
 snippet itemize "Itemize" bw
 \begin{itemize}
 	\item ${0:${VISUAL}}
@@ -149,15 +155,15 @@ endsnippet
 
 priority -20
 
-context in_env(["itemize", "enumerate", "parts"])
-snippet "\\(item|part)\s*\S+.*" "create next item/part" rb
+context in_env(["itemize", "enumerate", "parts", "choices"])
+snippet "\\(item|part|choice)\s*\S+.*" "create next item/part/choice" rb
 `!p snip.rv = match.group(0)`
 \\`!p snip.rv = match.group(1)` $0
 endsnippet
 
-context in_env(["itemize", "enumerate", "parts"])
+context in_env(["itemize", "enumerate", "parts", "choices"])
 pre_expand "delline_exit(snip, match)"
-snippet "(\s*)\\(item|part)\s*$" "exit item/part envs" r
+snippet "(\s*)\\(item|part|choice)\s*$" "Exit item/part/choice envs" r
 `!p snip.rv = snip.mkline()`
 $0
 endsnippet
