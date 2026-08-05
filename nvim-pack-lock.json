@@ -53,11 +53,11 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "fzf-lua": {
-      "rev": "28440c741e927592877514fba3db21eb188caec8",
+      "rev": "d0355a7f30bc0f7a81223ad2d88a019edd91f768",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "inc-rename.nvim": {
-      "rev": "0074b551a17338ccdcd299bd86687cc651bcb33d",
+      "rev": "ddff8bd3eccedf043bd73f5bf89cf90d2d6d8105",
       "src": "https://github.com/smjonas/inc-rename.nvim"
     },
     "inlay-hint.nvim": {
@@ -65,7 +65,7 @@
       "src": "https://github.com/felpafel/inlay-hint.nvim"
     },
     "lean.nvim": {
-      "rev": "41a759066abb9c88394835208d026b492ab514a5",
+      "rev": "dbfa4928652229c92bd02c21dffa1b7e8d20a108",
       "src": "https://github.com/julian/lean.nvim"
     },
     "log-highlight.nvim": {
@@ -97,7 +97,7 @@
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "b7b920947f21339ee41fbb38c79d6445e12900aa",
+      "rev": "43ed3797b266e1ee8d222e491379ad471c9d3146",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-numbertoggle": {
@@ -109,7 +109,7 @@
       "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
-      "rev": "61df84986b4b4ec469ee745a182e433d49f8c27e",
+      "rev": "3d3321b560a63ff92a8692401f303a5123336b86",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -130,7 +130,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "rainbow-delimiters.nvim": {
-      "rev": "a798325b7f36acc62741d1029930a7b96d4dd4bf",
+      "rev": "012f1480cd9a5fc99fce7678e0a536421a53fc46",
       "src": "https://github.com/hiphish/rainbow-delimiters.nvim"
     },
     "rustaceanvim": {
@@ -160,11 +160,11 @@
       "version": "'6d5abdd8430a68d887ee89d3910ecb6082c6118e'"
     },
     "vimtex": {
-      "rev": "853eb587873a7061a083655578be56dd8027b834",
+      "rev": "154eca8f68a5ad54eb12308bb378e88bdd0dfb3e",
       "src": "https://github.com/lervag/vimtex"
     },
     "zpack.nvim": {
-      "rev": "c8b4e8d597ec5da5102e66ce7d73b77fa727b90c",
+      "rev": "f1af873a894a3c1a433daad110500603387fa721",
       "src": "https://github.com/zuqini/zpack.nvim"
     },
     "zshow.nvim": {
