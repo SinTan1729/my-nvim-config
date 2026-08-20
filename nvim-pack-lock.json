@@ -160,11 +160,11 @@
       "version": "'6d5abdd8430a68d887ee89d3910ecb6082c6118e'"
     },
     "vimtex": {
-      "rev": "390aa658832a84223b559ef3c8fb34837fc72cad",
+      "rev": "2f279775e5b73743973bf2b013791f8f1673d5ac",
       "src": "https://github.com/lervag/vimtex"
     },
     "zpack.nvim": {
-      "rev": "f1af873a894a3c1a433daad110500603387fa721",
+      "rev": "b9146b11e0485eb60e0bd76d70c6bb273d635915",
       "src": "https://github.com/zuqini/zpack.nvim"
     },
     "zshow.nvim": {
