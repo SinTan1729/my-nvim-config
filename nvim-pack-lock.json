@@ -1,8 +1,9 @@
 {
   "plugins": {
     "Comment.nvim": {
-      "rev": "e30b7f2008e52442154b66f7c519bfd2f1e32acb",
-      "src": "https://github.com/numToStr/Comment.nvim"
+      "rev": "9386e876191b455d30a66dd97ecdb0e4dac4ef0f",
+      "src": "https://github.com/faergeek/Comment.nvim",
+      "version": "'nvim-0.12-compatibility'"
     },
     "academic.nvim": {
       "rev": "fa6aa4deae2df95e117e04ca2bb42cded50f5b5d",
@@ -65,7 +66,7 @@
       "src": "https://github.com/felpafel/inlay-hint.nvim"
     },
     "lean.nvim": {
-      "rev": "3d8027a96ada0fe43bdd01403e1bd4a09d175448",
+      "rev": "5a2c1dff42ca1055dc8977f1ad3217e42ce72659",
       "src": "https://github.com/julian/lean.nvim"
     },
     "log-highlight.nvim": {
@@ -81,7 +82,7 @@
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "moonfly": {
-      "rev": "261664f92ed51cf0c077555b2d4b2530307eac17",
+      "rev": "2c883835f5b7b380a0a9e80695c420f7efebdfe4",
       "src": "https://github.com/bluz71/vim-moonfly-colors"
     },
     "neoscroll.nvim": {
@@ -97,7 +98,7 @@
       "src": "https://github.com/hrsh7th/nvim-cmp"
     },
     "nvim-lspconfig": {
-      "rev": "3928e638fdedf195b23ae5a18f024afa487982bc",
+      "rev": "da1aff0332774a0f60d52bf972e815dfc226f276",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-numbertoggle": {
@@ -109,12 +110,12 @@
       "src": "https://github.com/kylechui/nvim-surround"
     },
     "nvim-treesitter": {
-      "rev": "8b98b4470eb326f1c7b50dae79f8c963568e5720",
+      "rev": "5cb0114e6242625db56dd6440e945ed1ece10bc7",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
     "nvim-treesitter-textobjects": {
-      "rev": "898ee307df58f854d11cd7edd06472574d48014e",
+      "rev": "5c7b0263797dfd1bd6202f2b219f3b53a80b2187",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
     },
     "nvim-ts-autotag": {
@@ -122,7 +123,7 @@
       "src": "https://github.com/windwp/nvim-ts-autotag"
     },
     "nvim-web-devicons": {
-      "rev": "2ae6958df7ced50baac5035cec0c15799eedfbf7",
+      "rev": "5f032a85be210cd1c6ac98861eb3b187ff3bd5eb",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "plenary.nvim": {
@@ -130,7 +131,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "rainbow-delimiters.nvim": {
-      "rev": "012f1480cd9a5fc99fce7678e0a536421a53fc46",
+      "rev": "3a0fc08dd39e8bf034a4cfef3f2845bd5f565a2e",
       "src": "https://github.com/hiphish/rainbow-delimiters.nvim"
     },
     "rustaceanvim": {
@@ -151,7 +152,7 @@
       "src": "https://github.com/folke/todo-comments.nvim"
     },
     "ultisnips": {
-      "rev": "62aca2a735b76d24a8fc7862f902330ac688849b",
+      "rev": "0ca6a21386021e74a91034365809dcca56ed13f0",
       "src": "https://github.com/SirVer/ultisnips"
     },
     "vim-dirtytalk": {
@@ -160,7 +161,7 @@
       "version": "'6d5abdd8430a68d887ee89d3910ecb6082c6118e'"
     },
     "vimtex": {
-      "rev": "c1b96604d9a387cde5a98bec8f6687ae3078b571",
+      "rev": "e355987594cbf16283bee7b37e3aa3a65d5e1c5c",
       "src": "https://github.com/lervag/vimtex"
     },
     "zpack.nvim": {
