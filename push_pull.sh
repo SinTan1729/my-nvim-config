@@ -16,7 +16,7 @@ if [ "$1" = "push" ]; then
         nvim --headless +'ZPack! restore' +qa &>/dev/null
     echo "Cleaning plugins in neovim..."
     nvim --headless +'ZPack clean' +qa &>/dev/null
-    servers="server vps pi3b"
+    servers="server vps dedirock pi3b"
     [ "$2" = "pizero" ] && servers="pizero"
     for server in $servers; do
         echo -e "\nTrying to connect to $server..."
