@@ -4,7 +4,12 @@ return {
     lazy = false,
     branch = 'main',
     dependencies = {
-        { 'numToStr/Comment.nvim', opts = {} },
+        {
+            'faergeek/Comment.nvim',
+            branch = 'nvim-0.12-compatibility',
+            commit = '9386e876191b455d30a66dd97ecdb0e4dac4ef0f',
+            opts = {},
+        },
         {
             'nvim-treesitter/nvim-treesitter-textobjects',
             init = function()
