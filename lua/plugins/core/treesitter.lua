@@ -20,6 +20,15 @@ return {
                 move = { set_jumps = true },
             },
         },
+        {
+            'nvim-treesitter/nvim-treesitter-context',
+            opts = {
+                enable = true,
+                max_lines = 3,
+                multiline_threshold = 1,
+                mode = 'cursor',
+            },
+        }
     },
     opts = {
         ts_filetypes = {
