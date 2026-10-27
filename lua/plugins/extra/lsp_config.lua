@@ -90,6 +90,36 @@ return {
             end,
         })
 
+        -- Typst
+        lsp_config('tinymist', {
+            settings = {
+                formatterMode = 'typstyle',
+                exportPdf = 'onSave',
+                semanticTokens = 'enable',
+                lint = {
+                    when = 'onType',
+                    enabled = true,
+                },
+            }
+        })
+        vim.api.nvim_create_autocmd('FileType', {
+            desc = 'Typst keymaps',
+            group = group,
+            pattern = { 'typst' },
+            callback = function(args)
+                local buf = args.buf
+                map({ 'n' }, '<localleader>lv', function()
+                        local filepath = vim.api.nvim_buf_get_name(0)
+                        local pdf_path = filepath:gsub('%.typ$', '.pdf')
+                        if vim.fn.filereadable(pdf_path) == 0 then
+                            vim.cmd('LspTinymistExportPdf')
+                        end
+                        vim.system({ 'xdg-open', pdf_path })
+                    end,
+                    { buf = buf, desc = 'Preview LSP actions' })
+            end,
+        })
+
         -- Misc
         lsp.enable({ 'bashls', 'fish_lsp', 'gopls', 'hls' })
 
