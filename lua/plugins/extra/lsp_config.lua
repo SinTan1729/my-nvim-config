@@ -121,13 +121,13 @@ return {
         })
 
         -- Misc
-        lsp.enable({ 'bashls', 'fish_lsp', 'gopls', 'hls' })
+        lsp.enable({ 'bashls', 'fish_lsp', 'gopls', 'hls', 'ts_ls' })
 
         vim.api.nvim_create_autocmd('FileType', {
             desc = 'Warn about failed LSP configs',
             group = group,
             pattern = { 'lua', 'python', 'rust', 'fish', 'bash',
-                'sh', 'go', 'haskell' },
+                'sh', 'go', 'haskell', 'javascript' },
             callback = function(args)
                 local bufnr = args.buf
                 local tick = vim.api.nvim_buf_get_changedtick(bufnr)

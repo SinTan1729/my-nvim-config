@@ -17,7 +17,7 @@ Feel free to use it as a baseline for your personal neovim configuration.
    prefer having control over which binaries are in my system. So, the following binaries must be installed
    manually for it to work.
    ```
-   ty, ruff, luals, gopls, hls, clippy, bashls, fish-lsp, tinymist
+   ty, ruff, luals, gopls, hls, clippy, bashls, fish-lsp, tinymist, typescript-language-server
    ```
    You can easily disable some of the LSPs that are unnecessary.
 1. In the `extra` config, `vimtex` assumes that packages related to compiling and editing LaTeX files are installed
