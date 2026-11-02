@@ -47,5 +47,8 @@ return {
                 return { '--lines', ctx.range.start[1] .. '-' .. ctx.range['end'][1] }
             end,
         }
+        cnf.formatters.prettier = {
+            prepend_args = { '--single-quote' },
+        }
     end,
 }

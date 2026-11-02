@@ -32,6 +32,8 @@ return {
             -- disable for .vim files, but it work for another filetypes
             Rule('a', 'a', '-vim')
         )
+        npairs.get_rules('```')[1].not_filetypes = { 'markdown' }
+        npairs.get_rules('`')[1]:with_pair(cond.not_before_text('``'))
 
         -- Add spaces between brackets
         local brackets = { { '(', ')' }, { '[', ']' }, { '{', '}' } }
