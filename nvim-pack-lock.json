@@ -3,7 +3,7 @@
     "Comment.nvim": {
       "rev": "9386e876191b455d30a66dd97ecdb0e4dac4ef0f",
       "src": "https://github.com/faergeek/Comment.nvim",
-      "version": "'nvim-0.12-compatibility'"
+      "version": "'9386e876191b455d30a66dd97ecdb0e4dac4ef0f'"
     },
     "academic.nvim": {
       "rev": "fa6aa4deae2df95e117e04ca2bb42cded50f5b5d",
