@@ -55,6 +55,17 @@ return {
             }
         })
 
+        -- Golang
+        lsp_config('gopls', {
+            settings = {
+                gopls = {
+                    analyses = {
+                        inline = false,
+                    },
+                },
+            },
+        })
+
         -- Lua
         lsp_config('luals', {
             cmd = { 'lua-language-server' },
@@ -121,7 +132,7 @@ return {
         })
 
         -- Misc
-        lsp.enable({ 'bashls', 'fish_lsp', 'gopls', 'hls', 'ts_ls' })
+        lsp.enable({ 'bashls', 'fish_lsp', 'hls', 'ts_ls' })
 
         vim.api.nvim_create_autocmd('FileType', {
             desc = 'Warn about failed LSP configs',
