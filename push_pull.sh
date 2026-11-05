@@ -20,9 +20,10 @@ if [ "$1" = "push" ]; then
     [ "$2" = "pizero" ] && servers="pizero"
     for server in $servers; do
         echo -e "\nTrying to connect to $server..."
-        if ping -qc2 -W5 $server-ts >/dev/null; then
+        if ping -qc2 -W5 $server >/dev/null; then
             echo "Syncing on $server..."
-            ssh $server-ts-plain -T /bin/bash <<'EOF'
+            [ "$server" == "pizero" ] && ssh_target="$server-plain" || ssh_target="$server-ts-plain"
+            ssh "$ssh_target" -T /bin/bash <<'EOF'
                 cd ~/.config/nvim
                 git fetch origin
                 git reset --hard origin/main
