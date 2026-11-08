@@ -22,7 +22,7 @@ if [ "$1" = "push" ]; then
         echo -e "\nTrying to connect to $server..."
         if ping -qc2 -W5 $server >/dev/null; then
             echo "Syncing on $server..."
-            [ "$server" == "pizero" ] && ssh_target="$server-plain" || ssh_target="$server-ts-plain"
+            [[ "$server" == pi* ]] && ssh_target="$server-plain" || ssh_target="$server-ts-plain"
             ssh "$ssh_target" -T /bin/bash <<'EOF'
                 cd ~/.config/nvim
                 git fetch origin
