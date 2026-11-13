@@ -60,3 +60,13 @@ vim.filetype.add({
         ['${XDG_CONFIG_HOME}/backup_config/.*/.*%.config'] = 'bash',
     },
 })
+
+-- tmp based clipboard
+if not vim.env.WAYLAND_DISPLAY and not vim.env.DISPLAY then
+    vim.g.clipboard = {
+        name = 'ssh-clipboard',
+        copy = { ['+'] = { '/home/sintan/.local/bin/personal/tmp-clipboard' } },
+        paste = { ['+'] = { '/home/sintan/.local/bin/personal/tmp-clipboard', '--paste' } },
+        cache_enabled = 0,
+    }
+end
