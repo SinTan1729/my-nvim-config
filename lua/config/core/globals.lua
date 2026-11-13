@@ -65,8 +65,8 @@ vim.filetype.add({
 if not vim.env.WAYLAND_DISPLAY and not vim.env.DISPLAY then
     vim.g.clipboard = {
         name = 'ssh-clipboard',
-        copy = { ['+'] = { '/home/sintan/.local/bin/personal/tmp-clipboard' } },
-        paste = { ['+'] = { '/home/sintan/.local/bin/personal/tmp-clipboard', '--paste' } },
+        copy = { ['+'] = { '$HOME/.local/bin/personal/tmp-clipboard' } },
+        paste = { ['+'] = { '$HOME/.local/bin/personal/tmp-clipboard', '--paste' } },
         cache_enabled = 0,
     }
 end
