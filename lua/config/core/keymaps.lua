@@ -52,3 +52,6 @@ map('n', '<leader>x', ':ccl<cr>', { desc = 'Close quickfix' })
 
 map('n', '<leader>u', '<c-r>', { desc = 'Redo' })
 map('n', '<Esc>', ':noh<cr>', { desc = 'Remove search highlights' })
+
+map('n', '<leader>y', '"+y', { desc = 'Copy to system clipboard' })
+map('n', '<leader>p', '"+p', { desc = 'Paste from system clipboard' })
