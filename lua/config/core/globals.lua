@@ -63,10 +63,19 @@ vim.filetype.add({
 
 -- tmp based clipboard
 if not vim.env.WAYLAND_DISPLAY and not vim.env.DISPLAY then
+    local clipboard_file = '/tmp/tmp-clipboard'
     vim.g.clipboard = {
-        name = 'ssh-clipboard',
-        copy = { ['+'] = { '$HOME/.local/bin/personal/tmp-clipboard' } },
-        paste = { ['+'] = { '$HOME/.local/bin/personal/tmp-clipboard', '--paste' } },
+        name = 'tmp-clipboard',
+        copy = {
+            ['+'] = function(lines, _)
+                vim.fn.writefile(lines, clipboard_file, 'b')
+            end,
+        },
+        paste = {
+            ['+'] = function()
+                return vim.fn.readfile(clipboard_file, 'b')
+            end,
+        },
         cache_enabled = 0,
     }
 end
